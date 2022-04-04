@@ -6,11 +6,13 @@ const raicesMultiples = require('./Functions/raicesMultiples')
 const steffensen = require('./Functions/steffensen')
 const aitken = require('./Functions/aitken')
 const muller = require('./Functions/muller')
+const fixedpoint = require('./Functions/fixedpoint')
 
 console.table(raicesMultiples('e^x-x-1','e^x-1','e^x',1,10e-7,100).iterations)
 console.table(aitken('x-e^(-x)','e^(-x)',0,10e-7,100).iterations)
 console.table(steffensen('x^3 + 4x^2 -10','sqrt(10/(x+4))',1.5,10e-7,100).iterations)
 console.table(muller('x-e^(-x)',0,1,10e-7,100).iterations)
+fixedpoint('log((sin(x)^2)+1)-x-1/2','log((sin(x)^2)+1)-1/2',-0.5,10e-7,100)
 
 // Ax = b
 const gausSimple = require('./Matrixes/gausSimple')
