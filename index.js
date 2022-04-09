@@ -27,7 +27,9 @@ const secante = require('./Functions/secante')
 // console.log('x:\n')
 // console.log(root?root:approximation)
 
-//fixedpoint('log((sin(x)^2)+1)-x-1/2','log((sin(x)^2)+1)-1/2',-0.5,10e-7,100)
+const {x,iterations}=fixedpoint('log((sin(x)^2)+1)-x-1/2','log((sin(x)^2)+1)-1/2',-0.5,1e-7,100)
+console.table(iterations)
+console.log(x)
 //falsePosition('log((sin(x)^2)+ 1)-1/2',0,1,10e-7,100)
 //secante('log((sin(x)^2)+ 1)-1/2',0.5,1,10e-7,100)
 
