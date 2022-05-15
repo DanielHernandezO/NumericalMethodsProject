@@ -1,0 +1,9 @@
+/* For mobile phones: */
+[class*="form-container"] {
+    width: 100%;
+}
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .form-container {width: 50%;}
+  }
