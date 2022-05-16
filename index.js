@@ -59,3 +59,12 @@ const factLUPartialPiv = require('./Matrixes/factLUPartialPiv')
 
 // const result = factLUPartialPiv([[4,-1,0,3],[1,15.5,3,8],[0,-1.3,-4,1.1],[14,5,-2,30]],[[1],[1],[1],[1]]);
 // console.log(result);
+
+
+// Integration
+// const trapezoidIntegration = require('./Integration/trapezoidIntegration');
+// const simpsonIntegration = require('./Integration/simpsonIntegration');
+// const simpsonSimpleIntegration = require('./Integration/simpsonSimpleIntegration');
+// console.log(trapezoidIntegration(0,5,'x^3 - 5*x^2 + 2*x + 8',1000));
+// console.log(simpsonIntegration(1,5,'5*x^2 - x/3',12));
+// console.log(simpsonSimpleIntegration(1,2,'x/(1+x^2)',3));
