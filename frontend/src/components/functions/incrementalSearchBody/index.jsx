@@ -7,10 +7,10 @@ const IncrementalSearchBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
-        fx: '',
-        x0: 0,
-        delta: 0,
-        niter: 10e-7
+        fx: 'x-1',
+        x0: -2,
+        delta: 5,
+        niter: 1
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -30,22 +30,26 @@ const IncrementalSearchBody = () => {
     }
 
     //Método para validar los datos que entran desde el formulario
-    const validateData = ({fx,x0,delta,niter}) => {
+    const validateData = ({ fx, x0, delta, niter }) => {
         //Validate input
-        
-        return false;
+
+        return true;
     }
 
     //Función para correr el método
     const run = () => {
-        const validateDataResult  = validateData({...dataForm});
-        if(validateDataResult){
-            incrementalSearchMethod(dataForm.fx, parseFloat(dataForm.x0), parseFloat(dataForm.delta), parseFloat(dataForm.niter))
+        const validateDataResult = validateData({ ...dataForm });
+        if (validateDataResult) {
+            const { matrix, x1, logs } = incrementalSearchMethod(dataForm.fx, parseFloat(dataForm.x0), parseFloat(dataForm.delta), parseFloat(dataForm.niter))
+            setColumns(matrix[0]);
+            setRows(matrix.slice(1, matrix.length));
+            setExtraInfo({Raiz: x1});
+            setLogs(logs);
             setIsRun(true);
-        }else{
-            setLogs([...logs, {type:'Error',text:'The data input is invalid'}])
+        } else {
+            setLogs([...logs, { type: 'Error', text: 'The data input is invalid' }])
         }
-        
+
     }
 
     //Método para reiniciar los valores

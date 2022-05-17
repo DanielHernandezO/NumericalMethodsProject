@@ -1,5 +1,5 @@
 const mathjs = require('mathjs')
-
+const print = require('../utilities/printMatrix')
 const partialPivot = (U, k, P, L) => {
     list = mathjs.column(U, k);
     major = -1;
@@ -72,11 +72,16 @@ module.exports = (A, b) => {
     const { L, U, P } = fact_lu(A);
     Bn = mathjs.multiply(P, b);
     z = progressive_replacement(L, Bn);
-    console.log('L',L);
-    console.log('U',U);
-    console.log('P',P);
-    console.log('Bn',Bn);
-    console.log('z',z);
+    console.log('L = \n');
+    print(L)
+    console.log('\nU = \n');
+    print(U)
+    console.log('\nP = \n');
+    print(P)
+    console.log('\nBn = \n');
+    print(Bn)
+    console.log('\nz = \n');
+    print(z)
     x = backward_substitution(U, z);
-    return {x}
+    console.log('\nx = ',x)
 }
