@@ -1,5 +1,6 @@
 const mathjs = require('mathjs')
-
+const print = require('../utilities/printMatrix')
+const format = require('../utilities/format')
 const fact_lu = (A) => {
     U = A;
     n = A.length;
@@ -47,9 +48,12 @@ const backward_substitution = (A, b) => {
 module.exports = (A, b) => {
     const { L, U } = fact_lu(A);
     z = progressive_replacement(L,b);
-    console.log('L',L);
-    console.log('U',U);
-    console.log('Z',z);
+    console.log('L = \n');
+    print(L)
+    console.log('U = \n');
+    print(U)
+    console.log('Z = \n');
+    print(z)
     x = backward_substitution(U,z);
-    return {x};
+    console.log('x = ',x)
 }

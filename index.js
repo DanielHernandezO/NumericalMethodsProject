@@ -57,14 +57,14 @@ const factLUPartialPiv = require('./Matrixes/factLUPartialPiv')
 //console.log(gausPivoteoParcial([[0, 0.6787, 0.6555, 0.2769],[0, 0.7577, 0.1712, 0.0462],[0.8491, 0.7431, 0.7060, 0.0971],[0.9340, 0.3922, 0.0318, 0.8235]],[[0.4387],[0.3816],[0.7655],[0.7952]],4).x)
 //console.log(gausPivoteoTotal([[-7,2,-3,4],[5,-1,14,-1],[1,9,-7,13],[-12,13,-8,-4]],[[-12],[13],[31],[-32]],4).stages.map(element => console.table(element)))
 
-// const result = factLUPartialPiv([[4,-1,0,3],[1,15.5,3,8],[0,-1.3,-4,1.1],[14,5,-2,30]],[[1],[1],[1],[1]]);
-// console.log(result);
+//factLUPartialPiv([[4,-1,0,3],[1,15.5,3,8],[0,-1.3,-4,-1.1],[14,5,-2,30]],[[1],[1],[1],[1]]);
+
 
 
 // Integration
-// const trapezoidIntegration = require('./Integration/trapezoidIntegration');
-// const simpsonIntegration = require('./Integration/simpsonIntegration');
+//const trapezoidIntegration = require('./Integration/trapezoidIntegration');
+//const simpsonIntegration = require('./Integration/simpsonIntegration');
 // const simpsonSimpleIntegration = require('./Integration/simpsonSimpleIntegration');
 // console.log(trapezoidIntegration(0,5,'x^3 - 5*x^2 + 2*x + 8',1000));
-// console.log(simpsonIntegration(1,5,'5*x^2 - x/3',12));
+//simpsonIntegration(1,5,'5*x^2 - x/3',12);
 // console.log(simpsonSimpleIntegration(1,2,'x/(1+x^2)',3));
