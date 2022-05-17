@@ -43,7 +43,7 @@ const difdivididas = require('./Functions/difdivididas')
 // console.log(cuadratica([-1,0,3,4],[15.5,3,8,1]))
 // console.log(cubica([-1,0,3,4],[15.5,3,8,1]))
 // console.log(difdivididas([-1,0,3,4],[15.5,3,8,1]))
-console.log(lagrange([-1,0,3,4],[15.5,3,8,1]))
+//console.log(lagrange([-1,0,3,4],[15.5,3,8,1]))
 // Ax = b
 const gausSimple = require('./Matrixes/gausSimple')
 const gausPivoteoParcial = require('./Matrixes/gausPivoteoParcial')
@@ -75,7 +75,7 @@ const factLUPartialPiv = require('./Matrixes/factLUPartialPiv')
 // Integration
 //const trapezoidIntegration = require('./Integration/trapezoidIntegration');
 //const simpsonIntegration = require('./Integration/simpsonIntegration');
-// const simpsonSimpleIntegration = require('./Integration/simpsonSimpleIntegration');
-// console.log(trapezoidIntegration(0,5,'x^3 - 5*x^2 + 2*x + 8',1000));
-//simpsonIntegration(1,5,'5*x^2 - x/3',12);
-// console.log(simpsonSimpleIntegration(1,2,'x/(1+x^2)',3));
+//const simpsonSimpleIntegration = require('./Integration/simpsonSimpleIntegration');
+//trapezoidIntegration(1,2,'e^x -2*x',10);
+//simpsonIntegration(1,2,'e^x -2*x',10);
+//simpsonSimpleIntegration(1,2,'e^x -2*x',9);
