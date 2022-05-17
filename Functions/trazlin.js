@@ -24,9 +24,10 @@ module.exports = (x,y) => {
         B[i][0]=y[i];
 
     }
+    
     A[0][0] = x[0];
     A[0][1] = 1;
-    B[0][0] = 1;
+    B[0][0] = y[0];
     z=0;
     for (let i = 1; i < x.length-1; i++) {
         A[x.length-1+i][z] = x[i];
@@ -40,13 +41,14 @@ module.exports = (x,y) => {
     result = mathjs.multiply(inverse,B);
     newarray = zeros([2,2]);
     toit=0;
-    for (let i = 0; i < B.length/2  ; i++) {
+    
+    for (let i = 1; i < B.length/2  ; i++) {
 
-        newarray[i][0] = result[toit];
-        newarray[i][1] = result[toit+1];
+        newarray[i-1][0] = result[toit];
+        newarray[i-1][1] = result[toit+1];
         toit = toit+2;
     }
-    return newarray;
+     return newarray;
 }
 // %Este programa halla el spline lineal que interpola los datos dados usando el
 // %m�todo de trazadores lineales
