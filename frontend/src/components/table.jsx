@@ -1,5 +1,11 @@
 import React from "react";
 
+/*
+columns => ['nombreColumna1','nombreColumna2'...]
+rows => [[1,2],[3,1],[3,5],[1,4]]
+
+*/
+
 const Table = ({ columns, rows }) => {
     return (
         <table className="table">

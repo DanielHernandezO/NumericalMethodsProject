@@ -1,5 +1,13 @@
 import React from "react";
 const Logs = ({ title, logs }) => {
+    /**
+        {
+            type: 'Success' | 'Error',
+            text: valor que quiero mostrar
+        } 
+
+
+     */
     return (
         <>
             <h5>{title}</h5>
