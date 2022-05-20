@@ -79,3 +79,11 @@ const factLUPartialPiv = require('./Matrixes/factLUPartialPiv')
 //trapezoidIntegration(1,2,'e^x -2*x',10);
 //simpsonIntegration(1,2,'e^x -2*x',10);
 //simpsonSimpleIntegration(1,2,'e^x -2*x',9);
+//const vandermorde = require('./Functions/vandermorde.js');
+//vandermorde([1,2,3,4],[5,6,7,8]);
+//const jacobi = require('./Functions/jacobi.js');
+//jacobi([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7);
+const gaussseidel = require('./Functions/gaussseidel.js');
+gaussseidel([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7);
+//const sor = require('./Functions/sor.js');
+//sor([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7,3.5);

@@ -1,5 +1,4 @@
 function [ yo ] = euler( y )
-%     programa realizado por Julio Echeverri
 
 %esta funcion recibe derivada simbolica en terminos de
 %la variabe X para calcular numericamente su integral
