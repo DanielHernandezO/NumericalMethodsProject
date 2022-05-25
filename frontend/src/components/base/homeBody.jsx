@@ -18,7 +18,7 @@ const HomeBody = () => {
                                 <li><a href="#">Fixed point</a></li>
                                 <li><a href="#">Newton</a></li>
                                 <li><a href="#">Secant</a></li>
-                                <li><a href="#">Multiple roots</a></li>
+                                <li><a href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a href="#">Steffensen</a></li>
                                 <li><a href="#">Aitken</a></li>
                                 <li><a href="#">Müller</a></li>

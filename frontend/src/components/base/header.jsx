@@ -21,7 +21,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="#">Fixed point</a></li>
                                 <li><a className="dropdown-item" href="#">Newton</a></li>
                                 <li><a className="dropdown-item" href="#">Secant</a></li>
-                                <li><a className="dropdown-item" href="#">Multiple roots</a></li>
+                                <li><a className="dropdown-item" href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a className="dropdown-item" href="#">Steffensen</a></li>
                                 <li><a className="dropdown-item" href="#">Aitken</a></li>
                                 <li><a className="dropdown-item" href="#">Müller</a></li>

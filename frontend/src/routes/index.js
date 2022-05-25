@@ -6,6 +6,7 @@ import {
 
 import Home from "../pages/Home"
 import IncrementalSearch from "../pages/functions/IncrementalSearch"
+import MultipleRoots from "../pages/functions/MultipleRoots"
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <Routes>    
                     <Route path="/" element={<Home/>}/>
                     <Route path="/functions/incremental_search" element={<IncrementalSearch/>}/>
+                    <Route path="/functions/multiple_roots" element={<MultipleRoots/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
