@@ -11,7 +11,7 @@ const MultipleRootsExecution = ({ run, clear, dataForm, handleChangeDataForm, lo
                         <MultipleRootsForm run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} />
                     </div>
                     <div className="col">
-                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModalXl" style={{float:"right"}}>Graph</button>
+                        <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModalXl" style={{float:"right"}}>Graph</button>
                         <Logs title='Logs' logs={logs} />
                     </div>
                 </div>

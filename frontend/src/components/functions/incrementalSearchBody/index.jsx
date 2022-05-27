@@ -3,6 +3,7 @@ import IncrementalSearchBodyDescription from "./incrementalSearchBodyDescription
 import IncrementalSearchBodyExecution from "./IncrementalSearchBodyExecution";
 import incrementalSearchMethod from "../../../utilities/methods/functions/IncrementalSearch";
 import IncrementalSearchBodyResult from "./incrementalSearchBodyResult"
+import Graph from "../../graph"
 const IncrementalSearchBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -73,6 +74,7 @@ const IncrementalSearchBody = () => {
             <IncrementalSearchBodyDescription />
             <IncrementalSearchBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
             {isRun ? <IncrementalSearchBodyResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <Graph/>
         </div>
 
     )
