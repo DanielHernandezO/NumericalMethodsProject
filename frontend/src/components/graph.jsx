@@ -1,38 +1,22 @@
-import React, { useEffect } from 'react'
-const math = require('mathjs')
-var Plotly = require('plotly.js-dist')
-const Graph = ({expression,low_lim,upp_lim,step}) => {
-  function draw () {
-    try {
-      // compile the expression once
-      const expr = math.compile(expression)
-
-      // evaluate the expression repeatedly for different values of x
-      const xValues = math.range(low_lim, upp_lim, step).toArray()
-      const yValues = xValues.map(function (x) {
-        return expr.evaluate({ x: x })
-      })
-
-      // render the plot using plotly
-      const trace1 = {
-        x: xValues,
-        y: yValues,
-        type: 'scatter'
-      }
-      const data = [trace1]
-      Plotly.newPlot('plot', data)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  useEffect(()=>{
-    draw()
-  },[])
-
-  //draw()
+import React from 'react'
+const Graph = () => {
   return (
-      <div id='plot'></div>
+    <div className="modal fade" id="exampleModalXl" tabIndex="-1" aria-labelledby="exampleModalXlLabel" style={{display:'none'}} aria-hidden="true">
+      <div className="modal-dialog modal-xl">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title h4" id="exampleModalXlLabel">Graph</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div className="modal-body">
+            <iframe src="https://www.geogebra.org/graphing?lang=es"
+              width={'100%'}
+              height={'800px'}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
