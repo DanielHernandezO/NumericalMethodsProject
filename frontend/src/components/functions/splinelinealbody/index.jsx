@@ -18,7 +18,7 @@ const SplineLinealBody = () => {
     const [isRun, setIsRun] = useState(false);
 
     //Se crean los estados para guardar las filas, columnas, e informacion adicional resultantes del método
-    const [columns, setColumns] = useState(["Tracers",' ']);
+    const [columns, setColumns] = useState(["Tracer Coefficients",' ']);
     const [rows, setRows] = useState([]);
     const [extraInfo, setExtraInfo] = useState({});
 

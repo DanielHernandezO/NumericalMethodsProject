@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SplineQuadraticDescription from "./SplineQuadraticDescription";
-import SplineQuadraticExecution from "./SplineQuadraticExecution";
-import trazquadmethod from "../../../utilities/methods/functions/trazcuad";
-import SplineQuadraticResult from "./SplineQuadraticResult"
-const SplineQuadraticBody = () => {
+import SplineCubicDescription from "./SplineCubicDescription";
+import SplineCubicExecution from "./SplineCubicExecution";
+import trazcubmethod from "../../../utilities/methods/functions/trazcub";
+import SplineCubicResult from "./SplineCubicResult"
+const SplineCubicBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -96,7 +96,7 @@ const SplineQuadraticBody = () => {
                 return Number(str);
             });
             
-            let { newarray, logs } = trazquadmethod(arrOfNum1,arrOfNum2)
+            let { newarray, logs } = trazcubmethod(arrOfNum1,arrOfNum2)
             
             let message = { type: 'Success', text: "Correct Input"}
             logs = [message];
@@ -127,13 +127,13 @@ const SplineQuadraticBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Quadratic Spline</h1>
-            <SplineQuadraticDescription />
-            <SplineQuadraticExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <SplineQuadraticResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Cubic Spline</h1>
+            <SplineCubicDescription />
+            <SplineCubicExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <SplineCubicResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
         </div>
 
     )
 }
 
-export default SplineQuadraticBody;
+export default SplineCubicBody;
