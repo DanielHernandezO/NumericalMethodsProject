@@ -60,9 +60,9 @@ const HomeBody = () => {
                                 <li><a href="#">Vandermonde</a></li>
                                 <li><a href="#">Newton( Divided differences)</a></li>
                                 <li><a href="#">Lagrange</a></li>
-                                <li><a href="#">Line plotters</a></li>
-                                <li><a href="#">Quadratic plotters</a></li>
-                                <li><a href="#">Cubic plotters</a></li>
+                                <li><a href="/functions/linealspline">Line plotters</a></li>
+                                <li><a href="/functions/quadraticspline">Quadratic plotters</a></li>
+                                <li><a href="/functions/cubicspline">Cubic plotters</a></li>
                             </ul>
                         </div>
                     </div>
