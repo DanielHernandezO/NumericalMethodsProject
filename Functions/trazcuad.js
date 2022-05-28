@@ -63,7 +63,7 @@ module.exports = (x,y) => {
     toit=0;
     
     for (let i = 1; i < Math.trunc(B.length/2)  ; i++) {
-        console.log("a");
+
         newarray[i-1][0] = result[toit];
         newarray[i-1][1] = result[toit+1];
         newarray[i-1][2] = result[toit+2];
