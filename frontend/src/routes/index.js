@@ -6,6 +6,7 @@ import {
 
 import Home from "../pages/Home"
 import IncrementalSearch from "../pages/functions/IncrementalSearch"
+import LinealSpline from "../pages/functions/SplineLineal"
 
 const App = () => {
     return (
@@ -13,7 +14,8 @@ const App = () => {
             <BrowserRouter>
                 <Routes>    
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/functions/incremental_search" element={<IncrementalSearch/>}/>
+                    <Route path="/functions/incremental_search" element={<IncrementalSearch/>}/> 
+                    <Route path="/functions/linealspline" element={<LinealSpline/>}/> 
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
