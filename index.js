@@ -22,11 +22,11 @@ const difdivididas = require('./Functions/difdivididas')
 // console.log('x:\n')
 // console.log(root?root:approximation)
 
-// const {root,approximation,iterations} = aitken('(x+(2/x))/2',1,10e-9,100)
+// aitken('(1/2)*(x + 2/x)',1,10e-9,100)
 // console.log('iterations:\n')
 // console.table(iterations)
 // console.log('x:\n')
-// console.log(root?root:approximation)
+// console.log(xi)
 
 // const {root,approximation,iterations} = muller('log((sin(x)^2)+ 1)-1/2',0,1,10e-7,100)
 // console.log('iterations:\n')
