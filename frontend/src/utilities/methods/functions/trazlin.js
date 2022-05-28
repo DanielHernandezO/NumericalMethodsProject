@@ -25,7 +25,7 @@ const trazlin = (x,y) => {
         B[i][0]=y[i];
 
     }
-    
+    let logs = 0;
     A[0][0] = x[0];
     A[0][1] = 1;
     B[0][0] = y[0];
@@ -40,16 +40,16 @@ const trazlin = (x,y) => {
     }
     let inverse= mathjs.inv(A);
     let result = mathjs.multiply(inverse,B);
-    let newarray = zeros([2,2]);
+    let newarray = zeros([3,2]);
     let toit=0;
     
-    for (let i = 1; i < B.length/2  ; i++) {
+    for (let i = 1; i < newarray.length+1  ; i++) {
 
-        newarray[i-1][0] = result[toit];
-        newarray[i-1][1] = result[toit+1];
+        newarray[i-1][0] = result[toit][0];
+        newarray[i-1][1] = result[toit+1][0];
         toit = toit+2;
     }
-     return newarray;
+     return {newarray,logs};
 }
 
 export default trazlin;

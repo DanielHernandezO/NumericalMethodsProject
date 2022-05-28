@@ -4,7 +4,7 @@
     A = 0;
     
     %Test if n is par
-    
+    iterations = [];
     for i=0:1:n
         xi = a + i*deltaX;
         fxi = f(xi);
@@ -16,8 +16,11 @@
             end
         end
         A = A + fxi;
+        iterations = [iterations;[(i+1),xi,fxi,A]];
     end
-    
+    disp('    Counter    Xi         Fxi     A');
+    disp(iterations);
     A = A * (deltaX/3);
+    A
     
     end

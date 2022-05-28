@@ -44,6 +44,7 @@ const difdivididas = require('./Functions/difdivididas')
 // console.log(cubica([-1,0,3,4],[15.5,3,8,1]))
 // console.log(difdivididas([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]]))
 // console.log(lagrange([-1,0,3,4],[15.5,3,8,1]))
+
 // Ax = b
 const gausSimple = require('./Matrixes/gausSimple')
 const gausPivoteoParcial = require('./Matrixes/gausPivoteoParcial')
@@ -75,7 +76,15 @@ const factLUPartialPiv = require('./Matrixes/factLUPartialPiv')
 // Integration
 //const trapezoidIntegration = require('./Integration/trapezoidIntegration');
 //const simpsonIntegration = require('./Integration/simpsonIntegration');
-// const simpsonSimpleIntegration = require('./Integration/simpsonSimpleIntegration');
-// console.log(trapezoidIntegration(0,5,'x^3 - 5*x^2 + 2*x + 8',1000));
-//simpsonIntegration(1,5,'5*x^2 - x/3',12);
-// console.log(simpsonSimpleIntegration(1,2,'x/(1+x^2)',3));
+//const simpsonSimpleIntegration = require('./Integration/simpsonSimpleIntegration');
+//trapezoidIntegration(1,2,'e^x -2*x',10);
+//simpsonIntegration(1,2,'e^x -2*x',10);
+//simpsonSimpleIntegration(1,2,'e^x -2*x',9);
+//const vandermorde = require('./Functions/vandermorde.js');
+//vandermorde([1,2,3,4],[5,6,7,8]);
+//const jacobi = require('./Functions/jacobi.js');
+//jacobi([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7);
+// const gaussseidel = require('./Functions/gaussseidel.js');
+// gaussseidel([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7);
+//const sor = require('./Functions/sor.js');
+//sor([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7,3.5);

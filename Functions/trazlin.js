@@ -39,10 +39,10 @@ module.exports = (x,y) => {
     }
     inverse= mathjs.inv(A);
     result = mathjs.multiply(inverse,B);
-    newarray = zeros([2,2]);
+    newarray = zeros([3,2]);
     toit=0;
     
-    for (let i = 1; i < B.length/2  ; i++) {
+    for (let i = 1; i < newarray.length+1  ; i++) {
 
         newarray[i-1][0] = result[toit];
         newarray[i-1][1] = result[toit+1];

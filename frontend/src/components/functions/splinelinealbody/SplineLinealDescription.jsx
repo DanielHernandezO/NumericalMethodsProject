@@ -7,22 +7,16 @@ const SplineLinealDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b>fx:</b> Function to which we want to find the interval where the root or the root is located. Ej: 'x^2 + 2 -1'
+                        <b>X:</b> First row of the table
                     </li>
                     <li>
-                        <b>x0:</b> Initial root approximation. Ej: 0
-                    </li>
-                    <li>
-                        <b>delta: </b> Reason for change of x. Ej: 0.5
-                    </li>
-                    <li>
-                        <b>niter: </b> Maximum number of iterations
+                        <b>Y:</b> Second row of the table
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
                 <ol>
                     <li>
-                        <b>fx</b> must be continuous.
+                        The input must be every element of the table followed by a coma like this : 1,5,2,3
                     </li>
                 </ol>
                 <div className="card-footer">

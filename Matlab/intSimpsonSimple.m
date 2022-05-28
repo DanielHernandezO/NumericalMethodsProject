@@ -2,7 +2,7 @@ function [A] = intSimpsonSimple(a,b,n,f)
 f = inline(f);
 deltaX = (b-a)/n;
 A = 0;
-
+iterations = [];
 for i=0:1:n
     xi = a + i*deltaX;
     fxi = f(xi);
@@ -14,7 +14,10 @@ for i=0:1:n
         end
     end
     A = A + fxi;
+    iterations = [iterations;[(i+1),xi,fxi,A]];
 end
-
+disp('    Counter    Xi         Fxi     A');
+disp(iterations);
 A = A * (3*deltaX/8);
+A
 end

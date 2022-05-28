@@ -12,7 +12,7 @@ const SplineLinealForm = ({ run, clear, dataForm, handleChangeDataForm }) => {
                 <div className="row mb-3">
                     <div className="col-sm-10">
                         <label>y</label>
-                        <input type="number" className="form-control form-control-sm" id="y" placeholder="y" value={dataForm.y} onChange={handleChangeDataForm} />
+                        <input type="text" className="form-control form-control-sm" id="y" placeholder="y" value={dataForm.y} onChange={handleChangeDataForm} />
                     </div>
                 </div>
             </div>
