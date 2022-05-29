@@ -7,7 +7,7 @@ import {
 import Home from "../pages/Home"
 import IncrementalSearch from "../pages/functions/IncrementalSearch"
 import MultipleRoots from "../pages/functions/MultipleRoots"
-
+import Aitken from "../pages/functions/Aitken"
 
 const App = () => {
     return (
@@ -17,6 +17,7 @@ const App = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/functions/incremental_search" element={<IncrementalSearch/>}/>
                     <Route path="/functions/multiple_roots" element={<MultipleRoots/>}/>
+                    <Route path="/functions/aitken" element={<Aitken/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

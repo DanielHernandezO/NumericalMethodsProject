@@ -1,26 +1,33 @@
 const mathjs = require('mathjs')
 
-module.exports = (an, x0, tolerance, nMax) => {
-    const iterations = [];
-    const logs = [];
-    let x1 = mathjs.evaluate(an, { x: x0 });
-    let x2 = mathjs.evaluate(an, { x: x1 });
-    let xi = x0 - (Math.pow(x1 - x0, 2)) / (x2 - 2 * x1 + x0);
-    let error = tolerance + 1;
-    let counter = 0;
-    iterations.push([counter,xi])
+module.exports = (f, x0, tolerance, nMax) => {
+    const iterations = []
+    let x1 = 0;
+    let x2 = 0;
+    let xi = 0;
+    for (let i = 1; i < nMax; i++) {
+        x1 = mathjs.evaluate(f, { x: x0 });
+        x2 = mathjs.evaluate(f, { x: x1 });
+        denominator = (x2 - x1) - (x1 - x0);
 
-    while (error > tolerance && counter < nMax) {
-        x0 = xi
-        x1 = mathjs.evaluate(an, { x: x0 });
-        x2 = mathjs.evaluate(an, { x: x1 });
-        xi = x0 - (Math.pow(x1 - x0, 2)) / (x2 - 2 * x1 + x0);
-        error = Math.abs(xi-x2);
-        counter++;
-        iterations.push([counter, xi, error ]) 
+        if (Math.abs(denominator) < 10e-16) {
+            console.log('Problem with denominatpr')
+            break;
+        }
+
+        xi = x2 - (Math.pow(x2 - x1, 2)) / denominator;
+
+        iterations.push(i === 1 ? [i, xi] : [i, xi, Math.abs(xi - x2)]);
+
+        if (Math.abs(xi - x2) < tolerance) {
+            console.log('Problem with tolerance')
+            break;
+        }
+        x0 = xi;
     }
 
-    if (error <= tolerance) logs.push({ type: 'Success', text: xi + ' is an approximation of the root' })
-    else logs.push({ type: 'Error', text: 'The method fails with the maximum number of iterations given' })
-    return { iterations, logs, xi }
+    console.log('iterations:\n')
+    console.table(iterations)
+    console.log('x:\n')
+    console.log(xi)
 }
