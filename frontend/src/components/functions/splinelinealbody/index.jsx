@@ -95,7 +95,7 @@ const SplineLinealBody = () => {
                 return Number(str);
             });
             let { newarray, logs } = trazlinmethod(arrOfNum1,arrOfNum2)
-
+            console.log(newarray);
             if(logs[0].type == "Success"){
                 setRows(newarray);
                 setLogs(logs);

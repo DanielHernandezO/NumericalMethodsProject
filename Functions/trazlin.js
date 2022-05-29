@@ -28,6 +28,7 @@ module.exports = (x,y) => {
     A[0][0] = x[0];
     A[0][1] = 1;
     B[0][0] = y[0];
+    
     z=0;
     for (let i = 1; i < x.length-1; i++) {
         A[x.length-1+i][z] = x[i];
@@ -37,6 +38,7 @@ module.exports = (x,y) => {
         z=z+2; 
         B[x.length-1+i][0]=0;
     }
+    
     inverse= mathjs.inv(A);
     result = mathjs.multiply(inverse,B);
     newarray = zeros([3,2]);
@@ -47,6 +49,7 @@ module.exports = (x,y) => {
         newarray[i-1][0] = result[toit];
         newarray[i-1][1] = result[toit+1];
         toit = toit+2;
+        console.log(newarray);
     }
-     return newarray;
+    return newarray;
 }

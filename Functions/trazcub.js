@@ -16,6 +16,7 @@ module.exports = (x,y) => {
     n = x.length;
     m = 4*(n-1);
     A = zeros([m,m]);
+    console.log(A);
     B = zeros([m,1]);
     Coef = zeros([n-1,4]);
     z = 0;
