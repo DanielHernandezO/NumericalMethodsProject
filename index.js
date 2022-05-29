@@ -42,7 +42,7 @@ const difdivididas = require('./Functions/difdivididas')
 // console.log(linear([1,2,3,4],[1,2,3,4]))
 // console.log(cuadratica([-1,0,3,4],[15.5,3,8,1]))
 // console.log(cubica([1,2],[1,2]))
-// console.log(difdivididas([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]]))
+console.log(difdivididas([-1,0,3,4],[15.5,3,8,1]))
 // console.log(lagrange([-1,0,3,4],[15.5,3,8,1]))
 
 // Ax = b
