@@ -46,7 +46,7 @@ const trazcuad = (x,y) => {
         B[n-1+i][0]=0;
     }
     z=0;
-    let logs = 0;
+    let logs = [];
     for (let i = 2; i < x.length; i++) {
         A[2*x.length-4+i][z] = x[i-1]*2;
         A[2*x.length-4+i][z+1] = 1;
@@ -58,6 +58,10 @@ const trazcuad = (x,y) => {
     }
     A[m-1][0]=2;
     B[m-1][0]=0;
+    if (mathjs.det(A) == 0  ){
+        logs.push({type: 'Error', text:'Determinant can not be 0'})
+        return {A,logs};
+    }
     let inverse= mathjs.inv(A);
     let result = mathjs.multiply(inverse,B);
     let newarray = zeros([3,3]);
@@ -70,6 +74,20 @@ const trazcuad = (x,y) => {
         newarray[i-1][2] = result[toit+2];
         toit = toit+3;
     }
+    for(var i = 0; i < newarray.length; i++) {
+        z = newarray.length-1;
+        for(var j = 0; j < newarray.length-1; j++) {
+            if(j<newarray.length-2){
+                newarray[i][j] = newarray[i][j] + "x^" +z;
+            }
+            else{
+                newarray[i][j] = newarray[i][j] + "x";
+            }
+            
+            z--;
+        }    
+    }
+    logs.push({ type: 'Success', text: "Correct Input"})
     return {newarray,logs};
 }
 

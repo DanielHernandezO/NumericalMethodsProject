@@ -28,8 +28,9 @@ const SplineCubicBody = () => {
     }
 
     //Método para validar los datos que entran desde el formulario
-    const validateData = ({ x,y}) => {
+    const validateData = ({x,y}) => {
         //Validate input
+        
         let newarr1 = x.split(",");
         const arrOfNum1 = newarr1.map(str => {
             return Number(str);
@@ -96,16 +97,20 @@ const SplineCubicBody = () => {
                 return Number(str);
             });
             
+            
             let { newarray, logs } = trazcubmethod(arrOfNum1,arrOfNum2)
+                        
+
+            console.log(logs);
+            if(logs[0].type == "Success"){
+                setRows(newarray);
+                setLogs(logs);
+                setIsRun(true);
+            }
+            else{
+                setLogs(logs);
+            }
             
-            let message = { type: 'Success', text: "Correct Input"}
-            logs = [message];
-            setRows(newarray);
-            
-            setLogs(logs);
-            
-            setIsRun(true);
-            console.log(newarray);
         }else{
             setLogs(logs);
         }
@@ -115,8 +120,8 @@ const SplineCubicBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            x: [0,0,0,0],
-            y: [0,0,0,0]
+            x: "",
+            y: ""
         })
         setIsRun(false);
         setLogs([]);

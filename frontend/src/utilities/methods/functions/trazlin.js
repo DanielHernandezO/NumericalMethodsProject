@@ -25,7 +25,7 @@ const trazlin = (x,y) => {
         B[i][0]=y[i];
 
     }
-    let logs = 0;
+    let logs = [];
     A[0][0] = x[0];
     A[0][1] = 1;
     B[0][0] = y[0];
@@ -38,6 +38,10 @@ const trazlin = (x,y) => {
         z=z+2; 
         B[x.length-1+i][0]=0;
     }
+    if (mathjs.det(A) == 0  ){
+        logs.push({type: 'Error', text:'Determinant can not be 0'})
+        return {A,logs};
+    }
     let inverse= mathjs.inv(A);
     let result = mathjs.multiply(inverse,B);
     let newarray = zeros([3,2]);
@@ -49,7 +53,18 @@ const trazlin = (x,y) => {
         newarray[i-1][1] = result[toit+1][0];
         toit = toit+2;
     }
-     return {newarray,logs};
+    for(var i = 0; i < newarray.length; i++) {
+        z = newarray.length-1;
+        for(var j = 0; j < newarray.length-1; j++) {
+
+            if(j==1){
+                newarray[i][j] = newarray[i][j]}
+            else{newarray[i][j] = newarray[i][j] + "x"}
+            z--;
+        }    
+    }
+    logs.push({ type: 'Success', text: "Correct Input"})
+    return {newarray,logs};
 }
 
 export default trazlin;

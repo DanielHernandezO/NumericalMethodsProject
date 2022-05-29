@@ -4,6 +4,7 @@ const mathjs = require('mathjs')
 
 
 module.exports = (x,y) => {
+    try{
     function zeros(dimensions) {
         var array = [];
         for (var i = 0; i < dimensions[0]; ++i) {
@@ -81,18 +82,39 @@ module.exports = (x,y) => {
     A[m-1][8]=x[x.length-1]*6;
     A[m-1][9]=2;
     B[m-2][0]=0;
+    let logs = [];
+
+    if (mathjs.det(A) == 0  ){
+        logs.push({type: 'Error', text:'Determinant can not be 0'})
+        return {A,logs};
+    }
     let inverse= mathjs.inv(A);
     let result = mathjs.multiply(inverse,B);
     let newarray = zeros([3,4]);
     let toit=0;
     for (let i = 1; i < newarray.length+1  ; i++) {
-        console.log("as");
+
         newarray[i-1][0] = result[toit];
         newarray[i-1][1] = result[toit+1];
         newarray[i-1][2] = result[toit+2];
         newarray[i-1][3] = result[toit+3];
         toit = toit+4;
     }
-    let logs = 0;
+    
+    for(var i = 0; i < newarray.length; i++) {
+        z = newarray.length;
+        for(var j = 0; j < newarray.length; j++) {
+            if(j<newarray.length-1){
+                newarray[i][j] = newarray[i][j] + "x^" +z;
+            }
+            else{
+                newarray[i][j] = newarray[i][j] + "x";
+            }
+            
+            z--;
+        }    
+    }
+    logs.push({ type: 'Success', text: "Correct Input"})
     return {newarray,logs};
+}catch(err){}
 }

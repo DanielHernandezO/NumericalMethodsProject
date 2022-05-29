@@ -102,8 +102,6 @@ const LagrangeBody = () => {
             console.log(newarray);
             var polynom = [];
             for (var i = 0; i < arrOfNum2.length; i++) {
-                console.log(i);
-                console.log(arrOfNum2.length);
                 if (i == arrOfNum2.length-1){
                     polynom.push(arrOfNum2[i], "*L", i);   
                 }else{
@@ -126,8 +124,8 @@ const LagrangeBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            x: [0,0,0,0],
-            y: [0,0,0,0]
+            x: "",
+            y: ""
         })
         setIsRun(false);
         setLogs([]);

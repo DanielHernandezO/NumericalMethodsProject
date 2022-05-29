@@ -98,14 +98,14 @@ const SplineQuadraticBody = () => {
             
             let { newarray, logs } = trazquadmethod(arrOfNum1,arrOfNum2)
             
-            let message = { type: 'Success', text: "Correct Input"}
-            logs = [message];
-            setRows(newarray);
-            
-            setLogs(logs);
-            
-            setIsRun(true);
-            console.log(newarray);
+            if(logs[0].type == "Success"){
+                setRows(newarray);
+                setLogs(logs);
+                setIsRun(true);
+            }
+            else{
+                setLogs(logs);
+            }
         }else{
             setLogs(logs);
         }
@@ -115,8 +115,8 @@ const SplineQuadraticBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            x: [0,0,0,0],
-            y: [0,0,0,0]
+            x: "",
+            y: ""
         })
         setIsRun(false);
         setLogs([]);
