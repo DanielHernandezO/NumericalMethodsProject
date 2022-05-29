@@ -22,7 +22,7 @@ const difdivididas = require('./Functions/difdivididas')
 // console.log('x:\n')
 // console.log(root?root:approximation)
 
-// aitken('(1/2)*(x + 2/x)',1,10e-9,100)
+// aitken('1+(3/x)',1,10e-9,100)
 // console.log('iterations:\n')
 // console.table(iterations)
 // console.log('x:\n')

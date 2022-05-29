@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "../../table";
-const AitkenBodyResult = ({ columns, rows, extraInfo }) => {
+const SteffensenBodyResult = ({ columns, rows, extraInfo }) => {
     const info = [];
     Object.entries(extraInfo).forEach(([key, value]) => {
         info.push({ key, value })
@@ -24,4 +24,4 @@ const AitkenBodyResult = ({ columns, rows, extraInfo }) => {
     )
 }
 
-export default AitkenBodyResult;
+export default SteffensenBodyResult;

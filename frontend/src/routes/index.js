@@ -12,6 +12,7 @@ import CubicSpline from "../pages/functions/SplineCubic"
 import MultipleRoots from "../pages/functions/MultipleRoots"
 import Aitken from "../pages/functions/Aitken"
 import Lagrange from "../pages/functions/Lagrange"
+import Steffensen from "../pages/functions/Steffensen"
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
                     <Route path="/functions/multiple_roots" element={<MultipleRoots/>}/>
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
+                    <Route path="/functions/steffensen" element={<Steffensen/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

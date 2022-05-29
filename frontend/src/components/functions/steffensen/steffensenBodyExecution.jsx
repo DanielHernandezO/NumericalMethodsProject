@@ -1,14 +1,14 @@
 import React from "react";
-import AitkenForm from "./aitkenForm";
+import SteffensenForm from "./steffensenForm";
 import Logs from "../../logs";
-const AitkenExecution = ({ run, clear, dataForm, handleChangeDataForm, logs }) => {
+const SteffensenExecution = ({ run, clear, dataForm, handleChangeDataForm, logs }) => {
     return (
         <div className="card mb-3 border-success">
             <div className="card-body">
                 <h5 className="card-title">Enter data</h5>
                 <div className="row">
                     <div className="form-container">
-                        <AitkenForm run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} />
+                        <SteffensenForm run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} />
                     </div>
                     <div className="col">
                         <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModalXl" style={{float:"right"}}>Graph</button>
@@ -20,4 +20,4 @@ const AitkenExecution = ({ run, clear, dataForm, handleChangeDataForm, logs }) =
     )
 }
 
-export default AitkenExecution;
+export default SteffensenExecution;
