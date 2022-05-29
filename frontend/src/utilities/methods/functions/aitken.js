@@ -2,16 +2,17 @@ const mathjs = require('mathjs')
 
 module.exports = (f, x0, tolerance, nMax) => {
     const iterations = []
+    const logs = []
     let x1 = 0;
     let x2 = 0;
     let xi = 0;
     for (let i = 1; i < nMax; i++) {
         x1 = mathjs.evaluate(f, { x: x0 });
         x2 = mathjs.evaluate(f, { x: x1 });
-        denominator = (x2 - x1) - (x1 - x0);
+        let denominator = (x2 - x1) - (x1 - x0);
 
         if (Math.abs(denominator) < 10e-16) {
-            console.log('Problem with denominatpr')
+            logs.push({ type: 'Error', text: 'Error during method execution: division by 0' })
             break;
         }
 
@@ -20,14 +21,11 @@ module.exports = (f, x0, tolerance, nMax) => {
         iterations.push(i === 1 ? [i, xi] : [i, xi, Math.abs(xi - x2)]);
 
         if (Math.abs(xi - x2) < tolerance) {
-            console.log('Problem with tolerance')
+            logs.push({ type: 'Success', text: xi + ' is an approximation' })
             break;
         }
         x0 = xi;
     }
 
-    console.log('iterations:\n')
-    console.table(iterations)
-    console.log('x:\n')
-    console.log(xi)
+    return { logs, iterations, xi };
 }
