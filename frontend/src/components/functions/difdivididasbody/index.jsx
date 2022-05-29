@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import LagrangeDescription from "./LagrangeDescription";
-import LagrangeExecution from "./LagrangeExecution";
-import lagrangemethod from "../../../utilities/methods/functions/lagrange";
-import LagrangeResult from "./LagrangeResult"
-const LagrangeBody = () => {
+import DifdivididasDescription from "./DifdivididasDescription";
+import DifdivididasExecution from "./DifdivididasExecution";
+import Difdivididasmethod from "../../../utilities/methods/functions/difdivididas";
+import DifdivididasResult from "./DifdivididasResult"
+const DifdivididasBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -79,52 +79,52 @@ const LagrangeBody = () => {
 
     //Función para correr el método
     const run = () => {
-        
         const validateDataResult = validateData({ ...dataForm });
-
-        
         if (validateDataResult) {
-            
             let newarr1 = dataForm.x.split(",");
-
             let newarr2 = dataForm.y.split(",");
-            
             const arrOfNum1 = newarr1.map(str => {
                 return Number(str);
               });
             const arrOfNum2 = newarr2.map(str => {
                 return Number(str);
             });
-            
-            let { newarray, logs } = lagrangemethod(arrOfNum1,arrOfNum2)
-
-            
-            
+            let { newarray, logs } = Difdivididasmethod(arrOfNum1,arrOfNum2)
+            console.log(newarray);
             if(logs[0].type == "Success"){
                 var polynom = [];
-            for (var i = 0; i < arrOfNum2.length; i++) {
-                if (i == arrOfNum2.length-1){
-                    polynom.push(arrOfNum2[i], "*L", i);   
-                }else{
-                    polynom.push(arrOfNum2[i], "*L", i, "+");
-                }
+                var newpoly = [];
+                let polyn = [];
+                newpoly = [];
+                let w = []
+                ;
+                for (var i = 0; i < arrOfNum2.length; i++) {
+                    newpoly = []
+                    for (let j = 0; j < i; j++) {
+                        w = arrOfNum1[j];
+                        newpoly.push(["(x-", w, ")"]);
+                    }
+                    if (i == arrOfNum2.length-1){
+                        polynom.push(newarray[i][i],newpoly);
+                    }else{
+                        polynom.push(newarray[i][i],newpoly, "+");
+                    }
+                    // console.log(polyn);
                 //Do something
-            }
-            console.log(newarray);
-            setExtraInfo({Polynom: polynom});
-            setRows(newarray);
-            setLogs(logs); 
-            setIsRun(true);
-            }
-            else{
-                setLogs(logs);
-            }
+                }
+                setExtraInfo({Polynom: polynom});
+                
+                setRows(newarray);
+                setLogs(logs); 
+                setIsRun(true);
+                }
+                else{
+                    setLogs(logs);
+                }
         }else{
             setLogs(logs);
         }
-
     }
-
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
@@ -140,13 +140,13 @@ const LagrangeBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Lagrange</h1>
-            <LagrangeDescription />
-            <LagrangeExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <LagrangeResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Divided Differences</h1>
+            <DifdivididasDescription />
+            <DifdivididasExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <DifdivididasResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
         </div>
 
     )
 }
 
-export default LagrangeBody;
+export default DifdivididasBody;

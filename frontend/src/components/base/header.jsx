@@ -54,11 +54,11 @@ const Header = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="#">Vandermonde</a></li>
-                                <li><a className="dropdown-item" href="#">Newton( Divided differences)</a></li>
-                                <li><a className="dropdown-item" href="#">Lagrange</a></li>
-                                <li><a className="dropdown-item" href="#">Line plotters</a></li>
-                                <li><a className="dropdown-item" href="#">Quadratic plotters</a></li>
-                                <li><a className="dropdown-item" href="#">Cubic plotters</a></li>
+                                <li><a className="dropdown-item" href="/functions/difdivididas">Newton( Divided differences)</a></li>
+                                <li><a className="dropdown-item" href="/functions/lagrange">Lagrange</a></li>
+                                <li><a className="dropdown-item" href="/functions/linealspline">Line plotters</a></li>
+                                <li><a className="dropdown-item" href="/functions/quadraticspline">Quadratic plotters</a></li>
+                                <li><a className="dropdown-item" href="/functions/cubicspline">Cubic plotters</a></li>
                             </ul>
                         </li>
 

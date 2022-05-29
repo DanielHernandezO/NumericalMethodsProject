@@ -12,6 +12,7 @@ import CubicSpline from "../pages/functions/SplineCubic"
 import MultipleRoots from "../pages/functions/MultipleRoots"
 import Aitken from "../pages/functions/Aitken"
 import Lagrange from "../pages/functions/Lagrange"
+import Difdivididas from "../pages/functions/Difdivididas"
 import Steffensen from "../pages/functions/Steffensen"
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
+                    <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
