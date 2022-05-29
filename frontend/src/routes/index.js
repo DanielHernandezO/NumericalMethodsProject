@@ -13,6 +13,7 @@ import MultipleRoots from "../pages/functions/MultipleRoots"
 import Aitken from "../pages/functions/Aitken"
 import Lagrange from "../pages/functions/Lagrange"
 import Steffensen from "../pages/functions/Steffensen"
+import Falseposition from "../pages/functions/Falseposition"
 
 const App = () => {
     return (
@@ -28,6 +29,7 @@ const App = () => {
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
+                    <Route path="/functions/falseposition" element={<Falseposition/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

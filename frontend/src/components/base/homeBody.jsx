@@ -14,7 +14,7 @@ const HomeBody = () => {
                             <ul>
                                 <li><a href="/functions/incremental_search">Incremental Searches</a></li>
                                 <li><a href="#">bisection</a></li>
-                                <li><a href="#">False rule</a></li>
+                                <li><a href="/functions/falseposition">False position</a></li>
                                 <li><a href="#">Fixed point</a></li>
                                 <li><a href="#">Newton</a></li>
                                 <li><a href="#">Secant</a></li>

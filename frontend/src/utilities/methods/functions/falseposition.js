@@ -3,9 +3,9 @@ const mathjs = require('mathjs')
 module.exports = (f, xi, xs, tolerance, nMax) => {
     const iterations = []
     const logs = []
-    fxi = mathjs.evaluate(f, { x: xi });
-    fxs = mathjs.evaluate(f, { x: xs });
-
+    let fxi = mathjs.evaluate(f, { x: xi });
+    let fxs = mathjs.evaluate(f, { x: xs });
+    console.log(f,xi,xs,tolerance,nMax)
     if (fxi === 0) {
         logs.push({
             type : 'Sucess',
@@ -21,22 +21,22 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
         //console.log('Solution')
         //console.log('xs is a root')
     } else if (fxi < fxs) {
-        xm = (xi) - ((fxi * (xi - xs)) / (fxi - fxs));
-        fxm = mathjs.evaluate(f,{ x: xm });
-        error = tolerance + 1
-        counter = 0;
+        let xm = (xi) - ((fxi * (xi - xs)) / (fxi - fxs));
+        let fxm = mathjs.evaluate(f,{ x: xm });
+        let error = tolerance + 1
+        let counter = 0;
         iterations.push([counter, xi, xs, xm, fxm, error ]);
 
         while (fxm !== 0 && error > tolerance && counter < nMax) {
             if (fxi * fxm < 0) {
-                xs = xm;
+                let xs = xm;
                 fxs = fxm;
             } else {
-                xi = xm
+                let xi = xm
                 fxi = fxm
             }
 
-            xAux = xm;
+            let xAux = xm;
             xm = (xi) - ((fxi * (xi - xs)) / (fxi - fxs));
             fxm = mathjs.evaluate(f,{ x: xm });
             error = Math.abs(xm - xAux) / xm;

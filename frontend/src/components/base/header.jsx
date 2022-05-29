@@ -17,7 +17,7 @@ const Header = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/functions/incremental_search">Incremental Searches</a></li>
                                 <li><a className="dropdown-item" href="#">bisection</a></li>
-                                <li><a className="dropdown-item" href="#">False rule</a></li>
+                                <li><a className="dropdown-item" href="/functions/falseposition">False position</a></li>
                                 <li><a className="dropdown-item" href="#">Fixed point</a></li>
                                 <li><a className="dropdown-item" href="#">Newton</a></li>
                                 <li><a className="dropdown-item" href="#">Secant</a></li>
