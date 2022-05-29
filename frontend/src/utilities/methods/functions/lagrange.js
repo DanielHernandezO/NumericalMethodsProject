@@ -24,15 +24,11 @@ module.exports = (x,y) => {
             newCoefficients[0]=newCoefficients[0]*(-x[n]/(x[m]-x[n]));
         }
         newarray.push(newCoefficients.reverse());
-        // console.log(newarr);
-        
-        // console.log(newCoefficients.reverse()[1]);
-        // console.log(newCoefficients.reverse()[2]);
-        // console.log(newCoefficients.reverse()[3], "X");
+
         for (var nc=0; nc<x.length; nc++) coefficients[nc]+=y[m]*newCoefficients[nc];
     }
     let z = 0;
-    let logs = 0;
+    let logs = [];
     for(var i = 0; i < newarray.length; i++) {
         z = newarray.length-1;
         for(var j = 0; j < newarray.length-1; j++) {
@@ -40,5 +36,16 @@ module.exports = (x,y) => {
             z--;
         }    
     }
+    let count = 0;
+    for(var i = 0; i < newarray.length; i++) {
+        if(newarray[i][newarray.length-1]<1.1 & newarray[i][newarray.length-1]> 0.9){
+            count++
+        }
+    }
+    if (count!=1){
+        logs.push({type: 'Error', text:'Lagrange method can not be applied to the input data providen'})
+        return{count,logs}
+    }
+    logs.push({ type: 'Success', text: "Correct Input"})
     return {newarray,logs};
 }

@@ -1,7 +1,7 @@
 const mathjs = require('mathjs')
 
 
-const trazcuad = (x,y) => {
+module.exports= (x,y) => {
     function zeros(dimensions) {
         var array = [];
         for (var i = 0; i < dimensions[0]; ++i) {
@@ -64,10 +64,10 @@ const trazcuad = (x,y) => {
     }
     let inverse= mathjs.inv(A);
     let result = mathjs.multiply(inverse,B);
-    let newarray = zeros([3,3]);
+    let newarray = zeros([result.length/3,3]);
     let toit=0;
-    
-    for (let i = 1; i < Math.trunc(B.length/2)  ; i++) {
+   
+    for (let i = 1; i < (result.length/3)+1  ; i++) {
 
         newarray[i-1][0] = result[toit];
         newarray[i-1][1] = result[toit+1];
@@ -75,13 +75,13 @@ const trazcuad = (x,y) => {
         toit = toit+3;
     }
     for(var i = 0; i < newarray.length; i++) {
-        z = newarray.length-1;
-        for(var j = 0; j < newarray.length-1; j++) {
-            if(j<newarray.length-2){
+        z = 2;
+        for(var j = 0; j < 3; j++) {
+            if(j<2){
                 newarray[i][j] = newarray[i][j] + "x^" +z;
             }
             else{
-                newarray[i][j] = newarray[i][j] + "x";
+                newarray[i][j] = newarray[i][j];
             }
             
             z--;
@@ -90,5 +90,3 @@ const trazcuad = (x,y) => {
     logs.push({ type: 'Success', text: "Correct Input"})
     return {newarray,logs};
 }
-
-export default trazcuad;

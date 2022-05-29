@@ -100,8 +100,6 @@ const SplineCubicBody = () => {
             
             let { newarray, logs } = trazcubmethod(arrOfNum1,arrOfNum2)
                         
-
-            console.log(logs);
             if(logs[0].type == "Success"){
                 setRows(newarray);
                 setLogs(logs);

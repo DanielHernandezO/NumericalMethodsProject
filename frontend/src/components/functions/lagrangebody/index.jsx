@@ -98,9 +98,10 @@ const LagrangeBody = () => {
             
             let { newarray, logs } = lagrangemethod(arrOfNum1,arrOfNum2)
 
-            let message = { type: 'Success', text: "Correct Input"}
-            console.log(newarray);
-            var polynom = [];
+            
+            
+            if(logs[0].type == "Success"){
+                var polynom = [];
             for (var i = 0; i < arrOfNum2.length; i++) {
                 if (i == arrOfNum2.length-1){
                     polynom.push(arrOfNum2[i], "*L", i);   
@@ -109,12 +110,15 @@ const LagrangeBody = () => {
                 }
                 //Do something
             }
-            logs = [message];
+            
             setExtraInfo({Polynom: polynom});
             setRows(newarray);
             setLogs(logs); 
             setIsRun(true);
-            
+            }
+            else{
+                setLogs(logs);
+            }
         }else{
             setLogs(logs);
         }
