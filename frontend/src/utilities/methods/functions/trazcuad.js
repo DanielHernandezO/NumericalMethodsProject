@@ -1,7 +1,7 @@
 const mathjs = require('mathjs')
 
 
-module.exports = (x,y) => {
+const trazcuad = (x,y) => {
     function zeros(dimensions) {
         var array = [];
         for (var i = 0; i < dimensions[0]; ++i) {
@@ -10,14 +10,14 @@ module.exports = (x,y) => {
         return array;
     }
     
-    A = []
-    B = []
-    n = x.length;
-    m = 3*(n-1);
+    let A = []
+    let B = []
+    let n = x.length;
+    let m = 3*(n-1);
     A = zeros([m,m]);
     B = zeros([m,1]);
-    Coef = zeros([n-1,3]);
-    z = 0;
+    let Coef = zeros([n-1,3]);
+    let z = 0;
     for (let i = 1; i < n; i++) {
         A[i][z] = (x[i])**2;
 
@@ -46,6 +46,7 @@ module.exports = (x,y) => {
         B[n-1+i][0]=0;
     }
     z=0;
+    let logs = 0;
     for (let i = 2; i < x.length; i++) {
         A[2*x.length-4+i][z] = x[i-1]*2;
         A[2*x.length-4+i][z+1] = 1;
@@ -57,10 +58,10 @@ module.exports = (x,y) => {
     }
     A[m-1][0]=2;
     B[m-1][0]=0;
-    inverse= mathjs.inv(A);
-    result = mathjs.multiply(inverse,B);
-    newarray = zeros([3,3]);
-    toit=0;
+    let inverse= mathjs.inv(A);
+    let result = mathjs.multiply(inverse,B);
+    let newarray = zeros([3,3]);
+    let toit=0;
     
     for (let i = 1; i < Math.trunc(B.length/2)  ; i++) {
 
@@ -69,6 +70,7 @@ module.exports = (x,y) => {
         newarray[i-1][2] = result[toit+2];
         toit = toit+3;
     }
-    return newarray;
+    return {newarray,logs};
 }
 
+export default trazcuad;
