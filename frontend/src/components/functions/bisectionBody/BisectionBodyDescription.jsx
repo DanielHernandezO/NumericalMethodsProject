@@ -31,9 +31,6 @@ const BisectionDescriptionBody = () => {
                     <li>
                         <b>fx</b> must have at least one root between the interval [Left,Right]
                     </li>
-                    <li>
-                        <b>Right</b> Right must be greater or equal than Left
-                    </li>
                 </ol>
                 <div className="card-footer">
                     <small className="text-muted"><b>Note: </b>If the input data does not comply with the rules, the success of the method is not assured.</small>
