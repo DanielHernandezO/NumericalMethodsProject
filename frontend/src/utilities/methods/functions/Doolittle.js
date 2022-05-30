@@ -57,6 +57,8 @@ function Doolittle(mat,B)
     const {z,flag}=sustProg(lower);
     if(flag==true){
         message = { type: 'Error', text: "division by 0 during progressive substitution"}
+        logs = [message];
+        return {stages,logs};
     }
     for(var i=0;i<n;++i){
         upper[i].push(parseFloat(z[i][0]).toPrecision(10));
@@ -64,10 +66,10 @@ function Doolittle(mat,B)
     var {x,flag1}= susRegre(upper);
     if(flag1==true){
         message = { type: 'Error', text: "division by 0 during regressive substitution"}
+        logs = [message];
+        return {stages,logs};
     }
-    if(flag1==false && flag==false){
-        message = { type: 'Success', text: "Successful proccess"}
-    }
+    message = { type: 'Success', text: "Successful proccess"}
     logs = [message];
     return {x,stages,logs};
 }
