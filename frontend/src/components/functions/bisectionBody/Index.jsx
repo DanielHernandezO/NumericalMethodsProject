@@ -45,7 +45,7 @@ const BisectionSearchBody = () => {
             logsAux.push({ type: 'Error', text: 'right must be a valid number' })
             flag = false;
         }
-        if (isNaN(right) && isNaN(left) && left>right) {
+        if (!isNaN(right) && !isNaN(left) && left>right) {
             logsAux.push({ type: 'Error', text: 'right must greater or equal than left' })
             flag = false;
         }
@@ -76,7 +76,7 @@ const BisectionSearchBody = () => {
         }
 
         //Validate tolerance
-        if (isNaN(tolerance) && tolerance) {
+        if (!isNaN(tolerance) && tolerance<=0) {
             logsAux.push({ type: 'Error', text: 'tolerance must be greater than 0' });
             flag = false;
         }
@@ -100,7 +100,7 @@ const BisectionSearchBody = () => {
             }
             
         } else {
-            setLogs([...logs, { type: 'Error', text: 'The data input is invalid' }])
+            setIsRun(false);
         }
 
     }
