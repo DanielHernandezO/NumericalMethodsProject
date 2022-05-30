@@ -3,6 +3,7 @@ import BisectionDescriptionBody from "./BisectionBodyDescription";
 import BisectionBodyExecution from "./BisectionBodyExecution"
 import BisectionBodyResult from "./BisectionBodyResult"
 import Graph from "../../graph"
+import validateFunction from "../../../utilities/validateFunction";
 import bisection from  "../../../utilities/methods/functions/bisection"
 const BisectionSearchBody = () => {
 
@@ -30,10 +31,57 @@ const BisectionSearchBody = () => {
     const handleChangeDataForm = (e) => {
         setDataForm({ ...dataForm, [`${e.target.id}`]: e.target.value })
     }
-    const validateData = ({ fx, x0, delta, niter }) => {
-        //Validate input
+    const validateData = ({ fx, left, right, tolerance,niter}) => {
+        let flag = true;
+        const logsAux = [];
+        //Validate left
+        if (isNaN(left)) {
+            logsAux.push({ type: 'Error', text: 'left must be a valid number' })
+            flag = false;
+        }
 
-        return true;
+        // validate right 
+        if (isNaN(right)) {
+            logsAux.push({ type: 'Error', text: 'right must be a valid number' })
+            flag = false;
+        }
+        if (isNaN(right) && isNaN(left) && left>right) {
+            logsAux.push({ type: 'Error', text: 'right must greater or equal than left' })
+            flag = false;
+        }
+        //Validate fx
+        if (!isNaN(left) && !validateFunction(fx, left)) {
+            logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
+            flag = false;
+        }
+
+        //Validate niter
+        if (isNaN(niter)) {
+            logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
+            flag = false;
+        }
+
+        if (!isNaN(niter) && parseFloat(niter) <= 0) {
+            logsAux.push({ type: 'Error', text: "niter must be greater than 0" });
+            flag = false;
+        }
+        if (!isNaN(niter) && parseFloat(niter) > 0 && (parseFloat(niter) - Math.trunc(niter)) > 0) {
+            logsAux.push({ type: 'Error', text: "niter must be integer" });
+            flag = false;
+        }
+        //Validate tolerance
+        if (isNaN(tolerance)) {
+            logsAux.push({ type: 'Error', text: 'tolerance must be a valid number' });
+            flag = false;
+        }
+
+        //Validate tolerance
+        if (isNaN(tolerance) && tolerance) {
+            logsAux.push({ type: 'Error', text: 'tolerance must be greater than 0' });
+            flag = false;
+        }
+        setLogs(logsAux);
+        return flag;
     }
     const run = () => {
         const validateDataResult = validateData({ ...dataForm });
