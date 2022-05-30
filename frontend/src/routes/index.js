@@ -18,6 +18,7 @@ import Steffensen from "../pages/functions/Steffensen"
 import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
+import Crout from "../pages/matrices/Crout"
 const App = () => {
     return (
         <div>
@@ -37,6 +38,7 @@ const App = () => {
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>
                     <Route path="/functions/trisection" element={<Trisection/>}/>
+                    <Route path="/functions/crout" element={<Crout/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
