@@ -13,7 +13,7 @@ const HomeBody = () => {
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="/functions/incremental_search">Incremental Searches</a></li>
-                                <li><a href="#">bisection</a></li>
+                                <li><a href="/functions/bisection">bisection</a></li>
                                 <li><a href="#">False rule</a></li>
                                 <li><a href="#">Fixed point</a></li>
                                 <li><a href="#">Newton</a></li>
