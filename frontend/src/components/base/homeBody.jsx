@@ -22,7 +22,7 @@ const HomeBody = () => {
                                 <li><a href="/functions/steffensen">Steffensen</a></li>
                                 <li><a href="/functions/aitken">Aitken</a></li>
                                 <li><a href="#">Müller</a></li>
-                                <li><a href="#">Trisection</a></li>
+                                <li><a href="/functions/trisection">Trisection</a></li>
                             </ul>
                         </div>
                     </div>

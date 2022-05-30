@@ -16,6 +16,7 @@ import Lagrange from "../pages/functions/Lagrange"
 import Difdivididas from "../pages/functions/Difdivididas"
 import Steffensen from "../pages/functions/Steffensen"
 import Newton from "../pages/functions/Newton"
+import Trisection from "../pages/functions/Trisection"
 const App = () => {
     return (
         <div>
@@ -33,6 +34,7 @@ const App = () => {
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>
+                    <Route path="/functions/trisection" element={<Trisection/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
