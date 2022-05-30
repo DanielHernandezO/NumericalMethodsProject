@@ -59,10 +59,16 @@ const SimpleLuBody = () => {
             const matrixTransformered = transformMatrix(dataForm.A);
             const vectorTransformered = transformMatrix(dataForm.b);
             const {x, stages} = simpleLu(matrixTransformered,vectorTransformered);
-            setMatrixList(stages);
-            setVectorResult(x);
-        }else{
 
+            //Falta setear logs
+
+            if(stages.length >0 ){
+                setMatrixList(stages);
+                setVectorResult(x);
+                setIsRun(true);
+            }
+        }else{
+            setIsRun(false);
         }
     }
 
@@ -84,7 +90,7 @@ const SimpleLuBody = () => {
             <h1 className="text-center">Simple LU</h1>
             <SimpleLuBodyDescription />
             <SimpleBodyExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
-            <SimpleBodyResult matrixList={matrixList} vectorResult={vectorResult}/>
+            {isRun?<SimpleBodyResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
             <Graph />
         </div>
     )
