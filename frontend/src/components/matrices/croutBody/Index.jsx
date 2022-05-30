@@ -7,6 +7,7 @@ import validateVector from "../../../utilities/validateVector"
 import crout from "../../../utilities/methods/functions/Crout"
 import transformMatrix from "../../../utilities/transformMatrix"
 import Graph from "../../graph"
+import { isNull } from "mathjs"
 const SimpleLuBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -62,7 +63,7 @@ const SimpleLuBody = () => {
 
             //Falta setear logs
             setLogs(logs);
-            if(stages.length >0 ){
+            if(stages.length >0 && !isNull(x)){
                 setMatrixList(stages);
                 setVectorResult(x);
                 setIsRun(true);
