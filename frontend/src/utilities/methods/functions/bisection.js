@@ -30,11 +30,16 @@ function bisection(f,left,right,tolerance,niter){
         var error = tolerance+1;
         while(error>tolerance && fXmid!=0 && counter<niter){
             matrix[counter][0]=counter;
-            matrix[counter][1]=left;
-            matrix[counter][2]=right;
-            matrix[counter][3]=xmid;
-            matrix[counter][4]=fXmid;
-            matrix[counter][5]=error;
+            matrix[counter][1]=parseFloat(left).toPrecision(10);
+            matrix[counter][2]=parseFloat(right).toPrecision(10);
+            matrix[counter][3]=parseFloat(xmid).toPrecision(10)
+            matrix[counter][4]=parseFloat(fXmid).toPrecision(10)
+            if(counter==1){
+                matrix[counter][5]="";
+            }else{
+                matrix[counter][5]=parseFloat(error).toPrecision(2);
+            }
+            
             if(fLeft*fXmid<0){
                 right=xmid;
                 fRight = fXmid;
@@ -50,11 +55,11 @@ function bisection(f,left,right,tolerance,niter){
             counter=counter+1;
         }
         matrix[counter][0]=counter;
-        matrix[counter][1]=left;
-        matrix[counter][2]=right;
-        matrix[counter][3]=xmid;
-        matrix[counter][4]=fXmid;
-        matrix[counter][5]=error;
+        matrix[counter][1]=parseFloat(left).toPrecision(10);
+        matrix[counter][2]=parseFloat(right).toPrecision(10);
+        matrix[counter][3]=parseFloat(xmid).toPrecision(10)
+        matrix[counter][4]=parseFloat(fXmid).toPrecision(10)
+        matrix[counter][5]=parseFloat(error).toPrecision(2);
         if(fXmid==0){
             message = { type: 'Success', text: xmid+" is a root"}
         }else if(error<tolerance){
