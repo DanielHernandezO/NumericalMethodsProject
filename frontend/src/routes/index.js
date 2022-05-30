@@ -19,6 +19,7 @@ import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
 import Crout from "../pages/matrices/Crout"
+import Doolittle from "../pages/matrices/Doolittle"
 const App = () => {
     return (
         <div>
@@ -39,6 +40,7 @@ const App = () => {
                     <Route path="/functions/newton" element={<Newton/>}/>
                     <Route path="/functions/trisection" element={<Trisection/>}/>
                     <Route path="/functions/crout" element={<Crout/>}/>
+                    <Route path="/functions/doolittle" element={<Doolittle/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
