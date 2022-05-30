@@ -8,6 +8,7 @@ const incrementalSearch = (f, x0, delta, niter) => {
             matrix[i][j] = 0;
         }
     }
+    var counter=0
     matrix[0][0] = "iteration";
     matrix[0][1] = "x0";
     matrix[0][2] = "x1";
@@ -19,7 +20,7 @@ const incrementalSearch = (f, x0, delta, niter) => {
         console.log(x0 + " is a root");
     } else {
         var x1 = x0 + delta;
-        var counter = 1;
+        counter = 1;
         var fx1 = mathjs.evaluate(f, { x: x1 });
         while (fx0 * fx1 > 0 && counter < niter) {
             matrix[counter][0] = counter;
@@ -51,9 +52,7 @@ const incrementalSearch = (f, x0, delta, niter) => {
 
         const logs = [message];
 
-        return { matrix, x1, logs};
-        console.log(matrix)
-        console.table(matrix);
+        return { matrix, counter, logs};
     }
 }
 

@@ -16,16 +16,16 @@ const Header = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/functions/incremental_search">Incremental Searches</a></li>
-                                <li><a className="dropdown-item" href="#">bisection</a></li>
+                                <li><a className="dropdown-item" href="/functions/bisection">bisection</a></li>
                                 <li><a className="dropdown-item" href="#">False rule</a></li>
                                 <li><a className="dropdown-item" href="#">Fixed point</a></li>
-                                <li><a className="dropdown-item" href="#">Newton</a></li>
+                                <li><a className="dropdown-item" href="/functions/Newton">Newton</a></li>
                                 <li><a className="dropdown-item" href="#">Secant</a></li>
                                 <li><a className="dropdown-item" href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a className="dropdown-item" href="/functions/steffensen">Steffensen</a></li>
                                 <li><a className="dropdown-item" href="/functions/aitken">Aitken</a></li>
                                 <li><a className="dropdown-item" href="#">Müller</a></li>
-                                <li><a className="dropdown-item" href="#">Trisection</a></li>
+                                <li><a className="dropdown-item" href="/functions/trisection">Trisection</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
@@ -54,11 +54,11 @@ const Header = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="#">Vandermonde</a></li>
-                                <li><a className="dropdown-item" href="#">Newton( Divided differences)</a></li>
-                                <li><a className="dropdown-item" href="#">Lagrange</a></li>
-                                <li><a className="dropdown-item" href="#">Line plotters</a></li>
-                                <li><a className="dropdown-item" href="#">Quadratic plotters</a></li>
-                                <li><a className="dropdown-item" href="#">Cubic plotters</a></li>
+                                <li><a className="dropdown-item" href="/functions/difdivididas">Newton( Divided differences)</a></li>
+                                <li><a className="dropdown-item" href="/functions/lagrange">Lagrange</a></li>
+                                <li><a className="dropdown-item" href="/functions/linealspline">Line plotters</a></li>
+                                <li><a className="dropdown-item" href="/functions/quadraticspline">Quadratic plotters</a></li>
+                                <li><a className="dropdown-item" href="/functions/cubicspline">Cubic plotters</a></li>
                             </ul>
                         </li>
 

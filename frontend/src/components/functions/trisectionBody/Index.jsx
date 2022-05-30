@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import IncrementalSearchBodyDescription from "./incrementalSearchBodyDescription";
-import IncrementalSearchBodyExecution from "./IncrementalSearchBodyExecution";
-import incrementalSearchMethod from "../../../utilities/methods/functions/IncrementalSearch";
-import IncrementalSearchBodyResult from "./incrementalSearchBodyResult"
-import validateFunction from "../../../utilities/validateFunction";
+import TrisectionBodyDescription from "./TrisectionBodyDescription";
+import TrisectionBodyExecution from "./TrisectionBodyExecution"
+import TrisectionBodyResult from "./TrisectionBodyResult"
 import Graph from "../../graph"
-const IncrementalSearchBody = () => {
+import validateFunction from "../../../utilities/validateFunction";
+import trisection from  "../../../utilities/methods/functions/trisection"
+const TrisectionBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
         fx: 'x-1',
-        x0: -2,
-        delta: 5,
-        niter: 1
+        left: 0,
+        right: 0,
+        tolerance: 0,
+        niter: 0
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -30,24 +31,24 @@ const IncrementalSearchBody = () => {
     const handleChangeDataForm = (e) => {
         setDataForm({ ...dataForm, [`${e.target.id}`]: e.target.value })
     }
-
-    //Método para validar los datos que entran desde el formulario
-    const validateData = ({ fx, x0, delta, niter }) => {
+    const validateData = ({ fx, left, right, tolerance,niter}) => {
         let flag = true;
         const logsAux = [];
-        //Validate x0
-        if (isNaN(x0)) {
-            logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
+        //Validate left
+        if (isNaN(left)) {
+            logsAux.push({ type: 'Error', text: 'left must be a valid number' })
             flag = false;
         }
+
+        // validate right 
+        if (isNaN(right)) {
+            logsAux.push({ type: 'Error', text: 'right must be a valid number' })
+            flag = false;
+        }
+
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(fx, x0)) {
+        if (!isNaN(left) && !validateFunction(fx, left)) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
-            flag = false;
-        }
-        //Validate delta
-        if (isNaN(delta)) {
-            logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
 
@@ -56,6 +57,7 @@ const IncrementalSearchBody = () => {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
+
         if (!isNaN(niter) && parseFloat(niter) <= 0) {
             logsAux.push({ type: 'Error', text: "niter must be greater than 0" });
             flag = false;
@@ -64,15 +66,24 @@ const IncrementalSearchBody = () => {
             logsAux.push({ type: 'Error', text: "niter must be integer" });
             flag = false;
         }
+        //Validate tolerance
+        if (isNaN(tolerance)) {
+            logsAux.push({ type: 'Error', text: 'tolerance must be a valid number' });
+            flag = false;
+        }
+
+        //Validate tolerance
+        if (!isNaN(tolerance) && tolerance<=0) {
+            logsAux.push({ type: 'Error', text: 'tolerance must be greater than 0' });
+            flag = false;
+        }
         setLogs(logsAux);
         return flag;
     }
-
-    //Función para correr el método
     const run = () => {
         const validateDataResult = validateData({ ...dataForm });
         if (validateDataResult) {
-            const { matrix, counter, logs } = incrementalSearchMethod(dataForm.fx, parseFloat(dataForm.x0), parseFloat(dataForm.delta), parseFloat(dataForm.niter))
+            const{matrix,counter,logs} = trisection(dataForm.fx,parseFloat(dataForm.left),parseFloat(dataForm.right),parseFloat(dataForm.tolerance),parseFloat(dataForm.niter))
             if(counter>0){
                 setColumns(matrix[0]);
                 setRows(matrix.slice(1, counter+1));
@@ -84,6 +95,7 @@ const IncrementalSearchBody = () => {
                 setRows([]);
                 setIsRun(true);
             }
+            
         } else {
             setIsRun(false);
         }
@@ -93,10 +105,11 @@ const IncrementalSearchBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            fx: '',
-            x0: 0,
-            delta: 0,
-            niter: 10e-7
+            fx: 'x-1',
+            left: 0,
+            right: 0,
+            tolerance: 0,
+            niter: 0
         })
         setIsRun(false);
         setLogs([]);
@@ -104,17 +117,16 @@ const IncrementalSearchBody = () => {
         setRows([]);
         setExtraInfo({});
     }
-
     return (
         <div className="container">
-            <h1 className="text-center">Incremental Search</h1>
-            <IncrementalSearchBodyDescription />
-            <IncrementalSearchBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <IncrementalSearchBodyResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Trisection</h1>
+            <TrisectionBodyDescription />
+            <TrisectionBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <TrisectionBodyResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
             <Graph/>
         </div>
 
     )
 }
 
-export default IncrementalSearchBody;
+export default TrisectionBody;
