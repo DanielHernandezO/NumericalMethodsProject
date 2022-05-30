@@ -58,14 +58,16 @@ const SimpleLuBody = () => {
         if(validateDataResult){
             const matrixTransformered = transformMatrix(dataForm.A);
             const vectorTransformered = transformMatrix(dataForm.b);
-            const {x, stages} = simpleLu(matrixTransformered,vectorTransformered);
-
-            //Falta setear logs
+            const {x, stages, logs} = simpleLu(matrixTransformered,vectorTransformered);
 
             if(stages.length >0 ){
                 setMatrixList(stages);
                 setVectorResult(x);
                 setIsRun(true);
+                setLogs(logs?logs:[]);
+            }else{
+                setIsRun(false);
+                setLogs(logs?logs:[]);
             }
         }else{
             setIsRun(false);
