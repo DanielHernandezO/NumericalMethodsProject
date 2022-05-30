@@ -23,10 +23,10 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
         let xm = (xi) - ((fxi * (xi - xs)) / (fxi - fxs));
         let fxm = mathjs.evaluate(f,{ x: xm });
         let error = tolerance + 1
-        let counter = 0;
-        iterations.push([counter, xi, xs, xm, fxm, error ]);
+        let counter = 1;
+        iterations.push([counter, xi, xs, xm, fxm]);
 
-        while (fxm !== 0 && error > tolerance && counter < nMax) {
+        while (fxm !== 0 && error > tolerance && counter <= nMax) {
             if (fxi * fxm < 0) {
                 xs = xm;
                 fxs = fxm;
@@ -43,7 +43,7 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
             iterations.push([ counter, xi, xs, xm, fxm, error ]);
         }
 
-        //console.table(iterations);
+        //console.table(fxm !== 0,error > tolerance,counter <= nMax);
 
         if (fxm === 0) {
             logs.push({

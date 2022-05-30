@@ -7,16 +7,16 @@ const AitkenBodyDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b><Latex>{'$f(x)$'}</Latex></b> succession or function to be accelerated. Ej: '(x+(2/x))/2'
+                        <b><Latex>{'$f(x)$'}</Latex>:</b> succession or function to be accelerated. Ej: '(x+(2/x))/2'
                     </li>
                     <li>
-                        <b><Latex>{'$x_0$'}</Latex></b> First value to be entered to the sequence or function. Ej: 1
+                        <b><Latex>{'$x_0$'}</Latex>:</b> First value to be entered to the sequence or function. Ej: 1
                     </li>
                     <li>
-                        <b>niter: </b> Maximum number of iterations
+                        <b><Latex>{'$niter$'}</Latex>:</b> Maximum number of iterations
                     </li>
                     <li>
-                        <b>tol: </b> Maximum permissible error
+                        <b><Latex>{'$tol$'}</Latex>:</b> Maximum permissible error
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
