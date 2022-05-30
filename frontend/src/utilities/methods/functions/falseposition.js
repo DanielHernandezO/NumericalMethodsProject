@@ -5,7 +5,6 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
     const logs = []
     let fxi = mathjs.evaluate(f, { x: xi });
     let fxs = mathjs.evaluate(f, { x: xs });
-    console.log(f,xi,xs,tolerance,nMax)
     if (fxi === 0) {
         logs.push({
             type : 'Sucess',
@@ -29,10 +28,10 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
 
         while (fxm !== 0 && error > tolerance && counter < nMax) {
             if (fxi * fxm < 0) {
-                let xs = xm;
+                xs = xm;
                 fxs = fxm;
             } else {
-                let xi = xm
+                xi = xm
                 fxi = fxm
             }
 
