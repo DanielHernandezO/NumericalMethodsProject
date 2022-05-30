@@ -37,7 +37,16 @@ module.exports = (x,y) => {
       ans.push(newarray[i][i])
 
     }
-    
+    for (let y = 0; y < newarray.length; y++) {
+        for (let k = 0; k < newarray[y].length; k++) {
+            if (newarray[y][k] == Infinity) {
+                logs.push({ type: 'Error', text: "Error found executing method, division by 0"})
+                return{newarray,logs};
+            }
+            
+        }
+        
+    }
     
     logs.push({ type: 'Success', text: "Correct Input"})
     return {newarray,logs};

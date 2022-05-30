@@ -18,7 +18,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="/functions/incremental_search">Incremental Searches</a></li>
                                 <li><a className="dropdown-item" href="/functions/bisection">bisection</a></li>
                                 <li><a className="dropdown-item" href="#">False rule</a></li>
-                                <li><a className="dropdown-item" href="#">Fixed point</a></li>
+                                <li><a className="dropdown-item" href="/functions/fixedpoint">Fixed point</a></li>
                                 <li><a className="dropdown-item" href="/functions/Newton">Newton</a></li>
                                 <li><a className="dropdown-item" href="#">Secant</a></li>
                                 <li><a className="dropdown-item" href="/functions/multiple_roots">Multiple roots</a></li>

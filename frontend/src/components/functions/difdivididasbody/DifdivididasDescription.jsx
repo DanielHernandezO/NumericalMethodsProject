@@ -1,5 +1,5 @@
 import React from "react";
-
+import Latex from "react-latex"
 const DifdivididasDescription = () => {
     return (
         <div className="card mb-3 border-success">
@@ -7,16 +7,16 @@ const DifdivididasDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b>X:</b> First row of the table
+                        <b><Latex>{'$X:$'}</Latex></b> First row of the table
                     </li>
                     <li>
-                        <b>Y:</b> Second row of the table
+                        <b><Latex>{'$Y:$'}</Latex></b> Second row of the table
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
                 <ol>
                     <li>
-                        The input must be every element of the table followed by a coma like this : 1,5,2,3
+                        The input must be every element of the table followed by a coma like this : <Latex>{'$1,5,2,3$'}</Latex>
                     </li>
                 </ol>
                 <div className="card-footer">

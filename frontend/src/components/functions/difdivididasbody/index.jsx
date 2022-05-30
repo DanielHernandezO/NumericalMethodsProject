@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import DifdivididasDescription from "./DifdivididasDescription";
 import DifdivididasExecution from "./DifdivididasExecution";
 import Difdivididasmethod from "../../../utilities/methods/functions/difdivididas";
-import DifdivididasResult from "./DifdivididasResult"
+import DifdivididasResult from "./DifdivididasResult";
+import Graph from "../../graph";
 const DifdivididasBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -144,6 +145,7 @@ const DifdivididasBody = () => {
             <DifdivididasDescription />
             <DifdivididasExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
             {isRun ? <DifdivididasResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <Graph/>
         </div>
 
     )

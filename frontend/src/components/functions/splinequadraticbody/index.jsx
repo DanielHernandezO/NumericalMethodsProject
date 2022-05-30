@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import SplineQuadraticDescription from "./SplineQuadraticDescription";
 import SplineQuadraticExecution from "./SplineQuadraticExecution";
 import trazquadmethod from "../../../utilities/methods/functions/trazcuad";
-import SplineQuadraticResult from "./SplineQuadraticResult"
+import SplineQuadraticResult from "./SplineQuadraticResult";
+import Graph from "../../graph";
 const SplineQuadraticBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -131,6 +132,7 @@ const SplineQuadraticBody = () => {
             <SplineQuadraticDescription />
             <SplineQuadraticExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
             {isRun ? <SplineQuadraticResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <Graph/>
         </div>
 
     )
