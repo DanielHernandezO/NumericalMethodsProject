@@ -19,8 +19,8 @@ const HomeBody = () => {
                                 <li><a href="#">Newton</a></li>
                                 <li><a href="#">Secant</a></li>
                                 <li><a href="/functions/multiple_roots">Multiple roots</a></li>
-                                <li><a href="#">Steffensen</a></li>
-                                <li><a href="#">Aitken</a></li>
+                                <li><a href="/functions/steffensen">Steffensen</a></li>
+                                <li><a href="/functions/aitken">Aitken</a></li>
                                 <li><a href="#">Müller</a></li>
                                 <li><a href="#">Trisection</a></li>
                             </ul>
@@ -58,11 +58,11 @@ const HomeBody = () => {
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="#">Vandermonde</a></li>
-                                <li><a href="#">Newton( Divided differences)</a></li>
-                                <li><a href="#">Lagrange</a></li>
-                                <li><a href="#">Line plotters</a></li>
-                                <li><a href="#">Quadratic plotters</a></li>
-                                <li><a href="#">Cubic plotters</a></li>
+                                <li><a href="/functions/difdivididas">Newton( Divided differences)</a></li>
+                                <li><a href="/functions/lagrange">Lagrange</a></li>
+                                <li><a href="/functions/linealspline">Line plotters</a></li>
+                                <li><a href="/functions/quadraticspline">Quadratic plotters</a></li>
+                                <li><a href="/functions/cubicspline">Cubic plotters</a></li>
                             </ul>
                         </div>
                     </div>

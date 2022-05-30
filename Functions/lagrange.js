@@ -16,7 +16,7 @@
 const mathjs = require('mathjs')
 
 module.exports = (x,y) => {
-
+    var newarr= [];
     var coefficients=[];
     for (var m=0; m<x.length; m++) coefficients[m]=0;
         for (var m=0; m<x.length; m++) {
@@ -37,10 +37,28 @@ module.exports = (x,y) => {
                 newCoefficients[nc]=newCoefficients[nc]*(-x[n]/(x[m]-x[n]))+newCoefficients[nc-1]/(x[m]-x[n]);
             }
             newCoefficients[0]=newCoefficients[0]*(-x[n]/(x[m]-x[n]));
-        }    
+        }
+        newarr.push(newCoefficients.reverse());
+        // console.log(newarr);
+        
+        // console.log(newCoefficients.reverse()[1]);
+        // console.log(newCoefficients.reverse()[2]);
+        // console.log(newCoefficients.reverse()[3], "X");
         for (var nc=0; nc<x.length; nc++) coefficients[nc]+=y[m]*newCoefficients[nc];
     }
-    return coefficients.reverse();
+    let z = 0;
+    for(var i = 0; i < newarr.length; i++) {
+        z = newarr.length-1;
+        for(var j = 0; j < newarr.length-1; j++) {
+
+            newarr[i][j] = newarr[i][j] + "x^" +z;
+            z--;
+        }
+         
+    }
+
+    return newarr;
+    
 }
 // function [L,Coef]=C21_lagrange(X,Y) 
 

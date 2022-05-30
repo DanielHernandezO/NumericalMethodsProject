@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SplineLinealDescription from "./SplineLinealDescription";
-import SplineLinealExecution from "./SplineLinealExecution";
-import trazlinmethod from "../../../utilities/methods/functions/trazlin";
-import SplineLinealResult from "./SplineLinealResult"
-const SplineLinealBody = () => {
+import LagrangeDescription from "./LagrangeDescription";
+import LagrangeExecution from "./LagrangeExecution";
+import lagrangemethod from "../../../utilities/methods/functions/lagrange";
+import LagrangeResult from "./LagrangeResult"
+const LagrangeBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -18,7 +18,7 @@ const SplineLinealBody = () => {
     const [isRun, setIsRun] = useState(false);
 
     //Se crean los estados para guardar las filas, columnas, e informacion adicional resultantes del método
-    const [columns, setColumns] = useState(["Tracer Coefficients",' ']);
+    const [columns, setColumns] = useState(["Interpolating Polynomials",' ']);
     const [rows, setRows] = useState([]);
     const [extraInfo, setExtraInfo] = useState({});
 
@@ -88,18 +88,33 @@ const SplineLinealBody = () => {
             let newarr1 = dataForm.x.split(",");
 
             let newarr2 = dataForm.y.split(",");
+            
             const arrOfNum1 = newarr1.map(str => {
                 return Number(str);
               });
             const arrOfNum2 = newarr2.map(str => {
                 return Number(str);
             });
-            let { newarray, logs } = trazlinmethod(arrOfNum1,arrOfNum2)
-            console.log(newarray);
+            
+            let { newarray, logs } = lagrangemethod(arrOfNum1,arrOfNum2)
+
+            
+            
             if(logs[0].type == "Success"){
-                setRows(newarray);
-                setLogs(logs);
-                setIsRun(true);
+                var polynom = [];
+            for (var i = 0; i < arrOfNum2.length; i++) {
+                if (i == arrOfNum2.length-1){
+                    polynom.push(arrOfNum2[i], "*L", i);   
+                }else{
+                    polynom.push(arrOfNum2[i], "*L", i, "+");
+                }
+                //Do something
+            }
+            console.log(newarray);
+            setExtraInfo({Polynom: polynom});
+            setRows(newarray);
+            setLogs(logs); 
+            setIsRun(true);
             }
             else{
                 setLogs(logs);
@@ -125,13 +140,13 @@ const SplineLinealBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Lineal Spline</h1>
-            <SplineLinealDescription />
-            <SplineLinealExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <SplineLinealResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Lagrange</h1>
+            <LagrangeDescription />
+            <LagrangeExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <LagrangeResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
         </div>
 
     )
 }
 
-export default SplineLinealBody;
+export default LagrangeBody;

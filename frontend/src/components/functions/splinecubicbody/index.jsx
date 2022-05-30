@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SplineLinealDescription from "./SplineLinealDescription";
-import SplineLinealExecution from "./SplineLinealExecution";
-import trazlinmethod from "../../../utilities/methods/functions/trazlin";
-import SplineLinealResult from "./SplineLinealResult"
-const SplineLinealBody = () => {
+import SplineCubicDescription from "./SplineCubicDescription";
+import SplineCubicExecution from "./SplineCubicExecution";
+import trazcubmethod from "../../../utilities/methods/functions/trazcub";
+import SplineCubicResult from "./SplineCubicResult"
+const SplineCubicBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -28,8 +28,9 @@ const SplineLinealBody = () => {
     }
 
     //Método para validar los datos que entran desde el formulario
-    const validateData = ({ x,y}) => {
+    const validateData = ({x,y}) => {
         //Validate input
+        
         let newarr1 = x.split(",");
         const arrOfNum1 = newarr1.map(str => {
             return Number(str);
@@ -88,14 +89,17 @@ const SplineLinealBody = () => {
             let newarr1 = dataForm.x.split(",");
 
             let newarr2 = dataForm.y.split(",");
+            
             const arrOfNum1 = newarr1.map(str => {
                 return Number(str);
               });
             const arrOfNum2 = newarr2.map(str => {
                 return Number(str);
             });
-            let { newarray, logs } = trazlinmethod(arrOfNum1,arrOfNum2)
-            console.log(newarray);
+            
+            
+            let { newarray, logs } = trazcubmethod(arrOfNum1,arrOfNum2)
+                        
             if(logs[0].type == "Success"){
                 setRows(newarray);
                 setLogs(logs);
@@ -104,6 +108,7 @@ const SplineLinealBody = () => {
             else{
                 setLogs(logs);
             }
+            
         }else{
             setLogs(logs);
         }
@@ -125,13 +130,13 @@ const SplineLinealBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Lineal Spline</h1>
-            <SplineLinealDescription />
-            <SplineLinealExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <SplineLinealResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Cubic Spline</h1>
+            <SplineCubicDescription />
+            <SplineCubicExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <SplineCubicResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
         </div>
 
     )
 }
 
-export default SplineLinealBody;
+export default SplineCubicBody;

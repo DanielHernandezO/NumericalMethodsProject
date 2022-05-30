@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SplineLinealDescription from "./SplineLinealDescription";
-import SplineLinealExecution from "./SplineLinealExecution";
-import trazlinmethod from "../../../utilities/methods/functions/trazlin";
-import SplineLinealResult from "./SplineLinealResult"
-const SplineLinealBody = () => {
+import SplineQuadraticDescription from "./SplineQuadraticDescription";
+import SplineQuadraticExecution from "./SplineQuadraticExecution";
+import trazquadmethod from "../../../utilities/methods/functions/trazcuad";
+import SplineQuadraticResult from "./SplineQuadraticResult"
+const SplineQuadraticBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -88,14 +88,16 @@ const SplineLinealBody = () => {
             let newarr1 = dataForm.x.split(",");
 
             let newarr2 = dataForm.y.split(",");
+            
             const arrOfNum1 = newarr1.map(str => {
                 return Number(str);
               });
             const arrOfNum2 = newarr2.map(str => {
                 return Number(str);
             });
-            let { newarray, logs } = trazlinmethod(arrOfNum1,arrOfNum2)
-            console.log(newarray);
+            
+            let { newarray, logs } = trazquadmethod(arrOfNum1,arrOfNum2)
+            
             if(logs[0].type == "Success"){
                 setRows(newarray);
                 setLogs(logs);
@@ -125,13 +127,13 @@ const SplineLinealBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Lineal Spline</h1>
-            <SplineLinealDescription />
-            <SplineLinealExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <SplineLinealResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Quadratic Spline</h1>
+            <SplineQuadraticDescription />
+            <SplineQuadraticExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <SplineQuadraticResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
         </div>
 
     )
 }
 
-export default SplineLinealBody;
+export default SplineQuadraticBody;

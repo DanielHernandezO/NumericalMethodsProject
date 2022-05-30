@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SplineLinealDescription from "./SplineLinealDescription";
-import SplineLinealExecution from "./SplineLinealExecution";
-import trazlinmethod from "../../../utilities/methods/functions/trazlin";
-import SplineLinealResult from "./SplineLinealResult"
-const SplineLinealBody = () => {
+import DifdivididasDescription from "./DifdivididasDescription";
+import DifdivididasExecution from "./DifdivididasExecution";
+import Difdivididasmethod from "../../../utilities/methods/functions/difdivididas";
+import DifdivididasResult from "./DifdivididasResult"
+const DifdivididasBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -18,7 +18,7 @@ const SplineLinealBody = () => {
     const [isRun, setIsRun] = useState(false);
 
     //Se crean los estados para guardar las filas, columnas, e informacion adicional resultantes del método
-    const [columns, setColumns] = useState(["Tracer Coefficients",' ']);
+    const [columns, setColumns] = useState(["Interpolating Polynomials",' ']);
     const [rows, setRows] = useState([]);
     const [extraInfo, setExtraInfo] = useState({});
 
@@ -79,14 +79,9 @@ const SplineLinealBody = () => {
 
     //Función para correr el método
     const run = () => {
-        
         const validateDataResult = validateData({ ...dataForm });
-
-        
         if (validateDataResult) {
-            
             let newarr1 = dataForm.x.split(",");
-
             let newarr2 = dataForm.y.split(",");
             const arrOfNum1 = newarr1.map(str => {
                 return Number(str);
@@ -94,22 +89,42 @@ const SplineLinealBody = () => {
             const arrOfNum2 = newarr2.map(str => {
                 return Number(str);
             });
-            let { newarray, logs } = trazlinmethod(arrOfNum1,arrOfNum2)
+            let { newarray, logs } = Difdivididasmethod(arrOfNum1,arrOfNum2)
             console.log(newarray);
             if(logs[0].type == "Success"){
+                var polynom = [];
+                var newpoly = [];
+                let polyn = [];
+                newpoly = [];
+                let w = []
+                ;
+                for (var i = 0; i < arrOfNum2.length; i++) {
+                    newpoly = []
+                    for (let j = 0; j < i; j++) {
+                        w = arrOfNum1[j];
+                        newpoly.push(["(x-", w, ")"]);
+                    }
+                    if (i == arrOfNum2.length-1){
+                        polynom.push(newarray[i][i],newpoly);
+                    }else{
+                        polynom.push(newarray[i][i],newpoly, "+");
+                    }
+                    // console.log(polyn);
+                //Do something
+                }
+                setExtraInfo({Polynom: polynom});
+                
                 setRows(newarray);
-                setLogs(logs);
+                setLogs(logs); 
                 setIsRun(true);
-            }
-            else{
-                setLogs(logs);
-            }
+                }
+                else{
+                    setLogs(logs);
+                }
         }else{
             setLogs(logs);
         }
-
     }
-
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
@@ -125,13 +140,13 @@ const SplineLinealBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Lineal Spline</h1>
-            <SplineLinealDescription />
-            <SplineLinealExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
-            {isRun ? <SplineLinealResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <h1 className="text-center">Divided Differences</h1>
+            <DifdivididasDescription />
+            <DifdivididasExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
+            {isRun ? <DifdivididasResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
         </div>
 
     )
 }
 
-export default SplineLinealBody;
+export default DifdivididasBody;
