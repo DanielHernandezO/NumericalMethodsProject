@@ -22,6 +22,7 @@ import Fixedpoint from "../pages/functions/Fixedpoint"
 import Euler from "../pages/functions/Euler"
 import Muller from "../pages/functions/Muller"
 import Crout from "../pages/matrices/Crout"
+import Doolittle from "../pages/matrices/Doolittle"
 const App = () => {
     return (
         <div>
@@ -45,6 +46,7 @@ const App = () => {
                     <Route path="/functions/fixedpoint" element={<Fixedpoint/>}/>
                     <Route path="/functions/euler" element={<Euler/>}/>
                     <Route path="/functions/crout" element={<Crout/>}/>
+                    <Route path="/functions/doolittle" element={<Doolittle/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

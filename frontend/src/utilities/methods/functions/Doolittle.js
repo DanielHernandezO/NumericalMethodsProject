@@ -1,58 +1,56 @@
 import susRegre from "./SusRegre";
 import sustProg from "./SusProgre";
-const mathjs = require("mathjs")
-function crout(A,B) {
+
+function Doolittle(mat,B)
+{
     const stages = [];
-    var n= A.length;
+    var n= mat.length;
     var lower = Array(n).fill(0).map(
            x => Array(n).fill(0));
     var upper = Array(n).fill(0).map(
            x => Array(n).fill(0));
-    // diagonalize U
-    for (var i = 0; i < n; i++) {
-        upper[i][i]=1;
-    }
     for(var i=0;i<n;i++){
         for(var j=0;j<n;j++){
-            A[i][j] = parseFloat(A[i][j]).toPrecision(10);
+            mat[i][j] = parseFloat(mat[i][j]).toPrecision(10);
         }
     }
     stages.push({
         title: `Stage ${0}`,
-        matrix: [...A]
+        matrix: [...mat]
     })
     let message = {};
-    let logs = [];
-    for(var j=0;j<n;j++){
-        for(var i=j;i<n;i++){
-            var sum =0;
-            for(var k=0;k<j;k++){
-                sum= sum+lower[i][k]*upper[k][j];
-            }
-            lower[i][j] = parseFloat(A[i][j]-sum).toPrecision(10);
+    let logs = []
+    for(var i = 0; i < n; i++){
+        for(var k = i; k < n; k++){
+            var sum = 0;
+            for(var j = 0; j < i; j++)
+                sum += (lower[i][j] * upper[j][k]);
+            upper[i][k] = parseFloat(mat[i][k] - sum).toPrecision(10);
         }
-        for(var i=j+1;i<n;i++){
-            var sum =0;
-            for(var k=0;k<j;k++){
-                sum= sum+lower[j][k]*upper[k][i];
+        for(var k = i; k < n; k++){
+            if (i == k)
+                lower[i][i] = 1;
+            else{
+                var sum = 0;
+                for(var j = 0; j < i; j++)
+                    sum += (lower[k][j] * upper[j][i]);
+                if(upper[i][i]==0){
+                    message = { type: 'Error', text: "division by 0"}
+                    logs = [message];
+                    return {stages,logs};
+                }
+                lower[k][i] = parseFloat((mat[k][i] - sum) /upper[i][i]).toPrecision(10);
             }
-            if(lower[j][j]==0){
-                message = { type: 'Error', text: "division by 0"}
-                logs = [message];
-                return {stages,logs};
-            }
-            upper[j][i]=parseFloat((A[j][i]-sum)/lower[j][j]).toPrecision(10);
         }
         stages.push({
-            title: `L - stage ${j+1}`,
+            title: `L - stage ${i+1}`,
             matrix: [...lower]
         })
         stages.push({
-            title: `U - stage ${j+1}`,
+            title: `U - stage ${i+1}`,
             matrix: [...upper]
         })
     }
-    
     for(var i=0;i<n;++i){
         lower[i].push(parseFloat(B[i][0]).toPrecision(10));
     }
@@ -74,7 +72,6 @@ function crout(A,B) {
     message = { type: 'Success', text: "Successful proccess"}
     logs = [message];
     return {x,stages,logs};
-};
+}
 
-export default crout;
-   
+export default Doolittle;

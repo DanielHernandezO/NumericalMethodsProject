@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import CroutBodyDescription from "./CroutBodyDescription"
-import CroutBodyExecution from "./CroutBodyExecution"
-import CroutBodyResult from "./CroutBodyResult"
+import DoolittleBodyDescription from "./DoolittleBodyDescription"
+import DoolittleBodyExecution from "./DoolittleBodyExecution"
+import DoolittleBodyResult from "./DoolittleBodyResult"
 import validateMatrix from "../../../utilities/validateMatrix"
 import validateVector from "../../../utilities/validateVector"
-import crout from "../../../utilities/methods/functions/Crout"
+import Doolittle from "../../../utilities/methods/functions/Doolittle"
 import transformMatrix from "../../../utilities/transformMatrix"
 import Graph from "../../graph"
 import { isNull } from "mathjs"
-const SimpleLuBody = () => {
+const Doolittlebody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -59,7 +59,7 @@ const SimpleLuBody = () => {
         if(validateDataResult){
             const matrixTransformered = transformMatrix(dataForm.A);
             const vectorTransformered = transformMatrix(dataForm.b);
-            const {x, stages,logs} = crout(matrixTransformered,vectorTransformered);
+            const {x, stages,logs} = Doolittle(matrixTransformered,vectorTransformered);
 
             //Falta setear logs
             setLogs(logs);
@@ -88,13 +88,13 @@ const SimpleLuBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Crout</h1>
-            <CroutBodyDescription />
-            <CroutBodyExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
-            {isRun?<CroutBodyResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
+            <h1 className="text-center">Doolittle</h1>
+            <DoolittleBodyDescription />
+            <DoolittleBodyExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
+            {isRun?<DoolittleBodyResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
             <Graph />
         </div>
     )
 }
 
-export default SimpleLuBody;
+export default Doolittlebody;
