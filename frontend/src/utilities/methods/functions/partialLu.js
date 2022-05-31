@@ -1,5 +1,5 @@
 const mathjs = require('mathjs')
-const stages  = [];
+let stages  = [];
 const logs = [];
 
 const partialPivot = (A, k, P, L) => {
@@ -128,6 +128,7 @@ const backward_substitution = (A, b) => {
 }
 
 module.exports = (A, b) => {
+    stages = [];
     stages.push({
         title: 'Stage 0',
         matrix: [...A]

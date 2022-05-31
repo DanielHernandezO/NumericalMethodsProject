@@ -34,7 +34,7 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Gaussian elimination</a></li>
+                                <li><a href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a href="#">Partial pivoting</a></li>
                                 <li><a href="#">Total pivoting</a></li>
                                 <li><a href="#">Tridiagonal Gaussian elimination</a></li>

@@ -1,8 +1,7 @@
 const mathjs = require('mathjs')
-const stages = [];
+let stages = [];
 const logs = [];
 const fact_lu = (A) => {
-
     const n = A.length;
     let U = mathjs.zeros(n, n).toArray();
     const L = mathjs.identity(n).toArray();
@@ -103,6 +102,7 @@ const backward_substitution = (A, b) => {
 
 
 module.exports = (A, b) => {
+    stages = [];
     stages.push({
         title: 'Stage 0',
         matrix: [...A]

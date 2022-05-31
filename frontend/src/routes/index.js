@@ -24,6 +24,7 @@ import Muller from "../pages/functions/Muller"
 import Crout from "../pages/matrices/Crout"
 import PivotLu from "../pages/matrices/PivotLu"
 import Doolittle from "../pages/matrices/Doolittle"
+import GaussianElimination from "../pages/matrices/GaussianElimination"
 
 const App = () => {
     return (
@@ -50,6 +51,7 @@ const App = () => {
                     <Route path="/functions/crout" element={<Crout/>}/>
                     <Route path="/matrices/privotlu" element={<PivotLu/>}/>
                     <Route path="/functions/doolittle" element={<Doolittle/>}/>
+                    <Route path="/matrices/gaussian_elimination" element={<GaussianElimination/>} />
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
