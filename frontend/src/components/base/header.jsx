@@ -24,7 +24,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a className="dropdown-item" href="/functions/steffensen">Steffensen</a></li>
                                 <li><a className="dropdown-item" href="/functions/aitken">Aitken</a></li>
-                                <li><a className="dropdown-item" href="#">Müller</a></li>
+                                <li><a className="dropdown-item" href="/functions/muller">Müller</a></li>
                                 <li><a className="dropdown-item" href="/functions/trisection">Trisection</a></li>
                             </ul>
                         </li>
@@ -78,7 +78,7 @@ const Header = () => {
                                 Differential equations
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">Euler</a></li>
+                                <li><a className="dropdown-item" href="/functions/euler">Euler</a></li>
                                 <li><a className="dropdown-item" href="#">Heun</a></li>
                             </ul>
                         </li>

@@ -16,14 +16,18 @@ module.exports = (f, x0, x1, tolerance, nMax) => {
     a = (delta1 - delta0) / (h1 - h0)
     b = a * (h1) + delta1
     c = fx2
-
+    console.log(b);
+    console.log(a);
+    console.log(c);
     //Tercera aproximacion
     xi = x2 + (-2 * c) / (b + (b / Math.abs(b)) * Math.sqrt(Math.pow(b, 2) - 4 * a * c))
+    
     fxi = mathjs.evaluate(f, { x: xi })
     error = tolerance + 1;
     counter = 0;
     iterations.push({counter, x0, x1, x2, xi, fxi});
-
+    let x2aux = 0;
+    let x1aux = 0;
     while(fxi !== 0 && error > tolerance && counter < nMax){
         x2aux = x2;
         x1aux = x1;

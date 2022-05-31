@@ -21,7 +21,7 @@ const HomeBody = () => {
                                 <li><a href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a href="/functions/steffensen">Steffensen</a></li>
                                 <li><a href="/functions/aitken">Aitken</a></li>
-                                <li><a href="#">Müller</a></li>
+                                <li><a href="/functions/muller">Müller</a></li>
                                 <li><a href="/functions/trisection">Trisection</a></li>
                             </ul>
                         </div>

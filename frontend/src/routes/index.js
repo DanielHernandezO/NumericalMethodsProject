@@ -19,6 +19,8 @@ import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
 import Fixedpoint from "../pages/functions/Fixedpoint"
+import Euler from "../pages/functions/Euler"
+import Muller from "../pages/functions/Muller"
 import Crout from "../pages/matrices/Crout"
 const App = () => {
     return (
@@ -39,7 +41,9 @@ const App = () => {
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>
                     <Route path="/functions/trisection" element={<Trisection/>}/>
+                    <Route path="/functions/muller" element={<Muller/>}/>
                     <Route path="/functions/fixedpoint" element={<Fixedpoint/>}/>
+                    <Route path="/functions/euler" element={<Euler/>}/>
                     <Route path="/functions/crout" element={<Crout/>}/>
                     {/* Others url */}  
                 </Routes>
