@@ -25,6 +25,7 @@ import Crout from "../pages/matrices/Crout"
 import PivotLu from "../pages/matrices/PivotLu"
 import Doolittle from "../pages/matrices/Doolittle"
 import GaussianElimination from "../pages/matrices/GaussianElimination"
+import PartialPivoting from "../pages/matrices/PartialPivoting"
 
 const App = () => {
     return (
@@ -52,6 +53,7 @@ const App = () => {
                     <Route path="/matrices/privotlu" element={<PivotLu/>}/>
                     <Route path="/functions/doolittle" element={<Doolittle/>}/>
                     <Route path="/matrices/gaussian_elimination" element={<GaussianElimination/>} />
+                    <Route path="/matrices/partial_pivoting" element={<PartialPivoting/>}></Route>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
