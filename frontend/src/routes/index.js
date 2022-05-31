@@ -19,6 +19,8 @@ import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
 import Crout from "../pages/matrices/Crout"
+import PivotLu from "../pages/matrices/PivotLu"
+
 const App = () => {
     return (
         <div>
@@ -34,11 +36,12 @@ const App = () => {
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
-                    <Route path="/functions/simplelu" element={<SimpleLu/>}/>
+                    <Route path="/matrices/simplelu" element={<SimpleLu/>}/>
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>
                     <Route path="/functions/trisection" element={<Trisection/>}/>
                     <Route path="/functions/crout" element={<Crout/>}/>
+                    <Route path="/matrices/privotlu" element={<PivotLu/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

@@ -17,13 +17,10 @@ const simpleLuBodyDescription = () => {
                 <ol>
                     <li>
                         <Latex>{'$det(A) \\not = 0$'}</Latex> 
-                    </li>
+                    </li> 
                     <li>
-                        The elements of the diagonal must be different from 0 and not adjacent to it.
-                    </li>   
-                    <li>
-                        All other elements of <Latex>{'$A$'}</Latex> should not be very close to 0. 
-                    </li>  
+                        All elements of <Latex>{'$A$'}</Latex> should not be very close to 0. That is to say, each column should have at least one number greater than 0. 
+                    </li> 
                 </ol>
                 <div className="card-footer">
                     <small className="text-muted"><b>Note: </b>If the input data does not comply with the rules, the success of the method is not assured.</small>

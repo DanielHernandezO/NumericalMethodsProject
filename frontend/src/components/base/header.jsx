@@ -37,8 +37,8 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="#">Partial pivoting</a></li>
                                 <li><a className="dropdown-item" href="#">Total pivoting</a></li>
                                 <li><a className="dropdown-item" href="#">Tridiagonal Gaussian elimination</a></li>
-                                <li><a className="dropdown-item" href="/functions/simplelu">Simple LU</a></li>
-                                <li><a className="dropdown-item" href="#">Pivot LU</a></li>
+                                <li><a className="dropdown-item" href="/matrices/simplelu">Simple LU</a></li>
+                                <li><a className="dropdown-item" href="/matrices/privotlu">Pivot LU</a></li>
                                 <li><a className="dropdown-item" href="/functions/crout">Crout</a></li>
                                 <li><a className="dropdown-item" href="#">Doolittle</a></li>
                                 <li><a className="dropdown-item" href="#">Cholesky</a></li>
