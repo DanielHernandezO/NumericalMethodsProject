@@ -1,16 +1,19 @@
 import React from "react";
 import Latex from "react-latex"
-const SplineCubicDescription = () => {
+const SplineQuadraticDescription = () => {
     return (
         <div className="card mb-3 border-success">
             <div className="card-body">
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b><Latex>{'$X:$'}</Latex></b> First row of the table
+                        <b><Latex>{'$x:$'}</Latex></b> Starting value.
                     </li>
                     <li>
-                        <b><Latex>{'$Y:$'}</Latex></b> Second row of the table
+                        <b><Latex>{'$y:$'}</Latex></b> Ending value / limit.
+                    </li>
+                    <li>
+                        <b><Latex>{'$h:$'}</Latex></b> Size of steps.
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
@@ -27,4 +30,4 @@ const SplineCubicDescription = () => {
     )
 }
 
-export default SplineCubicDescription;
+export default SplineQuadraticDescription;

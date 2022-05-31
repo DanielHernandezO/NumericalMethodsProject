@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import SplineCubicDescription from "./SplineCubicDescription";
 import SplineCubicExecution from "./SplineCubicExecution";
 import trazcubmethod from "../../../utilities/methods/functions/trazcub";
-import SplineCubicResult from "./SplineCubicResult"
+import SplineCubicResult from "./SplineCubicResult";
+import Graph from "../../graph";
 const SplineCubicBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -134,6 +135,7 @@ const SplineCubicBody = () => {
             <SplineCubicDescription />
             <SplineCubicExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
             {isRun ? <SplineCubicResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <Graph/>
         </div>
 
     )

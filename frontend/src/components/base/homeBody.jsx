@@ -15,13 +15,13 @@ const HomeBody = () => {
                                 <li><a href="/functions/incremental_search">Incremental Searches</a></li>
                                 <li><a href="/functions/bisection">bisection</a></li>
                                 <li><a href="#">False rule</a></li>
-                                <li><a href="#">Fixed point</a></li>
+                                <li><a href="/functions/fixedpoint">Fixed point</a></li>
                                 <li><a href="/functions/Newton">Newton</a></li>
                                 <li><a href="#">Secant</a></li>
                                 <li><a href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a href="/functions/steffensen">Steffensen</a></li>
                                 <li><a href="/functions/aitken">Aitken</a></li>
-                                <li><a href="#">Müller</a></li>
+                                <li><a href="/functions/muller">Müller</a></li>
                                 <li><a href="/functions/trisection">Trisection</a></li>
                             </ul>
                         </div>
@@ -41,7 +41,7 @@ const HomeBody = () => {
                                 <li><a href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a href="/matrices/privotlu">Pivot LU</a></li>
                                 <li><a href="/functions/crout">Crout</a></li>
-                                <li><a href="#">Doolittle</a></li>
+                                <li><a href="/functions/doolittle">Doolittle</a></li>
                                 <li><a href="#">Cholesky</a></li>
                                 <li><a href="#">Jacobi</a></li>
                                 <li><a href="#">Gauss-Seidel</a></li>
