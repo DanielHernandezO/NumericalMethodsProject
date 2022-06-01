@@ -30,7 +30,7 @@ const HomeBody = () => {
             </div>
             <div className="card mb-3 border-success">
                     <div className="card-body">
-                        <h5 className="card-title">Matrices</h5>
+                        <h5 className="card-title">Matrixes</h5>
                         <p className="card-text">The following numeric methods are based on a matrix with the objetive of returning a vector and steps of the process of each method.</p>
                         <div>
                             <h6>List of methods</h6>

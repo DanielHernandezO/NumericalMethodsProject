@@ -30,7 +30,7 @@ const Header = () => {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Matrices
+                                    Matrixes
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
