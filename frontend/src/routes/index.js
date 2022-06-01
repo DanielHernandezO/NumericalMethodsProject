@@ -28,7 +28,7 @@ import PivotLu from "../pages/matrices/PivotLu"
 import Doolittle from "../pages/matrices/Doolittle"
 import GaussianElimination from "../pages/matrices/GaussianElimination"
 import PartialPivoting from "../pages/matrices/PartialPivoting"
-
+import Heun from "../pages/differential/Heun"
 import Cholesky from "../pages/matrices/Cholesky"
 const App = () => {
     return (
@@ -60,6 +60,7 @@ const App = () => {
                     <Route path="/matrices/gaussian_elimination" element={<GaussianElimination/>} />
                     <Route path="/matrices/partial_pivoting" element={<PartialPivoting/>}></Route>
                     <Route path="/functions/cholesky" element={<Cholesky/>}/>
+                    <Route path="/functions/heun" element={<Heun/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
