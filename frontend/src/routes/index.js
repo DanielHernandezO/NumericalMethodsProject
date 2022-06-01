@@ -31,6 +31,7 @@ import PartialPivoting from "../pages/matrices/PartialPivoting"
 import Heun from "../pages/differential/Heun"
 import Cholesky from "../pages/matrices/Cholesky"
 import TotalPivoting from "../pages/matrices/TotalPivoting"
+import CompoundTrapeze from "../pages/integration/CompoundTrapeze"
 const App = () => {
     return (
         <div>
@@ -63,6 +64,7 @@ const App = () => {
                     <Route path="/functions/cholesky" element={<Cholesky/>}/>
                     <Route path="/matrices/total_pivoting" element={<TotalPivoting/>}/>
                     <Route path="/functions/heun" element={<Heun/>}/>
+                    <Route path="/integration/compound_trapeze" element={<CompoundTrapeze/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

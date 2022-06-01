@@ -74,7 +74,7 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Compound trapeze</a></li>
+                                <li><a href="/integration/compound_trapeze">Compound trapeze</a></li>
                                 <li><a href="#">Simpson 1/3 compound</a></li>
                                 <li><a href="#">Simpson 3/8 simple</a></li>
                             </ul>
