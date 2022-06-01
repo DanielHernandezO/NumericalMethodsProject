@@ -3,12 +3,13 @@ import React from "react";
 const HomeBody = () => {
     return (
         <div className="container">
-            <h1 className="text-center">Welcome to Numerical Methods Plattform</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h1 className="text-center">Welcome to Numerical Methods Platform</h1>
+            <p>Numerical Methods Platform is a Website where you can try different numerical methods with its own rules, posibilities and limitations.</p>
+            <p>Check out our guide on how to use the platform for a better user experience here: Yt link</p>
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Functions</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The follow numeric methods are methods based on a function with the objective to find one or more roots.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
@@ -30,7 +31,7 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Matrices</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a matrix with the objetive of returning a vector and steps of the process of each method.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
@@ -53,7 +54,7 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Interpolation</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a table with an X and a y, with the objective of returning an Interpolating Polynomial and a Polynom</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
@@ -70,7 +71,7 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Numerical integration</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a function, a lower limit, an upper limit and a number of divisions of the functions with the objective of returning an approximation of the integral function and the iteratiosn to achieve it.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
@@ -84,7 +85,7 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Differential equations</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a function, an inferior limit, superior limit, and a number that determines how big each evaluation will be apart from each other with the objective of returning an approximation of the graphic function.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>

@@ -4,13 +4,15 @@ import EulerExecution from "./EulerExecution";
 import eulermethod from "../../../utilities/methods/functions/euler";
 import EulerResult from "./EulerResult";
 import Graph from "../../graph";
+import validateFunctionxy from "../../../utilities/validateFunctionxy";
 const EulerBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
-        x: 0,
-        y: 100,
-        h: 10
+        f: '0.1*sqrt(y)+0.4*x^2',
+        x: 2,
+        y: 4,
+        h: 0.5
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -30,10 +32,15 @@ const EulerBody = () => {
     }
 
     //Método para validar los datos que entran desde el formulario
-    const validateData = ({x,y}) => {
+    const validateData = ({f,x,y}) => {
         //Validate input
         if (x > y){
             let message = { type: 'Error', text: "Y has to be greater than X"}
+            logs = [message];
+            return false;
+        }
+        if (!validateFunctionxy(f,x,y)){
+            let message = { type: 'Error', text: "Invalid Function"}
             logs = [message];
             return false;
         }
@@ -42,15 +49,17 @@ const EulerBody = () => {
 
     //Función para correr el método
     const run = () => {
-        
-        const validateDataResult = validateData({ ...dataForm });
+        const {f} = dataForm;
 
+        const validateDataResult = validateData({ ...dataForm });
+        
         
         if (validateDataResult) {
-
-            let { newarray, logs } = eulermethod(dataForm.x,dataForm.y,dataForm.h)
-            console.log(logs);
+           
+            let { newarray, logs } = eulermethod(f,dataForm.x,dataForm.y,dataForm.y,dataForm.h)
+            
             if(logs[0].type == "Success"){
+                
                 setRows(newarray);
                 setLogs(logs);
                 setIsRun(true);
@@ -67,8 +76,10 @@ const EulerBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            x: "",
-            y: ""
+            f: '0.1*sqrt(y)+0.4*x^2',
+            x: 2,
+            y: 4,
+            h: 0.5
         })
         setIsRun(false);
         setLogs([]);
