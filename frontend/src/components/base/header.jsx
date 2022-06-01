@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-success">
+        <nav className="navbar navbar-expand-lg bg-success mb-4">
             <div className="container-fluid">
                 <a className="navbar-brand text-light" href="/">Numerical Methods</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,10 +15,10 @@ const Header = () => {
                                 Functions
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="/functions/incremental_search">Incremental Searches</a></li>
+                                <li><a className="dropdown-item" href="/functions/incremental_search">Incremental search</a></li>
                                 <li><a className="dropdown-item" href="/functions/falseposition">False position</a></li>
                                 <li><a className="dropdown-item" href="/functions/secant">Secant</a></li>
-                                <li><a className="dropdown-item" href="/functions/bisection">bisection</a></li>
+                                <li><a className="dropdown-item" href="/functions/bisection">Bisection</a></li>
                                 <li><a className="dropdown-item" href="/functions/fixedpoint">Fixed point</a></li>
                                 <li><a className="dropdown-item" href="/functions/Newton">Newton</a></li>
                                 <li><a className="dropdown-item" href="/functions/multiple_roots">Multiple roots</a></li>

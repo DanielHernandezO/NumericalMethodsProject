@@ -1,35 +1,36 @@
 import React from "react";
+import Latex from "react-latex";
 const BisectionForm = ({ run, clear, dataForm, handleChangeDataForm }) => {
     return (
         <form>
             <div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
-                        <label>fx</label>
+                        <label><Latex>{'$fx$'}</Latex></label>
                         <input type="text" className="form-control form-control-sm" id="fx" placeholder="fx" value={dataForm.fx} onChange={handleChangeDataForm} />
                     </div>
                 </div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
-                        <label>Left</label>
+                        <label><Latex>{'$Left$'}</Latex></label>
                         <input type="number" className="form-control form-control-sm" id="left" placeholder="left" value={dataForm.left} onChange={handleChangeDataForm} />
                     </div>
                 </div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
-                        <label>Right</label>
+                        <label><Latex>{'$Right$'}</Latex></label>
                         <input type="number" className="form-control form-control-sm" id="right" placeholder="right" value={dataForm.right} onChange={handleChangeDataForm} />
                     </div>
                 </div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
-                        <label>Tolerance</label>
+                        <label><Latex>{'$Tolerance$'}</Latex></label>
                         <input type="number" className="form-control form-control-sm" id="tolerance" placeholder="tolerance" value={dataForm.tolerance} onChange={handleChangeDataForm} />
                     </div>
                 </div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
-                        <label>Niter</label>
+                        <label><Latex>{'$Niter$'}</Latex></label>
                         <input type="number" className="form-control form-control-sm" id="niter" placeholder="niter" value={dataForm.niter} onChange={handleChangeDataForm} />
                     </div>
                 </div>

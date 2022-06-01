@@ -12,7 +12,7 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="/functions/incremental_search">Incremental Searches</a></li>
+                                <li><a href="/functions/incremental_search">Incremental search</a></li>
                                 <li><a href="/functions/falseposition">False position</a></li>
                                 <li><a href="/functions/secant">Secant</a></li>
                                 <li><a href="/functions/bisection">bisection</a></li>

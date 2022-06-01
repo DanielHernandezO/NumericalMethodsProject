@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import BisectionDescriptionBody from "./BisectionBodyDescription";
 import BisectionBodyExecution from "./BisectionBodyExecution"
 import BisectionBodyResult from "./BisectionBodyResult"
@@ -104,6 +104,12 @@ const BisectionSearchBody = () => {
         }
 
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_bisection').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

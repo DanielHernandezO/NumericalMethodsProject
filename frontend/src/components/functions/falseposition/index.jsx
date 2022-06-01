@@ -117,7 +117,7 @@ const FalsepositionBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">false position</h1>
+            <h1 className="text-center">False position</h1>
             <FalsepositionBodyDescription />
             <FalsepositionBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs}/>
             {isRun ? <FalsepositionBodyResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}

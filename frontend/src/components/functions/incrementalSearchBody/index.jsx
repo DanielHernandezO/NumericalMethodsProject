@@ -46,7 +46,7 @@ const IncrementalSearchBody = () => {
             flag = false;
         }
         //Validate delta
-        if (isNaN(delta)) {
+        if (delta === '' || isNaN(delta)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -113,7 +113,7 @@ const IncrementalSearchBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Incremental Search</h1>
+            <h1 className="text-center">Incremental search</h1>
             <IncrementalSearchBodyDescription />
             <IncrementalSearchBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
             {isRun ? <IncrementalSearchBodyResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
