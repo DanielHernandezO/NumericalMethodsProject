@@ -84,8 +84,6 @@ const SimpleLuBody = () => {
         setLogs([]);
     }
 
-
-
     return (
         <div className="container">
             <h1 className="text-center">Crout</h1>

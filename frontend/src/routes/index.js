@@ -15,6 +15,8 @@ import Aitken from "../pages/functions/Aitken"
 import Lagrange from "../pages/functions/Lagrange"
 import Difdivididas from "../pages/functions/Difdivididas"
 import Steffensen from "../pages/functions/Steffensen"
+import Falseposition from "../pages/functions/Falseposition"
+import Secant from "../pages/functions/Secant"
 import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
@@ -22,7 +24,16 @@ import Fixedpoint from "../pages/functions/Fixedpoint"
 import Euler from "../pages/functions/Euler"
 import Muller from "../pages/functions/Muller"
 import Crout from "../pages/matrices/Crout"
+import PivotLu from "../pages/matrices/PivotLu"
 import Doolittle from "../pages/matrices/Doolittle"
+import GaussianElimination from "../pages/matrices/GaussianElimination"
+import PartialPivoting from "../pages/matrices/PartialPivoting"
+import Heun from "../pages/differential/Heun"
+import Cholesky from "../pages/matrices/Cholesky"
+import TotalPivoting from "../pages/matrices/TotalPivoting"
+import CompoundTrapeze from "../pages/integration/CompoundTrapeze"
+import Simpson from "../pages/integration/Simpson.jsx"
+import SimpsonSimple from "../pages/integration/SimpsonSimple"
 const App = () => {
     return (
         <div>
@@ -38,7 +49,9 @@ const App = () => {
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
-                    <Route path="/functions/simplelu" element={<SimpleLu/>}/>
+                    <Route path="/functions/falseposition" element={<Falseposition/>}/>
+                    <Route path="/functions/secant" element={<Secant/>}/>
+                    <Route path="/matrices/simplelu" element={<SimpleLu/>}/>
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>
                     <Route path="/functions/trisection" element={<Trisection/>}/>
@@ -46,7 +59,16 @@ const App = () => {
                     <Route path="/functions/fixedpoint" element={<Fixedpoint/>}/>
                     <Route path="/functions/euler" element={<Euler/>}/>
                     <Route path="/functions/crout" element={<Crout/>}/>
+                    <Route path="/matrices/privotlu" element={<PivotLu/>}/>
                     <Route path="/functions/doolittle" element={<Doolittle/>}/>
+                    <Route path="/matrices/gaussian_elimination" element={<GaussianElimination/>} />
+                    <Route path="/matrices/partial_pivoting" element={<PartialPivoting/>}></Route>
+                    <Route path="/functions/cholesky" element={<Cholesky/>}/>
+                    <Route path="/matrices/total_pivoting" element={<TotalPivoting/>}/>
+                    <Route path="/functions/heun" element={<Heun/>}/>
+                    <Route path="/integration/compound_trapeze" element={<CompoundTrapeze/>}/>
+                    <Route path="/integration/simpson" element={<Simpson/>}/>
+                    <Route path="/integration/simpson_simple" element={<SimpsonSimple/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

@@ -12,12 +12,12 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="/functions/incremental_search">Incremental Searches</a></li>
+                                <li><a href="/functions/incremental_search">Incremental search</a></li>
+                                <li><a href="/functions/falseposition">False position</a></li>
+                                <li><a href="/functions/secant">Secant</a></li>
                                 <li><a href="/functions/bisection">bisection</a></li>
-                                <li><a href="#">False rule</a></li>
                                 <li><a href="/functions/fixedpoint">Fixed point</a></li>
                                 <li><a href="/functions/Newton">Newton</a></li>
-                                <li><a href="#">Secant</a></li>
                                 <li><a href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a href="/functions/steffensen">Steffensen</a></li>
                                 <li><a href="/functions/aitken">Aitken</a></li>
@@ -34,15 +34,15 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Gaussian elimination</a></li>
-                                <li><a href="#">Partial pivoting</a></li>
-                                <li><a href="#">Total pivoting</a></li>
+                                <li><a href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
+                                <li><a href="/matrices/partial_pivoting">Partial pivoting</a></li>
+                                <li><a href="/matrices/total_pivoting">Total pivoting</a></li>
                                 <li><a href="#">Tridiagonal Gaussian elimination</a></li>
-                                <li><a href="/functions/simplelu">Simple LU</a></li>
-                                <li><a href="#">Pivot LU</a></li>
+                                <li><a href="/matrices/simplelu">Simple LU</a></li>
+                                <li><a href="/matrices/privotlu">Pivot LU</a></li>
                                 <li><a href="/functions/crout">Crout</a></li>
                                 <li><a href="/functions/doolittle">Doolittle</a></li>
-                                <li><a href="#">Cholesky</a></li>
+                                <li><a href="/functions/cholesky">Cholesky</a></li>
                                 <li><a href="#">Jacobi</a></li>
                                 <li><a href="#">Gauss-Seidel</a></li>
                                 <li><a href="#">SOR</a></li>
@@ -74,9 +74,9 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Compound trapeze</a></li>
-                                <li><a href="#">Simpson 1/3 compound</a></li>
-                                <li><a href="#">Simpson 3/8 simple</a></li>
+                                <li><a href="/integration/compound_trapeze">Compound trapeze</a></li>
+                                <li><a href="/integration/simpson">Simpson 1/3 compound</a></li>
+                                <li><a href="/integration/simpson_simple">Simpson 3/8 simple</a></li>
                             </ul>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ const HomeBody = () => {
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="#">Euler</a></li>
-                                <li><a href="#">Heun</a></li>
+                                <li><a href="/functions/heun">Heun</a></li>
                             </ul>
                         </div>
                     </div>
