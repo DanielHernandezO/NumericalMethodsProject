@@ -7,19 +7,19 @@ const FixedpointDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b><Latex>{'$f(x):$'}</Latex></b> Function to which we want to find the root. Ej: <Latex>{'$log((sin(x)^2)+1)-x-1/2$'}</Latex>
+                        <b><Latex>{'$f(x)$'}</Latex>:</b> Function to which we want to find the root. Ej: <Latex>{'$log((sin(x)^2)+1)-x-1/2$'}</Latex>
                     </li>
                     <li>
-                        <b><Latex>{'$g(x):$'}</Latex></b> A function in the form x = g(x). Ej: <Latex>{'$log((sin(x)^2)+1)-1/2$'}</Latex>
+                        <b><Latex>{'$g(x)$'}</Latex>:</b> A function in the form x = g(x). Ej: <Latex>{'$log((sin(x)^2)+1)-1/2$'}</Latex>
                     </li>
                     <li>
-                        <b><Latex>{'$x0:$'}</Latex></b> Initial root approximation
+                        <b><Latex>{'$x0$'}</Latex>:</b> Initial root approximation
                     </li>
                     <li>
-                        <b>niter: </b> Maximum number of iterations
+                        <b><Latex>{'$niter$'}</Latex>:</b> Maximum number of iterations
                     </li>
                     <li>
-                        <b>tol: </b> Maximum permissible error
+                        <b><Latex>{'$tol$'}</Latex>:</b> Maximum permissible error
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>

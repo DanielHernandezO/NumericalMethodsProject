@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import fixedpoint from "../../../utilities/methods/functions/fixedpoint";
 import FixedpointDescription from "./fixedpointDescription";
 import FixedpointExecution from "./fixedpointExecution";
@@ -37,23 +37,23 @@ const FixedpointBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate x0
-        if (isNaN(x0)) {
+        if (x0 === '' || isNaN(x0)) {
             logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
             flag = false;
         }
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(g, x0)) {
-            logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
+        if (g === '' || (!isNaN(x0) && !validateFunction(g, x0))) {
+            logsAux.push({ type: 'Error', text: 'g(x) must be a valid function' });
             flag = false;
         }
         //Validate f1x
-        if (!isNaN(x0) && !validateFunction(f, x0)) {
+        if (f === '' || (!isNaN(x0) && !validateFunction(f, x0))) {
             logsAux.push({ type: 'Error', text: "f'(x) must be a valid function" });
             flag = false;
         }
         //Validate f2x
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -67,7 +67,7 @@ const FixedpointBody = () => {
             flag = false;
         }
         //Validate tolerance
-        if (isNaN(tol)) {
+        if (tol === '' || isNaN(tol)) {
             logsAux.push({ type: 'Error', text: 'tol must be a valid number' });
             flag = false;
         }
@@ -100,6 +100,12 @@ const FixedpointBody = () => {
         }
 
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_fixed_point').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

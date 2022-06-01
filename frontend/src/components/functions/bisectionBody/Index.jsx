@@ -35,13 +35,13 @@ const BisectionSearchBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate left
-        if (isNaN(left)) {
+        if (left === '' || isNaN(left)) {
             logsAux.push({ type: 'Error', text: 'left must be a valid number' })
             flag = false;
         }
 
         // validate right 
-        if (isNaN(right)) {
+        if (right === '' || isNaN(right)) {
             logsAux.push({ type: 'Error', text: 'right must be a valid number' })
             flag = false;
         }
@@ -50,13 +50,13 @@ const BisectionSearchBody = () => {
             flag = false;
         }
         //Validate fx
-        if (!isNaN(left) && !validateFunction(fx, left)) {
+        if (fx === '' || !isNaN(left) && !validateFunction(fx, left)) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
 
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -70,7 +70,7 @@ const BisectionSearchBody = () => {
             flag = false;
         }
         //Validate tolerance
-        if (isNaN(tolerance)) {
+        if (tolerance === '' || isNaN(tolerance)) {
             logsAux.push({ type: 'Error', text: 'tolerance must be a valid number' });
             flag = false;
         }
