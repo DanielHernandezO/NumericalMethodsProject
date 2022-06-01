@@ -5,7 +5,7 @@ const EulerForm = ({ run, clear, dataForm, handleChangeDataForm }) => {
             <div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
-                        <label>f'</label>
+                        <label>f'(x,y)</label>
                         <input type="text" className="form-control form-control-sm" id="f" placeholder="f" value={dataForm.f} onChange={handleChangeDataForm} />
                     </div>
                 </div>

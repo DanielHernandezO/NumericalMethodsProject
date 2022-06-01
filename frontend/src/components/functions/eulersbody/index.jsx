@@ -4,7 +4,7 @@ import EulerExecution from "./EulerExecution";
 import eulermethod from "../../../utilities/methods/functions/euler";
 import EulerResult from "./EulerResult";
 import Graph from "../../graph";
-import validateFunction from "../../../utilities/validateFunction";
+import validateFunctionxy from "../../../utilities/validateFunctionxy";
 const EulerBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -32,18 +32,18 @@ const EulerBody = () => {
     }
 
     //Método para validar los datos que entran desde el formulario
-    const validateData = ({newfunc,x,y}) => {
+    const validateData = ({f,x,y}) => {
         //Validate input
         if (x > y){
             let message = { type: 'Error', text: "Y has to be greater than X"}
             logs = [message];
             return false;
         }
-        // if (!validateFunction(newfunc,x)){
-        //     let message = { type: 'Error', text: "Invalid Function"}
-        //     logs = [message];
-        //     return false;
-        // }
+        if (!validateFunctionxy(f,x,y)){
+            let message = { type: 'Error', text: "Invalid Function"}
+            logs = [message];
+            return false;
+        }
         return true;
     }
 
