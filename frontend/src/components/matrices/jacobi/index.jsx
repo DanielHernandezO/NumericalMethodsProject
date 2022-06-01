@@ -127,7 +127,7 @@ const JacobiBody = () => {
             b: '1;1;1;1',
             x0: '0;0;0;0',
             niter: 100,
-            tol: 10e-7
+            tol: 1e-7
         })
         setIsRun(false);
         setLogs([]);
