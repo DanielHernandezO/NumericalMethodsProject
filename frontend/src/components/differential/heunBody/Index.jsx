@@ -3,17 +3,17 @@ import HeunBodyDescription from "./HeunBodyDescription";
 import HeunBodyExecution from "./HeunBodyExecution"
 import HeunBodyResult from "./HeunBodyResult"
 import Graph from "../../graph"
-import validateFunction from "../../../utilities/validateFunction";
+import validateFunction from "../../../utilities/validateFunctionxy";
 import Heun from  "../../../utilities/methods/functions/Heun"
 const HeunBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
-        fx: 'x-1',
-        left: 0,
-        right: 0,
-        tolerance: 0,
-        niter: 0
+        f: '2x-3y',
+        x: 1,
+        y: 6,
+        h: 0.5,
+        n: 4
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -31,8 +31,41 @@ const HeunBody = () => {
     const handleChangeDataForm = (e) => {
         setDataForm({ ...dataForm, [`${e.target.id}`]: e.target.value })
     }
-    const validateData = ({ fx, left, right, tolerance,niter}) => {
-        return true;
+    const validateData = ({ f, x, y, h,n}) => {
+        let flag = true;
+        const logsAux = [];
+        if (x === '' || isNaN(x)) {
+            logsAux.push({ type: 'Error', text: 'x must be a valid number' })
+            flag = false;
+        }
+        if (y === '' || isNaN(y)) {
+            logsAux.push({ type: 'Error', text: 'y must be a valid number' })
+            flag = false;
+        }
+        if (h === '' || isNaN(h)) {
+            logsAux.push({ type: 'Error', text: 'h must be a valid number' })
+            flag = false;
+        }
+        //Validate n
+        if (n === '' || isNaN(n)) {
+            logsAux.push({ type: 'Error', text: 'n must be a valid number' });
+            flag = false;
+        }
+
+        if (!isNaN(n) && parseFloat(n) <= 0) {
+            logsAux.push({ type: 'Error', text: "n must be greater than 0" });
+            flag = false;
+        }
+        if (!isNaN(n) && parseFloat(n) > 0 && (parseFloat(n) - Math.trunc(n)) > 0) {
+            logsAux.push({ type: 'Error', text: "n must be integer" });
+            flag = false;
+        }
+        if (f === '' || !isNaN(x) && !isNaN(y) && !validateFunction(f, x,y)) {
+            logsAux.push({ type: 'Error', text: 'f(x,y) must be a valid function' });
+            flag = false;
+        }
+        setLogs(logsAux)
+        return flag;
     }
     const run = () => {
         const validateDataResult = validateData({ ...dataForm });
@@ -59,11 +92,11 @@ const HeunBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            fx: 'x-1',
-            left: 0,
-            right: 0,
-            tolerance: 0,
-            niter: 0
+            f: '2x-3y',
+            x: 1,
+            y: 6,
+            h: 0.5,
+            n: 4
         })
         setIsRun(false);
         setLogs([]);
