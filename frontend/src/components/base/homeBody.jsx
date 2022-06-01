@@ -89,7 +89,7 @@ const HomeBody = () => {
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="#">Euler</a></li>
-                                <li><a href="#">Heun</a></li>
+                                <li><a href="/functions/heun">Heun</a></li>
                             </ul>
                         </div>
                     </div>

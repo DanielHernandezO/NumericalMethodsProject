@@ -1,5 +1,6 @@
 import susRegre from "./SusRegre";
 import sustProg from "./SusProgre";
+const convertToInmutable = require('../../convertToInmutable')
 const mathjs = require("mathjs")
 function crout(A,B) {
     const stages = [];
@@ -19,7 +20,7 @@ function crout(A,B) {
     }
     stages.push({
         title: `Stage ${0}`,
-        matrix: [...A]
+        matrix: convertToInmutable(A)
     })
     let message = {};
     let logs = [];
@@ -45,11 +46,11 @@ function crout(A,B) {
         }
         stages.push({
             title: `L - stage ${j+1}`,
-            matrix: [...lower]
+            matrix: convertToInmutable(lower)
         })
         stages.push({
             title: `U - stage ${j+1}`,
-            matrix: [...upper]
+            matrix: convertToInmutable(upper)
         })
     }
     
