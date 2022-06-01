@@ -1,14 +1,16 @@
 import React, { useState } from "react"
-import CroutBodyDescription from "./CroutBodyDescription"
-import CroutBodyExecution from "./CroutBodyExecution"
-import CroutBodyResult from "./CroutBodyResult"
+import CholeskyBodyDescription from "./CholeskyBodyDescription"
+import CholeskyBodyExecution from "./CholeskyBodyExecution"
+import CholeskyBodyResult from "./CholeskyBodyResult"
 import validateMatrix from "../../../utilities/validateMatrix"
 import validateVector from "../../../utilities/validateVector"
-import crout from "../../../utilities/methods/functions/Crout"
+import Cholesky from "../../../utilities/methods/functions/Cholesky"
 import transformMatrix from "../../../utilities/transformMatrix"
 import Graph from "../../graph"
 import { isNull } from "mathjs"
-const SimpleLuBody = () => {
+
+const mathjs = require("mathjs")
+const Doolittlebody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -36,7 +38,6 @@ const SimpleLuBody = () => {
         const { message, n } = validateMatrix(A);
         const logsAux = [];
         let flag = true;
-
         if (!(message === 'Success')) {
             logsAux.push({ type: 'Error', text: message })
             flag = false;
@@ -59,15 +60,28 @@ const SimpleLuBody = () => {
         if(validateDataResult){
             const matrixTransformered = transformMatrix(dataForm.A);
             const vectorTransformered = transformMatrix(dataForm.b);
-            const {x, stages,logs} = crout(matrixTransformered,vectorTransformered);
-
-            //Falta setear logs
-            setLogs(logs);
-            if(stages.length >0 && !isNull(x)){
-                setMatrixList(stages);
-                setVectorResult(x);
-                setIsRun(true);
+            const eigs = mathjs.eigs(matrixTransformered);
+            var flag= true;
+            for(var i=0;i<eigs.values.length;i++){
+                console.log(eigs.values[i])
+                if(eigs.values[i]<0){
+                    flag = false;
+                }
             }
+            if(flag){
+                const {x, stages,logs} = Cholesky(matrixTransformered,vectorTransformered);
+                setLogs(logs);
+                if(stages.length >0 && !isNull(x)){
+                    setMatrixList(stages);
+                    setVectorResult(x);
+                    setIsRun(true);
+                }
+            }else{
+                let message = { type: 'Error', text: "The matrix is not positive definite"}
+                let logs = [message];
+                setLogs(logs);
+            }
+            
         }else{
             setIsRun(false);
         }
@@ -84,15 +98,17 @@ const SimpleLuBody = () => {
         setLogs([]);
     }
 
+
+
     return (
         <div className="container">
-            <h1 className="text-center">Crout</h1>
-            <CroutBodyDescription />
-            <CroutBodyExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
-            {isRun?<CroutBodyResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
+            <h1 className="text-center">Cholesky</h1>
+            <CholeskyBodyDescription />
+            <CholeskyBodyExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
+            {isRun?<CholeskyBodyResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
             <Graph />
         </div>
     )
 }
 
-export default SimpleLuBody;
+export default Doolittlebody;

@@ -15,6 +15,8 @@ import Aitken from "../pages/functions/Aitken"
 import Lagrange from "../pages/functions/Lagrange"
 import Difdivididas from "../pages/functions/Difdivididas"
 import Steffensen from "../pages/functions/Steffensen"
+import Falseposition from "../pages/functions/Falseposition"
+import Secant from "../pages/functions/Secant"
 import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
@@ -27,6 +29,7 @@ import Doolittle from "../pages/matrices/Doolittle"
 import GaussianElimination from "../pages/matrices/GaussianElimination"
 import PartialPivoting from "../pages/matrices/PartialPivoting"
 
+import Cholesky from "../pages/matrices/Cholesky"
 const App = () => {
     return (
         <div>
@@ -42,6 +45,8 @@ const App = () => {
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
+                    <Route path="/functions/falseposition" element={<Falseposition/>}/>
+                    <Route path="/functions/secant" element={<Secant/>}/>
                     <Route path="/matrices/simplelu" element={<SimpleLu/>}/>
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>
@@ -54,6 +59,7 @@ const App = () => {
                     <Route path="/functions/doolittle" element={<Doolittle/>}/>
                     <Route path="/matrices/gaussian_elimination" element={<GaussianElimination/>} />
                     <Route path="/matrices/partial_pivoting" element={<PartialPivoting/>}></Route>
+                    <Route path="/functions/cholesky" element={<Cholesky/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>
