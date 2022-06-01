@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import NewtonBodyDescription from "./NewtonBodyDescription";
 import NewtonBodyExecution from "./NewtonBodyExecution"
 import NewtonBodyResult from "./NewtonBodyResult"
@@ -35,25 +35,25 @@ const BisectionSearchBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate left
-        if (isNaN(x0)) {
+        if (x0 === '' || isNaN(x0)) {
             logsAux.push({ type: 'Error', text: 'left must be a valid number' })
             flag = false;
         }
 
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(fx, x0)) {
+        if (fx === '' || (!isNaN(x0) && !validateFunction(fx, x0))) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
 
          //Validate fder
-         if (!isNaN(x0) && !validateFunction(fder, x0)) {
+         if (fder === '' || (!isNaN(x0) && !validateFunction(fder, x0))) {
             logsAux.push({ type: 'Error', text: 'fder must be a valid function' });
             flag = false;
         }
 
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -67,7 +67,7 @@ const BisectionSearchBody = () => {
             flag = false;
         }
         //Validate tolerance
-        if (isNaN(tolerance)) {
+        if (tolerance === '' || isNaN(tolerance)) {
             logsAux.push({ type: 'Error', text: 'tolerance must be a valid number' });
             flag = false;
         }
@@ -96,6 +96,12 @@ const BisectionSearchBody = () => {
 
     }
 
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_newton').scrollIntoView()
+        }
+    },[isRun])
+    
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
