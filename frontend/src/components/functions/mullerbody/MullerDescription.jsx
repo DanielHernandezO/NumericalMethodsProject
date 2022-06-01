@@ -16,10 +16,10 @@ const MullerDescription = () => {
                         <b><Latex>{'$x1:$'}</Latex></b> Second approximation
                     </li>
                     <li>
-                        <b>niter: </b> Maximum number of iterations
+                        <b><Latex>{'$niter:$'}</Latex></b> Maximum number of iterations
                     </li>
                     <li>
-                        <b>tol: </b> Maximum permissible error
+                        <b><Latex>{'$tol:$'}</Latex>: </b> Maximum permissible error
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
