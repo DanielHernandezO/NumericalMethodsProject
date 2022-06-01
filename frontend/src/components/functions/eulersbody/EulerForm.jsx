@@ -5,6 +5,12 @@ const EulerForm = ({ run, clear, dataForm, handleChangeDataForm }) => {
             <div>
                 <div className="row mb-3">
                     <div className="col-sm-10">
+                        <label>f'</label>
+                        <input type="text" className="form-control form-control-sm" id="f" placeholder="f" value={dataForm.f} onChange={handleChangeDataForm} />
+                    </div>
+                </div>
+                <div className="row mb-3">
+                    <div className="col-sm-10">
                         <label>x</label>
                         <input type="number" className="form-control form-control-sm" id="x" placeholder="x" value={dataForm.x} onChange={handleChangeDataForm} />
                     </div>
