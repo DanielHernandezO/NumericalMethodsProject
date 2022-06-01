@@ -1,3 +1,5 @@
+const convertToInmutable = require('../../convertToInmutable')
+console.log(convertToInmutable)
 const mathjs = require('mathjs')
 let stages = [];
 const logs = [];
@@ -25,16 +27,16 @@ const fact_lu = (A) => {
 
         stages.push({
             title: `Stage ${i + 1}`,
-            matrix: [...A]
+            matrix: convertToInmutable(A)
         })
 
         stages.push({
             title: `L - stage ${i + 1}`,
-            matrix: [...L]
+            matrix: convertToInmutable(L)
         })
         stages.push({
             title: `U - stage ${i + 1}`,
-            matrix: [...U]
+            matrix: convertToInmutable(U)
         })
 
     }
@@ -105,7 +107,7 @@ module.exports = (A, b) => {
     stages = [];
     stages.push({
         title: 'Stage 0',
-        matrix: [...A]
+        matrix: convertToInmutable(A)
     })
     const resultFactLu = fact_lu(A);
     if (resultFactLu.error) return { logs, stages: [] };
