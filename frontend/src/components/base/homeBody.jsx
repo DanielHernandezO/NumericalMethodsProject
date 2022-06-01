@@ -35,7 +35,7 @@ const HomeBody = () => {
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
-                                <li><a href="#">Partial pivoting</a></li>
+                                <li><a href="/matrices/partial_pivoting">Partial pivoting</a></li>
                                 <li><a href="#">Total pivoting</a></li>
                                 <li><a href="#">Tridiagonal Gaussian elimination</a></li>
                                 <li><a href="/matrices/simplelu">Simple LU</a></li>
@@ -43,7 +43,7 @@ const HomeBody = () => {
                                 <li><a href="/functions/crout">Crout</a></li>
                                 <li><a href="/functions/doolittle">Doolittle</a></li>
                                 <li><a href="/functions/cholesky">Cholesky</a></li>
-                                <li><a href="#">Jacobi</a></li>
+                                <li><a href="/matrices/jacobi">Jacobi</a></li>
                                 <li><a href="#">Gauss-Seidel</a></li>
                                 <li><a href="#">SOR</a></li>
                             </ul>

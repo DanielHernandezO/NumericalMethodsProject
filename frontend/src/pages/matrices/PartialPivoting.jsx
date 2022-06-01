@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../../components/base/header"
 import Footer from "../../components/base/footer"
-import GaussianEliminationBody from "../../components/matrices/gaussianEliminationBody";
-const GaussianElimination = () => {
+import PartialPivotingBody from "../../components/matrices/partialPivotingBody";
+const PartialPivoting = () => {
     return (
         <div className="container-fluid">
             <Header/>
-            <GaussianEliminationBody/>
+            <PartialPivotingBody/>
             <Footer/>
         </div>
     )
 }
-export default GaussianElimination;
+export default PartialPivoting;

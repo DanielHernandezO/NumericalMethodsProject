@@ -24,15 +24,15 @@ function triu(A){
 }
 
 module.exports = (A,b,x,iter,tol) =>{
+    const logs = [];
 	const iteration = [];
-	const logs = [];
 	let determinante = mathjs.det(A);
 	if(determinante === 0){
-		logs.push({
+        logs.push({
             type: 'Error',
-            text: 'the determinant is equal to zero'
+            text: 'The determinant is zero, the problem has no unique solution.'
         })
-		return {error : true};
+		return {logs, iterations: []};
 	}
 	let n = b.length;
 	let d = mathjs.diag(mathjs.diag(A));
@@ -43,23 +43,32 @@ module.exports = (A,b,x,iter,tol) =>{
 	let T = mathjs.multiply(mathjs.inv(d),mathjs.add(l,u));
 	let re = mathjs.max(mathjs.abs(mathjs.eigs(T).values));
 	if(re > 1){
-		logs.push({
+        logs.push({
             type: 'Error',
-            text: 'spectral radius greater than 1, the methods doesn´t converge'
+            text: 'Spectral radius greater than 1: the method does not converge.'
         })
-		return {error : true};
+		return {logs, iterations: []};
 	}
 	let C = mathjs.multiply(mathjs.inv(d),b);
 	let i = 0;
 	let err = tol + 1; 
-	let z = [i,x[0],x[1],x[2],err];
+    iteration.push([i,x[0],x[1],x[2]]);
+
 	while(err > tol && i<iter){
-		xi = mathjs.add(mathjs.multiply(T,x),C);
+		let xi = mathjs.add(mathjs.multiply(T,x),C);
 		err = mathjs.norm(mathjs.subtract(xi,x));
 		x = xi;
 		i=i+1;
 		iteration.push([i,x[0],x[1],x[2],err]);
 	}
+
+	if(i>=iter){
+		logs.push({ type: 'Error', text: 'The method fails with the maximum number of iterations given' })
+	}
 	
-	return {T,C,re,iteration};
+	
+	return {T,C,re,iteration, logs, x};
 }
+
+
+
