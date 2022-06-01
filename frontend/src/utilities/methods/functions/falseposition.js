@@ -7,14 +7,14 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
     let fxs = mathjs.evaluate(f, { x: xs });
     if (fxi === 0) {
         logs.push({
-            type : 'Sucess',
+            type : 'Success',
             text : `${xi} is a root`
         })
         //console.log('Solution')
         //console.log('xi is a root')
     } else if (fxs === 0) {
         logs.push({
-            type : 'Sucess',
+            type : 'Success',
             text : `${xs} is a root`
         })
         //console.log('Solution')
@@ -47,14 +47,14 @@ module.exports = (f, xi, xs, tolerance, nMax) => {
 
         if (fxm === 0) {
             logs.push({
-                type : 'Sucess',
+                type : 'Success',
                 text : `${xm} is a root`
             })
             //console.log('Solution')
             //console.log(`${xm} is a root`)
         } else if (error <= tolerance) {
             logs.push({
-                type : 'Sucess',
+                type : 'Success',
                 text : `${xm} is am approximation to a root with a tolerance ${tolerance}`
             })
             //console.log('Solution')
