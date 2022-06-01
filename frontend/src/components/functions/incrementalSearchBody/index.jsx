@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import IncrementalSearchBodyDescription from "./incrementalSearchBodyDescription";
 import IncrementalSearchBodyExecution from "./IncrementalSearchBodyExecution";
 import incrementalSearchMethod from "../../../utilities/methods/functions/IncrementalSearch";
@@ -89,6 +89,12 @@ const IncrementalSearchBody = () => {
         }
 
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_incremental_search').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {
