@@ -1,5 +1,5 @@
 import React from "react";
-
+import Latex from "react-latex";
 const falsepositionBodyDescription = () => {
     return (
         <div className="card mb-3 border-success">
@@ -7,28 +7,27 @@ const falsepositionBodyDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b>f(x):</b> Function to which we want to find the root. Ej: 'x*e^x-e^x+1'
+                        <b><Latex>{"$f(x)$"}</Latex>:</b> Function to which we want to find the root. Ej: 'log(sin(x)^2 + 1) - (1/2)'
                     </li>
                     <li>
-                        <b>x0: </b> Initial root approximation
+                        <b><Latex>{"$x_0$"}</Latex>:</b> first root approximation
+                    </li><li>
+                        <b><Latex>{"$x_1$"}</Latex>:</b> Second root approximation
                     </li>
                     <li>
-                        <b>x1: </b> Initial root approximation
+                        <b><Latex>{"$niter$"}</Latex>:</b> Maximum number of iterations
                     </li>
                     <li>
-                        <b>niter: </b> Maximum number of iterations
-                    </li>
-                    <li>
-                        <b>tol: </b> Maximum permissible error
+                        <b><Latex>{"$tol$"}</Latex>:</b> Maximum permissible error
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
                 <ol>
                     <li>
-                        <b>f(x)</b> must be continuous.
+                    <b><Latex>{"$f(x)$"}</Latex></b> must be continuous.
                     </li>
                     <li>
-                        <b>(f'(x0)^2) - f(x0)*f''(x0)</b> must be different from 0.
+                        <b><Latex>{"$f(x0)$"}</Latex></b>*<b><Latex>{"$f(x1)$"}</Latex></b> &lt; 0.
                     </li>
                 </ol>
                 <div className="card-footer">
