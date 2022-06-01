@@ -41,7 +41,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="#">Pivot LU</a></li>
                                 <li><a className="dropdown-item" href="/functions/crout">Crout</a></li>
                                 <li><a className="dropdown-item" href="/functions/doolittle">Doolittle</a></li>
-                                <li><a className="dropdown-item" href="#">Cholesky</a></li>
+                                <li><a className="dropdown-item" href="/functions/cholesky">Cholesky</a></li>
                                 <li><a className="dropdown-item" href="#">Jacobi</a></li>
                                 <li><a className="dropdown-item" href="#">Gauss-Seidel</a></li>
                                 <li><a className="dropdown-item" href="#">SOR</a></li>

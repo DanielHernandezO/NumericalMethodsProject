@@ -21,6 +21,7 @@ import Trisection from "../pages/functions/Trisection"
 import Fixedpoint from "../pages/functions/Fixedpoint"
 import Crout from "../pages/matrices/Crout"
 import Doolittle from "../pages/matrices/Doolittle"
+import Cholesky from "../pages/matrices/Cholesky"
 const App = () => {
     return (
         <div>
@@ -43,6 +44,7 @@ const App = () => {
                     <Route path="/functions/fixedpoint" element={<Fixedpoint/>}/>
                     <Route path="/functions/crout" element={<Crout/>}/>
                     <Route path="/functions/doolittle" element={<Doolittle/>}/>
+                    <Route path="/functions/cholesky" element={<Cholesky/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

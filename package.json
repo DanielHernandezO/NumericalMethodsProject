@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "complex": "^3.0.1",
     "mathjs": "^10.4.2",
     "react-latex": "^2.0.0"
   }

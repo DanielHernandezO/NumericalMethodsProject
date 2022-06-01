@@ -42,7 +42,7 @@ const HomeBody = () => {
                                 <li><a href="#">Pivot LU</a></li>
                                 <li><a href="/functions/crout">Crout</a></li>
                                 <li><a href="/functions/doolittle">Doolittle</a></li>
-                                <li><a href="#">Cholesky</a></li>
+                                <li><a href="/functions/cholesky">Cholesky</a></li>
                                 <li><a href="#">Jacobi</a></li>
                                 <li><a href="#">Gauss-Seidel</a></li>
                                 <li><a href="#">SOR</a></li>
