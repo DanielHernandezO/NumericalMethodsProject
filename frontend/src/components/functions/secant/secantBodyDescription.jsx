@@ -7,7 +7,7 @@ const MultipleRootsDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b><Latex>{"$f(x)$"}</Latex>:</b> Function to which we want to find the root. Ej: 'x*e^x-e^x+1'
+                        <b><Latex>{"$f(x)$"}</Latex>:</b> Function to which we want to find the root. Ej: 'log(sin(x)^2 + 1) - (1/2)'
                     </li>
                     <li>
                         <b><Latex>{"$x_0$"}</Latex>:</b> first root approximation
@@ -25,9 +25,6 @@ const MultipleRootsDescription = () => {
                 <ol>
                     <li>
                         <b><Latex>{"$f(x)$"}</Latex></b> must be continuous.
-                    </li>
-                    <li>
-                        <b><Latex>{"$x_0 \\not = x_1 $"}</Latex></b>
                     </li>
                 </ol>
                 <div className="card-footer">
