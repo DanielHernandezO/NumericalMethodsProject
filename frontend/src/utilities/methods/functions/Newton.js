@@ -23,8 +23,9 @@ function newton(f,fder,tolerance,x0,niter) {
     matrix[counter][2]=parseFloat(fx).toPrecision(10);
     matrix[counter][3]=parseFloat(dfx).toPrecision(10);
     matrix[counter][4]="";
+    var x1 =0
     while(error>tolerance && fx!=0 && dfx!=0 && counter<niter){
-        var x1= x0-(fx/dfx);
+        x1= x0-(fx/dfx);
         fx=mathjs.evaluate(f,{x:x1});
         dfx=mathjs.evaluate(fder,{x:x1});
         error = Math.abs(x1-x0);

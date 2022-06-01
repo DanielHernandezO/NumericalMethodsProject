@@ -12,8 +12,8 @@ const BisectionSearchBody = () => {
         fx: 'x^2-1',
         fder: 'x',
         x0: 0,
-        tolerance: 0,
-        niter: 0
+        tolerance: 0.00001,
+        niter: 100
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -108,8 +108,8 @@ const BisectionSearchBody = () => {
             fx: 'x^2-1',
             fder: 'x',
             x0: 0,
-            tolerance: 0,
-            niter: 0
+            tolerance: 0.00001,
+            niter: 100
         })
         setIsRun(false);
         setLogs([]);
