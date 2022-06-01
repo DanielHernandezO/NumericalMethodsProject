@@ -36,7 +36,7 @@ const HomeBody = () => {
                             <ul>
                                 <li><a href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a href="/matrices/partial_pivoting">Partial pivoting</a></li>
-                                <li><a href="#">Total pivoting</a></li>
+                                <li><a href="/matrices/total_pivoting">Total pivoting</a></li>
                                 <li><a href="#">Tridiagonal Gaussian elimination</a></li>
                                 <li><a href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a href="/matrices/privotlu">Pivot LU</a></li>

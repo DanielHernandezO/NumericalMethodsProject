@@ -1,6 +1,6 @@
 import React from "react";
 import Latex from "react-latex"
-const simpleLuBodyDescription = () => {
+const TotalPivotingBodyDescription = () => {
     return (
         <div className="card mb-3 border-success">
             <div className="card-body">
@@ -19,7 +19,7 @@ const simpleLuBodyDescription = () => {
                         <Latex>{'$det(A) \\not = 0$'}</Latex> 
                     </li>
                     <li>
-                        At least one of the elements in each column of <Latex>{'$A$'}</Latex> should not be too close to 0.
+                        All other elements of <Latex>{'$A$'}</Latex> should not be very close to 0. 
                     </li>  
                 </ol>
                 <div className="card-footer">
@@ -30,4 +30,4 @@ const simpleLuBodyDescription = () => {
     )
 }
 
-export default simpleLuBodyDescription;
+export default TotalPivotingBodyDescription;

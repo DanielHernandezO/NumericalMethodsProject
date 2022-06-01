@@ -35,7 +35,7 @@ const Header = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a className="dropdown-item" href="/matrices/partial_pivoting">Partial pivoting</a></li>
-                                <li><a className="dropdown-item" href="#">Total pivoting</a></li>
+                                <li><a className="dropdown-item" href="/matrices/total_pivoting">Total pivoting</a></li>
                                 <li><a className="dropdown-item" href="#">Tridiagonal Gaussian elimination</a></li>
                                 <li><a className="dropdown-item" href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a className="dropdown-item" href="/matrices/privotlu">Pivot LU</a></li>

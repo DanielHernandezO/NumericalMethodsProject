@@ -1,13 +1,13 @@
 import React, { useState } from "react"
-import PartialPivotingBodyDescription from "./partialPivotingBodyDescription"
-import PartialPivotingExecution from "./partialPivotingExecution"
-import PartialPivotingResult from "./partialPivotingResult"
+import TotalPivotingBodyDescription from "./totalPivotingBodyDescription"
+import TotalPivotingExecution from "./totalPivotingExecution"
+import TotalPivotingResult from "./totalPivotingResult"
 import validateMatrix from "../../../utilities/validateMatrix"
 import validateVector from "../../../utilities/validateVector"
-import partialPivoting from "../../../utilities/methods/functions/partialPivoting"
+import totalPivoting from "../../../utilities/methods/functions/totalPivoting"
 import transformMatrix from "../../../utilities/transformMatrix"
 import Graph from "../../graph"
-const PartialPivotingBody = () => {
+const TotalPivotingBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -58,7 +58,7 @@ const PartialPivotingBody = () => {
         if(validateDataResult){
             const matrixTransformered = transformMatrix(dataForm.A);
             const vectorTransformered = transformMatrix(dataForm.b);
-            const {x, stages, logs} = partialPivoting(matrixTransformered,vectorTransformered,vectorTransformered.length);
+            const {x, stages, logs} = totalPivoting(matrixTransformered,vectorTransformered,vectorTransformered.length);
             if(stages.length >0 ){
                 setMatrixList(stages);
                 setVectorResult(x);
@@ -88,13 +88,13 @@ const PartialPivotingBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Partial Pivoting</h1>
-            <PartialPivotingBodyDescription />
-            <PartialPivotingExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
-            {isRun?<PartialPivotingResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
+            <h1 className="text-center">Total Pivoting</h1>
+            <TotalPivotingBodyDescription />
+            <TotalPivotingExecution run={run} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} clear={clear}/>
+            {isRun?<TotalPivotingResult matrixList={matrixList} vectorResult={vectorResult}/>:null}
             <Graph />
         </div>
     )
 }
 
-export default PartialPivotingBody;
+export default TotalPivotingBody;
