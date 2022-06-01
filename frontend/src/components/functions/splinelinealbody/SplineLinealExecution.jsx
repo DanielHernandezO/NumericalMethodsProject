@@ -12,6 +12,7 @@ const SplineLinealExecution = ({run, clear, dataForm, handleChangeDataForm, logs
                     <SplineLinealForm run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm}/>
                 </div>
                 <div className="col">
+                <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModalXl" style={{float:"right"}}>Graph</button>
                     <Logs title='Logs' logs={logs}/>
                 </div>
             </div>

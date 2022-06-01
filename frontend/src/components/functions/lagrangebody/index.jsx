@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import LagrangeDescription from "./LagrangeDescription";
 import LagrangeExecution from "./LagrangeExecution";
 import lagrangemethod from "../../../utilities/methods/functions/lagrange";
-import LagrangeResult from "./LagrangeResult"
+import LagrangeResult from "./LagrangeResult";
+import Graph from "../../graph";
 const LagrangeBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
@@ -110,7 +111,7 @@ const LagrangeBody = () => {
                 }
                 //Do something
             }
-            
+            console.log(newarray);
             setExtraInfo({Polynom: polynom});
             setRows(newarray);
             setLogs(logs); 
@@ -144,6 +145,7 @@ const LagrangeBody = () => {
             <LagrangeDescription />
             <LagrangeExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs} />
             {isRun ? <LagrangeResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}
+            <Graph/>
         </div>
 
     )

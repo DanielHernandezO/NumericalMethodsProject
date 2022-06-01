@@ -87,7 +87,7 @@ const MultipleRootsBody = () => {
         if (validateDataResult) {
             const { iterations, xi, logs } = multipleRoots(fx, f1x, f2x, parseFloat(x0), parseFloat(tol), parseFloat(niter))
             setLogs(logs);
-            console.log(logs);
+            console.log(iterations);
             if (iterations.length > 0) {
                 setRows(iterations);
                 setIsRun(true);

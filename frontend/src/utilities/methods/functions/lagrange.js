@@ -47,5 +47,6 @@ module.exports = (x,y) => {
         return{count,logs}
     }
     logs.push({ type: 'Success', text: "Correct Input"})
+    console.log(newarray);
     return {newarray,logs};
 }

@@ -3,6 +3,7 @@ import IncrementalSearchBodyDescription from "./incrementalSearchBodyDescription
 import IncrementalSearchBodyExecution from "./IncrementalSearchBodyExecution";
 import incrementalSearchMethod from "../../../utilities/methods/functions/IncrementalSearch";
 import IncrementalSearchBodyResult from "./incrementalSearchBodyResult"
+import validateFunction from "../../../utilities/validateFunction";
 import Graph from "../../graph"
 const IncrementalSearchBody = () => {
 
@@ -32,23 +33,59 @@ const IncrementalSearchBody = () => {
 
     //Método para validar los datos que entran desde el formulario
     const validateData = ({ fx, x0, delta, niter }) => {
-        //Validate input
+        let flag = true;
+        const logsAux = [];
+        //Validate x0
+        if (isNaN(x0)) {
+            logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
+            flag = false;
+        }
+        //Validate fx
+        if (!isNaN(x0) && !validateFunction(fx, x0)) {
+            logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
+            flag = false;
+        }
+        //Validate delta
+        if (isNaN(delta)) {
+            logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
+            flag = false;
+        }
 
-        return true;
+        //Validate niter
+        if (isNaN(niter)) {
+            logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
+            flag = false;
+        }
+        if (!isNaN(niter) && parseFloat(niter) <= 0) {
+            logsAux.push({ type: 'Error', text: "niter must be greater than 0" });
+            flag = false;
+        }
+        if (!isNaN(niter) && parseFloat(niter) > 0 && (parseFloat(niter) - Math.trunc(niter)) > 0) {
+            logsAux.push({ type: 'Error', text: "niter must be integer" });
+            flag = false;
+        }
+        setLogs(logsAux);
+        return flag;
     }
 
     //Función para correr el método
     const run = () => {
         const validateDataResult = validateData({ ...dataForm });
         if (validateDataResult) {
-            const { matrix, x1, logs } = incrementalSearchMethod(dataForm.fx, parseFloat(dataForm.x0), parseFloat(dataForm.delta), parseFloat(dataForm.niter))
-            setColumns(matrix[0]);
-            setRows(matrix.slice(1, matrix.length));
-            setExtraInfo({Raiz: x1});
-            setLogs(logs);
-            setIsRun(true);
+            const { matrix, counter, logs } = incrementalSearchMethod(dataForm.fx, parseFloat(dataForm.x0), parseFloat(dataForm.delta), parseFloat(dataForm.niter))
+            if(counter>0){
+                setColumns(matrix[0]);
+                setRows(matrix.slice(1, counter+1));
+                setLogs(logs);
+                setIsRun(true);
+            }else{
+                setLogs(logs);
+                setColumns([]);
+                setRows([]);
+                setIsRun(true);
+            }
         } else {
-            setLogs([...logs, { type: 'Error', text: 'The data input is invalid' }])
+            setIsRun(false);
         }
 
     }
