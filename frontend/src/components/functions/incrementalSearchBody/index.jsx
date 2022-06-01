@@ -36,12 +36,12 @@ const IncrementalSearchBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate x0
-        if (isNaN(x0)) {
+        if (x0 === '' || isNaN(x0)) {
             logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
             flag = false;
         }
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(fx, x0)) {
+        if (fx === '' || (!isNaN(x0) && !validateFunction(fx, x0))) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
@@ -52,7 +52,7 @@ const IncrementalSearchBody = () => {
         }
 
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -93,10 +93,10 @@ const IncrementalSearchBody = () => {
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
-            fx: '',
-            x0: 0,
-            delta: 0,
-            niter: 10e-7
+            fx: 'x-1',
+            x0: -2,
+            delta: 5,
+            niter: 1
         })
         setIsRun(false);
         setLogs([]);
