@@ -16,7 +16,7 @@ const SteffensenBodyDescription = () => {
                         <b><Latex>{'$b$'}</Latex></b> Upper limit of the integration interval. Ej: 5
                     </li>
                     <li>
-                        <b><Latex>{'$a$'}</Latex></b> Number of divisions of the function. Ej: 12
+                        <b><Latex>{'$n$'}</Latex></b> Number of divisions of the function. Ej: 12
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
@@ -38,7 +38,7 @@ const SteffensenBodyDescription = () => {
                     </li>
                     <li>
                         <Latex>
-                            {'$n$ must be par'}
+                            {'$n$ must be a factor of 3'}
                         </Latex>
                     </li>
                 </ol>
