@@ -70,6 +70,12 @@ const SecantBody = () => {
             logsAux.push({ type: 'Error', text: 'tol must be a valid number' });
             flag = false;
         }
+
+        //Validate x0 !== x1
+        if(x0 == x1){
+            logsAux.push({ type: 'Error', text: 'x0 must be different from x1' });
+            flag = false;
+        }
         setLogs(logsAux);
         return flag;
     }

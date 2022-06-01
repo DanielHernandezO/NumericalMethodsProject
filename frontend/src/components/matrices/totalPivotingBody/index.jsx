@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState , useEffect} from "react"
 import TotalPivotingBodyDescription from "./totalPivotingBodyDescription"
 import TotalPivotingExecution from "./totalPivotingExecution"
 import TotalPivotingResult from "./totalPivotingResult"
@@ -63,7 +63,10 @@ const TotalPivotingBody = () => {
                 setMatrixList(stages);
                 setVectorResult(x);
                 setIsRun(true);
-                setLogs(logs?logs:[]);
+                setLogs(logs.length>0?logs:[{
+                    type: 'Success',
+                    text: 'Successful proccess'
+                }]);
             }else{
                 setIsRun(false);
                 setLogs(logs?logs:[]);
@@ -73,6 +76,11 @@ const TotalPivotingBody = () => {
         }
     }
 
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_total_pivoting').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

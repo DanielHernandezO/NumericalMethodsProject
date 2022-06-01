@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState , useEffect} from "react"
 import CroutBodyDescription from "./CroutBodyDescription"
 import CroutBodyExecution from "./CroutBodyExecution"
 import CroutBodyResult from "./CroutBodyResult"
@@ -72,6 +72,12 @@ const SimpleLuBody = () => {
             setIsRun(false);
         }
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_crout').scrollIntoView()
+        }
+    },[isRun])
 
 
     //Método para reiniciar los valores
