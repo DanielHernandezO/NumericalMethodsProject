@@ -15,6 +15,8 @@ import Aitken from "../pages/functions/Aitken"
 import Lagrange from "../pages/functions/Lagrange"
 import Difdivididas from "../pages/functions/Difdivididas"
 import Steffensen from "../pages/functions/Steffensen"
+import Falseposition from "../pages/functions/Falseposition"
+import Secant from "../pages/functions/Secant"
 import SimpleLu from "../pages/matrices/SimpleLu"
 import Newton from "../pages/functions/Newton"
 import Trisection from "../pages/functions/Trisection"
@@ -41,6 +43,8 @@ const App = () => {
                     <Route path="/functions/aitken" element={<Aitken/>}/>
                     <Route path="/functions/lagrange" element={<Lagrange/>}/>
                     <Route path="/functions/steffensen" element={<Steffensen/>}/>
+                    <Route path="/functions/falseposition" element={<Falseposition/>}/>
+                    <Route path="/functions/secant" element={<Secant/>}/>
                     <Route path="/matrices/simplelu" element={<SimpleLu/>}/>
                     <Route path="/functions/difdivididas" element={<Difdivididas/>}/>
                     <Route path="/functions/newton" element={<Newton/>}/>

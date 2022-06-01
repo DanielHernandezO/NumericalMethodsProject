@@ -13,11 +13,11 @@ const HomeBody = () => {
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="/functions/incremental_search">Incremental Searches</a></li>
+                                <li><a href="/functions/falseposition">False position</a></li>
+                                <li><a href="/functions/secant">Secant</a></li>
                                 <li><a href="/functions/bisection">bisection</a></li>
-                                <li><a href="#">False rule</a></li>
                                 <li><a href="/functions/fixedpoint">Fixed point</a></li>
                                 <li><a href="/functions/Newton">Newton</a></li>
-                                <li><a href="#">Secant</a></li>
                                 <li><a href="/functions/multiple_roots">Multiple roots</a></li>
                                 <li><a href="/functions/steffensen">Steffensen</a></li>
                                 <li><a href="/functions/aitken">Aitken</a></li>
