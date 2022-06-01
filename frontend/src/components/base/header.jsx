@@ -68,7 +68,7 @@ const Header = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/integration/compound_trapeze">Compound trapeze</a></li>
-                                <li><a className="dropdown-item" href="#">Simpson 1/3 compound</a></li>
+                                <li><a className="dropdown-item" href="/integration/simpson">Simpson 1/3 compound</a></li>
                                 <li><a className="dropdown-item" href="#">Simpson 3/8 simple</a></li>
                             </ul>
                         </li>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CompoundTrapezeBodyDescription from "./compoundTrapezeBodyDescription";
-import CompoundTrapezeExecution from "./compoundTrapezeBodyExecution";
-import CompoundTrapezeBodyResult from "./compoundTrapezeBodyResult";
-import compoundTrapeze from "../../../utilities/methods/functions/compoundTrapeze"
+import SimpsonBodyDescription from "./simpsonBodyDescription";
+import SimpsonBodyExecution from "./simpsonBodyExecution";
+import SimpsonBodyResult from "./simpsonBodyResult";
+import simpson from "../../../utilities/methods/functions/simpson"
 import validateFunction from "../../../utilities/validateFunction"
 import Graph from "../../graph";
 const CompoundTrapezeBody = () => {
@@ -65,8 +65,8 @@ const CompoundTrapezeBody = () => {
             flag = false;
         }
 
-        if (!isNaN(n) && parseFloat(n) > 0 && (parseFloat(n) - Math.trunc(n)) > 0) {
-            logsAux.push({ type: 'Error', text: "niter must be integer" });
+        if (!isNaN(n) && parseFloat(n) > 0 && ((parseFloat(n) - Math.trunc(n)) === 0) && n%2 !== 0 ) {
+            logsAux.push({ type: 'Error', text: "n must be par" });
             flag = false;
         }
 
@@ -85,7 +85,7 @@ const CompoundTrapezeBody = () => {
         const validateDataResult = validateData({ ...dataForm });
         const { fx, a, b, n } = dataForm;
         if (validateDataResult) {
-            const { iterations, A } = compoundTrapeze(parseFloat(a), parseFloat(b),fx, parseFloat(n))
+            const { iterations, A, logs} = simpson(parseFloat(a), parseFloat(b),fx, parseFloat(n))
             
             setLogs([{
                 type: 'Success',
@@ -97,6 +97,7 @@ const CompoundTrapezeBody = () => {
                 setIsRun(true);
             }else{
                 setIsRun(false);
+                setLogs(logs);
             }
         } else {
             setIsRun(false);
@@ -123,10 +124,10 @@ const CompoundTrapezeBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">Compound Trapeze</h1>
-            <CompoundTrapezeBodyDescription />
-            <CompoundTrapezeExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={ handleChangeDataForm} logs={logs} />
-            {isRun?<CompoundTrapezeBodyResult columns={columns} rows={rows} extraInfo={extraInfo}/>:null }
+            <h1 className="text-center">Simpson 1/3</h1>
+            <SimpsonBodyDescription />
+            <SimpsonBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={ handleChangeDataForm} logs={logs} />
+            {isRun?<SimpsonBodyResult columns={columns} rows={rows} extraInfo={extraInfo}/>:null }
             <Graph/>
         </div>
     )
