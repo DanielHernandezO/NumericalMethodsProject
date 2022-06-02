@@ -36,7 +36,7 @@ const Header = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a className="dropdown-item" href="/matrices/partial_pivoting">Partial pivoting</a></li>
-                                <li><a className="dropdown-item" href="#">Total pivoting</a></li>
+                                <li><a className="dropdown-item" href="/matrices/total_pivoting">Total pivoting</a></li>
                                 <li><a className="dropdown-item" href="/matrices/tridiagonal">Tridiagonal</a></li>
                                 <li><a className="dropdown-item" href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a className="dropdown-item" href="/matrices/privotlu">Pivot LU</a></li>
@@ -54,7 +54,7 @@ const Header = () => {
                                     Interpolation
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">Vandermonde</a></li>
+                                <li><a className="dropdown-item" href="/interpolation/vandermorde">Vandermonde</a></li>
                                 <li><a className="dropdown-item" href="/functions/difdivididas">Newton( Divided differences)</a></li>
                                 <li><a className="dropdown-item" href="/functions/lagrange">Lagrange</a></li>
                                 <li><a className="dropdown-item" href="/functions/linealspline">Line plotters</a></li>
