@@ -1,6 +1,6 @@
 import susRegre from "./SusRegre";
 import sustProg from "./SusProgre";
-
+const convertToInmutable = require('../../convertToInmutable')
 function Doolittle(mat,B)
 {
     const stages = [];
@@ -16,7 +16,7 @@ function Doolittle(mat,B)
     }
     stages.push({
         title: `Stage ${0}`,
-        matrix: [...mat]
+        matrix: convertToInmutable(mat)
     })
     let message = {};
     let logs = []
@@ -44,11 +44,11 @@ function Doolittle(mat,B)
         }
         stages.push({
             title: `L - stage ${i+1}`,
-            matrix: [...lower]
+            matrix: convertToInmutable(lower)
         })
         stages.push({
             title: `U - stage ${i+1}`,
-            matrix: [...upper]
+            matrix: convertToInmutable(upper)
         })
     }
     for(var i=0;i<n;++i){

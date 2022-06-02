@@ -1,7 +1,7 @@
 import sustProgComplex from "./sustProgComplex";
 import susRegreComplex from "./susRegreComplex";
 const mathjs = require("mathjs")
-
+const convertToInmutable = require('../../convertToInmutable')
 function Cholesky(matrix,B)
 {
     
@@ -17,7 +17,7 @@ function Cholesky(matrix,B)
     }
     stages.push({
         title: `Stage ${0}`,
-        matrix: [...matrix]
+        matrix: convertToInmutable(matrix)
     })
     for (var j = 0; j <n; j++) {
         for(var i=0;i<j-1;i++){
@@ -35,12 +35,12 @@ function Cholesky(matrix,B)
         console.table(lower)
         stages.push({
             title: `L - stage ${i+1}`,
-            matrix: [...lower]
+            matrix: convertToInmutable(lower)
         })
         var upper = mathjs.transpose(lower)
         stages.push({
             title: `U - stage ${i+1}`,
-            matrix: [...upper]
+            matrix: convertToInmutable(upper)
         })
     }
     for(var i=0;i<n;++i){

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import FalsepositionBodyDescription from "./falsepositionBodyDescription";
 import FalsepositionBodyExecution from "./falsepositionBodyExecution";
 import FalsepositionBodyResult from "./falsepositionBodyResult";
@@ -10,10 +10,10 @@ const FalsepositionBody = () => {
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
         fx: 'log((sin(x)^2) + 1) - (1/2)',
-             x0: 0,
-            x1: 1,
-            tol: 10e-7,
-            niter : 100
+        x0: 0,
+        x1: 1,
+        tol: 10e-7,
+        niter : 100
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -37,23 +37,23 @@ const FalsepositionBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate x0
-        if (isNaN(x0)) {
+        if (x0 === '' || isNaN(x0)) {
             logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
             flag = false;
         }
         //Validate x1
-        if (isNaN(x1)) {
+        if (x1 === '' || isNaN(x1)) {
             logsAux.push({ type: 'Error', text: 'x1 must be a valid number' })
             flag = false;
         }
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(fx, x0) && !isNaN(x1) && !validateFunction(fx, x1)) {
+        if (fx === '' || (!isNaN(x0) && !validateFunction(fx, x0) && !isNaN(x1) && !validateFunction(fx, x1))) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
 
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' && isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -82,7 +82,6 @@ const FalsepositionBody = () => {
         if (validateDataResult) {
             const { iterations, logs } = falseposition(fx, parseFloat(x0),parseFloat(x1), parseFloat(tol), parseFloat(niter))
             setLogs(logs);
-            console.log(logs)
             if (iterations.length > 0) {
                 setRows(iterations);
                 setIsRun(true);
@@ -90,8 +89,13 @@ const FalsepositionBody = () => {
         } else {
             setIsRun(false);
         }
-
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_false_position').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {
@@ -113,7 +117,7 @@ const FalsepositionBody = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center">false position</h1>
+            <h1 className="text-center">False position</h1>
             <FalsepositionBodyDescription />
             <FalsepositionBodyExecution run={run} clear={clear} dataForm={dataForm} handleChangeDataForm={handleChangeDataForm} logs={logs}/>
             {isRun ? <FalsepositionBodyResult columns={columns} rows={rows} extraInfo={extraInfo} /> : null}

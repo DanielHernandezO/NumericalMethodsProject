@@ -11,7 +11,7 @@ const simpleBodyResult = ({matrixList,vectorResult}) => {
     
     */
     return (
-        <div className="card mb-3 border-success">
+        <div className="card mb-3 border-success" id="result_gauss_elimination">
             <div className="card-body">
                 <div className="d-flex justify-content-center">
                     <div className="text-center">

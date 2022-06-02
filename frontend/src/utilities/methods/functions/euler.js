@@ -1,15 +1,29 @@
 const mathjs = require('mathjs')
 
-module.exports = (f, xi, xf,yi,h) => {
+
+function euler(f, xi, yi, xf, h) {
+	xi = parseInt(xi);
+	yi = parseInt(yi);
+	xf = parseInt(xf);
+	
+
+	var newarray = [];
 	var n = (xf - xi)/h;
-	const iterations = [];
 	for (var i = 0; i < n; i++) {
 		var y1 = mathjs.evaluate(f, { x: xi , y: yi});
+		
 		var hy1 = h*y1;
-		iterations.push([xi,yi]);
+		newarray.push([xi,y1]);
+		console.log(newarray);
+		
 		yi = yi +hy1;
-    	xi = xi+h;
+    	
+		xi = xi+h;
+		
 	}
-	return {iterations};
+	
+	let logs = [{ type: 'Success', text: "Correct Input"}];
+	return {newarray,logs}
+	
 }
- 
+export default euler;

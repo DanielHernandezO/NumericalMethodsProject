@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import multipleRoots from "../../../utilities/methods/functions/multipleRoots";
 import MultipleRootsDescription from "./multipleRootsDescription";
 import MultipleRootsExecution from "./multipleRootsExecution";
@@ -13,7 +13,7 @@ const MultipleRootsBody = () => {
         f1x: 'e^x*x',
         f2x: 'e^x*x + e^x',
         x0: -2,
-        niter: 1,
+        niter: 100,
         tol: 10e-7
     })
 
@@ -38,27 +38,27 @@ const MultipleRootsBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate x0
-        if (isNaN(x0)) {
+        if (x0 === '' || isNaN(x0)) {
             logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
             flag = false;
         }
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(fx, x0)) {
+        if (fx === '' || (!isNaN(x0) && !validateFunction(fx, x0))) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
         //Validate f1x
-        if (!isNaN(x0) && !validateFunction(f1x, x0)) {
+        if (f1x === '' || (!isNaN(x0) && !validateFunction(f1x, x0))) {
             logsAux.push({ type: 'Error', text: "f'(x) must be a valid function" });
             flag = false;
         }
         //Validate f2x
-        if (!isNaN(x0) && !validateFunction(f2x, x0)) {
+        if (f2x === '' || (!isNaN(x0) && !validateFunction(f2x, x0))) {
             logsAux.push({ type: 'Error', text: "f''(x) must be a valid function" });
             flag = false;
         }
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -72,7 +72,7 @@ const MultipleRootsBody = () => {
             flag = false;
         }
         //Validate tolerance
-        if (isNaN(tol)) {
+        if (tol === '' || isNaN(tol)) {
             logsAux.push({ type: 'Error', text: 'tol must be a valid number' });
             flag = false;
         }
@@ -87,7 +87,6 @@ const MultipleRootsBody = () => {
         if (validateDataResult) {
             const { iterations, xi, logs } = multipleRoots(fx, f1x, f2x, parseFloat(x0), parseFloat(tol), parseFloat(niter))
             setLogs(logs);
-            console.log(iterations);
             if (iterations.length > 0) {
                 setRows(iterations);
                 setIsRun(true);
@@ -98,6 +97,12 @@ const MultipleRootsBody = () => {
 
     }
 
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_multiple').scrollIntoView()
+        }
+    },[isRun])
+
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
@@ -105,7 +110,7 @@ const MultipleRootsBody = () => {
             f1x: 'e^x*x',
             f2x: 'e^x*x + e^x',
             x0: -2,
-            niter: 1,
+            niter: 100,
             tol: 10e-7
         })
         setIsRun(false);

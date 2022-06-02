@@ -33,8 +33,12 @@ import Gaussseidel from "../pages/matrices/Gaussseidel"
 import Sor from "../pages/matrices/Sor"
 import Vandermorde from "../pages/functions/Vandermorde"
 import Tridiagonal from "../pages/matrices/Tridiagonal"
-
+import Heun from "../pages/differential/Heun"
 import Cholesky from "../pages/matrices/Cholesky"
+import TotalPivoting from "../pages/matrices/TotalPivoting"
+import CompoundTrapeze from "../pages/integration/CompoundTrapeze"
+import Simpson from "../pages/integration/Simpson.jsx"
+import SimpsonSimple from "../pages/integration/SimpsonSimple"
 const App = () => {
     return (
         <div>
@@ -70,6 +74,11 @@ const App = () => {
                     <Route path="/matrices/sor" element={<Sor/>}/>
                     <Route path="/interpolation/vandermorde" element={<Vandermorde/>}/>
                     <Route path="/matrices/tridiagonal" element={<Tridiagonal/>}/>
+                    <Route path="/matrices/total_pivoting" element={<TotalPivoting/>}/>
+                    <Route path="/functions/heun" element={<Heun/>}/>
+                    <Route path="/integration/compound_trapeze" element={<CompoundTrapeze/>}/>
+                    <Route path="/integration/simpson" element={<Simpson/>}/>
+                    <Route path="/integration/simpson_simple" element={<SimpsonSimple/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

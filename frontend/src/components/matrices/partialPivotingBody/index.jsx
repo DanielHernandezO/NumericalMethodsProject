@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState , useEffect} from "react"
 import PartialPivotingBodyDescription from "./partialPivotingBodyDescription"
 import PartialPivotingExecution from "./partialPivotingExecution"
 import PartialPivotingResult from "./partialPivotingResult"
@@ -7,7 +7,7 @@ import validateVector from "../../../utilities/validateVector"
 import partialPivoting from "../../../utilities/methods/functions/partialPivoting"
 import transformMatrix from "../../../utilities/transformMatrix"
 import Graph from "../../graph"
-const SimpleLuBody = () => {
+const PartialPivotingBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
@@ -63,7 +63,10 @@ const SimpleLuBody = () => {
                 setMatrixList(stages);
                 setVectorResult(x);
                 setIsRun(true);
-                setLogs(logs?logs:[]);
+                setLogs(logs.length>0?logs:[{
+                    type: 'Success',
+                    text: 'Successful proccess'
+                }]);
             }else{
                 setIsRun(false);
                 setLogs(logs?logs:[]);
@@ -73,6 +76,12 @@ const SimpleLuBody = () => {
         }
     }
 
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_partial_pivoting').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {
@@ -97,4 +106,4 @@ const SimpleLuBody = () => {
     )
 }
 
-export default SimpleLuBody;
+export default PartialPivotingBody;

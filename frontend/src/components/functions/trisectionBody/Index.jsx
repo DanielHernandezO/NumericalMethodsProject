@@ -11,9 +11,9 @@ const TrisectionBody = () => {
     const [dataForm, setDataForm] = useState({
         fx: 'x-1',
         left: 0,
-        right: 0,
-        tolerance: 0,
-        niter: 0
+        right: 4,
+        tolerance: 0.00001,
+        niter: 100
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -107,9 +107,9 @@ const TrisectionBody = () => {
         setDataForm({
             fx: 'x-1',
             left: 0,
-            right: 0,
-            tolerance: 0,
-            niter: 0
+            right: 4,
+            tolerance: 0.00001,
+            niter: 100
         })
         setIsRun(false);
         setLogs([]);

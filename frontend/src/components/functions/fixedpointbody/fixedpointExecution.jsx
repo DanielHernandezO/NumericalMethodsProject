@@ -3,7 +3,7 @@ import FixedpointForm from "./fixedpointForm";
 import Logs from "../../logs";
 const FixedpointExecution = ({ run, clear, dataForm, handleChangeDataForm, logs }) => {
     return (
-        <div className="card mb-3 border-success">
+        <div className="card mb-3 border-success" id="result_fixed_point">
             <div className="card-body">
                 <h5 className="card-title">Enter data</h5>
                 <div className="row">

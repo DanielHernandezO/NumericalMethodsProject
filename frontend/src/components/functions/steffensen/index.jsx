@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import SteffensenBodyDescription from "./steffensenBodyDescription";
 import SteffensenBodyExecution from "./steffensenBodyExecution";
 import SteffensenBodyResult from "./steffensenBodyResult";
@@ -9,9 +9,9 @@ const SteffensenBody = () => {
 
     //Se crea el estado que guardara la info del formulario con sus valores iniciales
     const [dataForm, setDataForm] = useState({
-        fx: '(x+(2/x))/2',
-        x0: 1,
-        niter: 10,
+        fx: 'log((sin(x)^2)+1)-1/2',
+        x0: -0.5,
+        niter: 100,
         tol: 10e-7
     })
 
@@ -86,6 +86,12 @@ const SteffensenBody = () => {
         }
 
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_steffensen').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

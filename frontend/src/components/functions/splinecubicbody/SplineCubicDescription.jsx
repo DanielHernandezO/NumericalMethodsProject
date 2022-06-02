@@ -16,7 +16,7 @@ const SplineCubicDescription = () => {
                 <h5 className="card-title">Rules</h5>
                 <ol>
                     <li>
-                        The input must be every element of the table followed by a coma like this : <Latex>{'$1,5,2,3$'}</Latex>
+                    The determinant can not be 0
                     </li>
                 </ol>
                 <div className="card-footer">

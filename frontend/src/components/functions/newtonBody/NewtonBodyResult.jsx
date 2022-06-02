@@ -7,7 +7,7 @@ const NewtonBodyResult = ({ columns, rows, extraInfo }) => {
         info.push({ key, value })
     })
     return (
-        <div className="card mb-3 border-success">
+        <div className="card mb-3 border-success" id="result_newton">
             <div className="card-body">
                 <h5 className="card-title">Result</h5>
                 <div className="card mb-3 text-center">

@@ -3,16 +3,17 @@ import React from "react";
 const HomeBody = () => {
     return (
         <div className="container">
-            <h1 className="text-center">Welcome to Numerical Methods Plattform</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h1 className="text-center">Welcome to Numerical Methods Platform</h1>
+            <p>Numerical Methods Platform is a Website where you can try different numerical methods with its own rules, posibilities and limitations.</p>
+            <p>Check out our guide on how to use the platform for a better user experience here: Yt link</p>
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Functions</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The follow numeric methods are methods based on a function with the objective to find one or more roots.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="/functions/incremental_search">Incremental Searches</a></li>
+                                <li><a href="/functions/incremental_search">Incremental search</a></li>
                                 <li><a href="/functions/falseposition">False position</a></li>
                                 <li><a href="/functions/secant">Secant</a></li>
                                 <li><a href="/functions/bisection">bisection</a></li>
@@ -30,14 +31,14 @@ const HomeBody = () => {
             </div>
             <div className="card mb-3 border-success">
                     <div className="card-body">
-                        <h5 className="card-title">Matrices</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h5 className="card-title">Matrixes</h5>
+                        <p className="card-text">The following numeric methods are based on a matrix with the objetive of returning a vector and steps of the process of each method.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a href="/matrices/partial_pivoting">Partial pivoting</a></li>
-                                <li><a href="#">Total pivoting</a></li>
+                                <li><a href="/matrices/total_pivoting">Total pivoting</a></li>
                                 <li><a href="#">Tridiagonal Gaussian elimination</a></li>
                                 <li><a href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a href="/matrices/privotlu">Pivot LU</a></li>
@@ -55,7 +56,7 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Interpolation</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a table with an X and a y, with the objective of returning an Interpolating Polynomial and a Polynom</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
@@ -72,13 +73,13 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Numerical integration</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a function, a lower limit, an upper limit and a number of divisions of the functions with the objective of returning an approximation of the integral function and the iteratiosn to achieve it.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Compound trapeze</a></li>
-                                <li><a href="#">Simpson 1/3 compound</a></li>
-                                <li><a href="#">Simpson 3/8 simple</a></li>
+                                <li><a href="/integration/compound_trapeze">Compound trapeze</a></li>
+                                <li><a href="/integration/simpson">Simpson 1/3 compound</a></li>
+                                <li><a href="/integration/simpson_simple">Simpson 3/8 simple</a></li>
                             </ul>
                         </div>
                     </div>
@@ -86,12 +87,12 @@ const HomeBody = () => {
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Differential equations</h5>
-                        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p className="card-text">The following numeric methods are based on a function, an inferior limit, superior limit, and a number that determines how big each evaluation will be apart from each other with the objective of returning an approximation of the graphic function.</p>
                         <div>
                             <h6>List of methods</h6>
                             <ul>
                                 <li><a href="#">Euler</a></li>
-                                <li><a href="#">Heun</a></li>
+                                <li><a href="/functions/heun">Heun</a></li>
                             </ul>
                         </div>
                     </div>
