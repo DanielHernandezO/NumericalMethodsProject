@@ -6,9 +6,7 @@ const HomeBody = () => {
             <h1 className="text-center">Welcome to Numerical Methods Platform</h1>
             <div>
                 <h3 className="text-center">User manual</h3>
-                <iframe width="100%" height="700px"
-                    src="https://www.youtube.com/embed/ZQc3RXJcjK0?autoplay=1&mute=1">
-                </iframe>
+                
             </div>
             <p>Numerical Methods Platform is a Website where you can try different numerical methods with its own rules, posibilities and limitations.</p>
             <p>Check out our guide on how to use the platform for a better user experience here: Yt link</p>
@@ -101,6 +99,9 @@ const HomeBody = () => {
                         </div>
                     </div>
             </div>
+            <iframe width="100%" height="700px"
+                    src="https://www.youtube.com/embed/ZQc3RXJcjK0?autoplay=1&mute=1">
+                </iframe>
         </div>
     )
 }
