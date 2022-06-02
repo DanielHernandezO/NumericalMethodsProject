@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState , useEffect} from "react"
 import DoolittleBodyDescription from "./DoolittleBodyDescription"
 import DoolittleBodyExecution from "./DoolittleBodyExecution"
 import DoolittleBodyResult from "./DoolittleBodyResult"
@@ -72,6 +72,12 @@ const Doolittlebody = () => {
             setIsRun(false);
         }
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_doolittle').scrollIntoView()
+        }
+    },[isRun])
 
 
     //Método para reiniciar los valores

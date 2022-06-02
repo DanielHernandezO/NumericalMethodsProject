@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState , useEffect} from "react"
 import SimpleLuBodyDescription from "./simpleLuBodyDescription"
 import SimpleBodyExecution from "./simpleBodyExecution"
 import SimpleBodyResult from "./simpleBodyResult"
@@ -64,7 +64,10 @@ const SimpleLuBody = () => {
                 setMatrixList(stages);
                 setVectorResult(x);
                 setIsRun(true);
-                setLogs(logs?logs:[]);
+                setLogs(logs.length>0?logs:[{
+                    type: 'Success',
+                    text: 'Successful proccess'
+                }]);
             }else{
                 setIsRun(false);
                 setLogs(logs?logs:[]);
@@ -74,6 +77,12 @@ const SimpleLuBody = () => {
         }
     }
 
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_simple_lu').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

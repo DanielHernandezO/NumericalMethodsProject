@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import secant from "../../../utilities/methods/functions/secant";
 import SecantBodyDescription from "./secantBodyDescription";
 import SecantBodyExecution from "./secantBodyExecution";
@@ -37,22 +37,22 @@ const SecantBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate x0
-        if (isNaN(x0)) {
+        if (x0 === '' || isNaN(x0)) {
             logsAux.push({ type: 'Error', text: 'x0 must be a valid number' })
             flag = false;
         }
         //Validate x1
-        if (isNaN(x1)) {
+        if (x1 === '' || isNaN(x1)) {
             logsAux.push({ type: 'Error', text: 'x1 must be a valid number' })
             flag = false;
         }
         //Validate fx
-        if (!isNaN(x0) && !validateFunction(fx, x0)) {
+        if (fx === '' || (!isNaN(x0) && !validateFunction(fx, x0))) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -66,8 +66,14 @@ const SecantBody = () => {
             flag = false;
         }
         //Validate tolerance
-        if (isNaN(tol)) {
+        if (niter === '' || isNaN(tol)) {
             logsAux.push({ type: 'Error', text: 'tol must be a valid number' });
+            flag = false;
+        }
+
+        //Validate x0 !== x1
+        if(x0 == x1){
+            logsAux.push({ type: 'Error', text: 'x0 must be different from x1' });
             flag = false;
         }
         setLogs(logsAux);
@@ -90,6 +96,12 @@ const SecantBody = () => {
         }
 
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_secant').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

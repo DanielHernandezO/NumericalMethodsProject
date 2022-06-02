@@ -7,20 +7,24 @@ const SplineQuadraticDescription = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b><Latex>{'$x:$'}</Latex></b> Starting value.
+                        <b><Latex>{'$f(x,y)$'}</Latex>:</b> The derivate of the function to evaulate
                     </li>
                     <li>
-                        <b><Latex>{'$y:$'}</Latex></b> Ending value / limit.
+                        <b><Latex>{'$x$'}</Latex>:</b> The initial condition for x
                     </li>
                     <li>
-                        <b><Latex>{'$h:$'}</Latex></b> Size of steps.
+                        <b><Latex>{'$y$'}</Latex>:</b> The initial condition for y
+                    </li>
+                    <li>
+                        <b><Latex>{'$h$'}</Latex>:</b> Step size
+                    </li>
+                    <li>
+                        <b><Latex>{'$n$'}</Latex>:</b> Number of iterations
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
                 <ol>
-                    <li>
-                        The input must be every element of the table followed by a coma like this : <Latex>{'$1,5,2,3$'}</Latex>
-                    </li>
+
                 </ol>
                 <div className="card-footer">
                     <small className="text-muted"><b>Note: </b>If the input data does not comply with the rules, the success of the method is not assured.</small>

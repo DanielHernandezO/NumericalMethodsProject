@@ -3,7 +3,7 @@ import Matrix from "../../matrix";
 import Vector from "../../vector";
 const DoolittleBodyResult = ({matrixList,vectorResult}) => {
     return (
-        <div className="card mb-3 border-success">
+        <div className="card mb-3 border-success" id="result_doolittle">
             <div className="card-body">
                 <div className="d-flex justify-content-center">
                     <div className="text-center">

@@ -1,5 +1,5 @@
 import React from "react";
-import Bisection from "../../../pages/functions/Bisection";
+import Latex from "react-latex";
 
 const BisectionDescriptionBody = () => {
     return (
@@ -8,28 +8,28 @@ const BisectionDescriptionBody = () => {
                 <h5 className="card-title">Input</h5>
                 <ul>
                     <li>
-                        <b>fx:</b> Function to which we want to find the interval where the root or the root is located. Ej: 'x^2 + 2 -1'
+                        <b><Latex>{'$fx$'}</Latex>:</b> Function to which we want to find the interval where the root or the root is located. Ej: 'x^2 + 2 -1'
                     </li>
                     <li>
-                        <b>Left: </b> Start of the interval to be taken into account
+                        <b><Latex>{'$Left$'}</Latex>:</b> Start of the interval to be taken into account
                     </li>
                     <li>
-                        <b>Right </b> End of the interval end to be taken into account
+                        <b><Latex>{'$Right$'}</Latex>:</b> End of the interval end to be taken into account
                     </li>
                     <li>
-                        <b>Tolerance: </b> Error tolerance between the real root and the method's answer
+                        <b><Latex>{'$Tolerance$'}</Latex>:</b> Error tolerance between the real root and the method's answer
                     </li>
                     <li>
-                        <b>Niter: </b> Maximum number of iterations
+                        <b><Latex>{'$Niter$'}</Latex>: </b> Maximum number of iterations
                     </li>
                 </ul>
                 <h5 className="card-title">Rules</h5>
                 <ol>
                     <li>
-                        <b>fx</b> must be continuous.
+                        <b><Latex>{'$fx$'}</Latex></b> must be continuous.
                     </li>
                     <li>
-                        <b>fx</b> must have at least one root between the interval [Left,Right]
+                        <b><Latex>{'$fx$'}</Latex></b> must have at least one root between the interval [Left,Right]
                     </li>
                 </ol>
                 <div className="card-footer">

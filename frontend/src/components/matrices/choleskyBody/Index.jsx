@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect} from "react"
 import CholeskyBodyDescription from "./CholeskyBodyDescription"
 import CholeskyBodyExecution from "./CholeskyBodyExecution"
 import CholeskyBodyResult from "./CholeskyBodyResult"
@@ -86,6 +86,12 @@ const Doolittlebody = () => {
             setIsRun(false);
         }
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_cholesky').scrollIntoView()
+        }
+    },[isRun])
 
 
     //Método para reiniciar los valores

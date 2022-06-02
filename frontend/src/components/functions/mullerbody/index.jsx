@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import mullermethod from "../../../utilities/methods/functions/muller";
 import MullerDescription from "./MullerDescription";
 import MullerExecution from "./MullerExecution";
@@ -103,6 +103,12 @@ const MullerBody = () => {
         }
 
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_muller').scrollIntoView()
+        }
+    },[isRun])
 
     //Método para reiniciar los valores
     const clear = () => {

@@ -19,7 +19,7 @@ const simpleLuBodyDescription = () => {
                         <Latex>{'$det(A) \\not = 0$'}</Latex> 
                     </li>
                     <li>
-                        All other elements of <Latex>{'$A$'}</Latex> should not be very close to 0. 
+                        At least one of the elements in each column of <Latex>{'$A$'}</Latex> should not be too close to 0.
                     </li>  
                 </ol>
                 <div className="card-footer">

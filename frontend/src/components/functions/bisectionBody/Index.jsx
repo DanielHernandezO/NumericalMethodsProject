@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import BisectionDescriptionBody from "./BisectionBodyDescription";
 import BisectionBodyExecution from "./BisectionBodyExecution"
 import BisectionBodyResult from "./BisectionBodyResult"
@@ -11,9 +11,9 @@ const BisectionSearchBody = () => {
     const [dataForm, setDataForm] = useState({
         fx: 'x-1',
         left: 0,
-        right: 0,
-        tolerance: 0,
-        niter: 0
+        right: 4,
+        tolerance: 0.00001,
+        niter: 100
     })
 
     //Se crea el estado que guardará los errores ocurridos durante la ejecución del método
@@ -35,13 +35,13 @@ const BisectionSearchBody = () => {
         let flag = true;
         const logsAux = [];
         //Validate left
-        if (isNaN(left)) {
+        if (left === '' || isNaN(left)) {
             logsAux.push({ type: 'Error', text: 'left must be a valid number' })
             flag = false;
         }
 
         // validate right 
-        if (isNaN(right)) {
+        if (right === '' || isNaN(right)) {
             logsAux.push({ type: 'Error', text: 'right must be a valid number' })
             flag = false;
         }
@@ -50,13 +50,13 @@ const BisectionSearchBody = () => {
             flag = false;
         }
         //Validate fx
-        if (!isNaN(left) && !validateFunction(fx, left)) {
+        if (fx === '' || !isNaN(left) && !validateFunction(fx, left)) {
             logsAux.push({ type: 'Error', text: 'f(x) must be a valid function' });
             flag = false;
         }
 
         //Validate niter
-        if (isNaN(niter)) {
+        if (niter === '' || isNaN(niter)) {
             logsAux.push({ type: 'Error', text: 'niter must be a valid number' });
             flag = false;
         }
@@ -70,7 +70,7 @@ const BisectionSearchBody = () => {
             flag = false;
         }
         //Validate tolerance
-        if (isNaN(tolerance)) {
+        if (tolerance === '' || isNaN(tolerance)) {
             logsAux.push({ type: 'Error', text: 'tolerance must be a valid number' });
             flag = false;
         }
@@ -105,14 +105,20 @@ const BisectionSearchBody = () => {
 
     }
 
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_bisection').scrollIntoView()
+        }
+    },[isRun])
+
     //Método para reiniciar los valores
     const clear = () => {
         setDataForm({
             fx: 'x-1',
             left: 0,
-            right: 0,
-            tolerance: 0,
-            niter: 0
+            right: 4,
+            tolerance: 0.00001,
+            niter: 100
         })
         setIsRun(false);
         setLogs([]);

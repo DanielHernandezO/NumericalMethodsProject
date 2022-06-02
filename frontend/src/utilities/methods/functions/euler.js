@@ -1,22 +1,28 @@
-function eulersMethod(x1, y1, h) {
+const mathjs = require('mathjs')
+
+function euler(f, xi, yi, xf, h) {
+	xi = parseInt(xi);
+	yi = parseInt(yi);
+	xf = parseInt(xf);
+	
+
 	var newarray = [];
-	var x=x1, y=y1;
-	function cooling(y) {
-		return -0.07 * (y-20);
+	var n = (xf - xi)/h;
+	for (var i = 0; i < n; i++) {
+		var y1 = mathjs.evaluate(f, { x: xi , y: yi});
+		
+		var hy1 = h*y1;
+		newarray.push([xi,y1]);
+		console.log(newarray);
+		
+		yi = yi +hy1;
+    	
+		xi = xi+h;
+		
 	}
-	let logs = [];
-	while ((x<y1 && x1<y1) || (x>y1 && x1>y1)) {
-		// Print what we have
-		newarray.push([x,y]);
-		// Calculate the next values
-		y += h*cooling(y);
-		x += h;
-	}
-	logs = [{type:'Success', text: "Correct input"}]
-	return {newarray,logs};
+	
+	let logs = [{ type: 'Success', text: "Correct Input"}];
+	return {newarray,logs}
+	
 }
- 
-
- 
-
-export default eulersMethod;
+export default euler;

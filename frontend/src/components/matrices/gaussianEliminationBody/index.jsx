@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState , useEffect} from "react"
 import GaussianEliminationBodyDescription from "./gaussianEliminationBodyDescription"
 import GaussianEliminationExecution from "./gaussianEliminationExecution"
 import GaussianEliminationBodyResult from "./gaussianEliminationBodyResult"
@@ -59,11 +59,15 @@ const SimpleLuBody = () => {
             const matrixTransformered = transformMatrix(dataForm.A);
             const vectorTransformered = transformMatrix(dataForm.b);
             const {x, stages, logs} = gaussianElimination(matrixTransformered,vectorTransformered,vectorTransformered.length);
+            console.log(logs)
             if(stages.length >0 ){
                 setMatrixList(stages);
                 setVectorResult(x);
                 setIsRun(true);
-                setLogs(logs?logs:[]);
+                setLogs(logs.length>0?logs:[{
+                    type: 'Success',
+                    text: 'Successful proccess'
+                }]);
             }else{
                 setIsRun(false);
                 setLogs(logs?logs:[]);
@@ -72,6 +76,12 @@ const SimpleLuBody = () => {
             setIsRun(false);
         }
     }
+
+    useEffect(()=>{
+        if(isRun){
+            document.getElementById('result_gauss_elimination').scrollIntoView()
+        }
+    },[isRun])
 
 
     //Método para reiniciar los valores
