@@ -1,6 +1,6 @@
 import susRegre from "./SusRegre";
 import sustProg from "./SusProgre";
-const convertToInmutable = require('../../convertToInmutable')
+import convertToInmutable from '../../convertToInmutable'
 const mathjs = require("mathjs")
 function crout(A,B) {
     const stages = [];

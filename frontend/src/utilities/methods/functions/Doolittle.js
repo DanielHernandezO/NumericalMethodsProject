@@ -1,6 +1,6 @@
 import susRegre from "./SusRegre";
 import sustProg from "./SusProgre";
-const convertToInmutable = require('../../convertToInmutable')
+import convertToInmutable from '../../convertToInmutable'
 function Doolittle(mat,B)
 {
     const stages = [];
