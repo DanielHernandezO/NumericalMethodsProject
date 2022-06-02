@@ -9,7 +9,7 @@ const HomeBody = () => {
                 
             </div>
             <p>Numerical Methods Platform is a Website where you can try different numerical methods with its own rules, posibilities and limitations.</p>
-            <p>Check out our guide on how to use the platform for a better user experience here: Yt link</p>
+            <p><b>Input ln() = log()</b></p>
             <div className="card mb-3 border-success">
                     <div className="card-body">
                         <h5 className="card-title">Functions</h5>
