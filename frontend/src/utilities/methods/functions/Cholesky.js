@@ -1,7 +1,8 @@
 import sustProgComplex from "./sustProgComplex";
 import susRegreComplex from "./susRegreComplex";
+import convertToInmutable from '../../convertToInmutable'
+
 const mathjs = require("mathjs")
-const convertToInmutable = require('../../convertToInmutable')
 function Cholesky(matrix,B)
 {
     
