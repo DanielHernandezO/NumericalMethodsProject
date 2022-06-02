@@ -1,5 +1,6 @@
+import partialPivoting from './partialPivoting.js'
 const mathjs = require('mathjs')
-const partialPivoting = require('./partialPivoting.js')
+
 
 
 function retornar(a){

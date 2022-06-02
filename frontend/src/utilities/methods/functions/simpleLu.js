@@ -1,4 +1,4 @@
-const convertToInmutable = require('../../convertToInmutable')
+import convertToInmutable from '../../convertToInmutable'
 console.log(convertToInmutable)
 const mathjs = require('mathjs')
 let stages = [];
