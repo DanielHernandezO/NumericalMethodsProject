@@ -1,5 +1,5 @@
 const mathjs = require('mathjs')
-module.exports = (f, g, x0, tol, nMax) => {
+export default  (f, g, x0, tol, nMax) => {
     const iterations = [];
     let gx1 = mathjs.evaluate(g, {x:x0});
     let fx1 = mathjs.evaluate(f, {x:x0});

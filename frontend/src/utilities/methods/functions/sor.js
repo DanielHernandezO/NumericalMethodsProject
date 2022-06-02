@@ -23,7 +23,7 @@ function triu(A){
 	return aux;
 }
 
-module.exports = (A,b,x,iter,tol,w) =>{
+export default  (A,b,x,iter,tol,w) =>{
     const logs = [];
 	const iteration = [];
 	let determinante = mathjs.det(A);

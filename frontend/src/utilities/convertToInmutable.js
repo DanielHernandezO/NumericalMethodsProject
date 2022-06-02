@@ -6,4 +6,4 @@ const convertToInmutable = (A) => {
     return newArray;
 }
 
-module.exports = convertToInmutable;
+export default convertToInmutable;

@@ -1,6 +1,6 @@
 const mathjs = require('mathjs')
 
-module.exports = (x,y) => {
+export default  (x,y) => {
     var newarray= [];
     var coefficients=[];
     for (var m=0; m<x.length; m++) coefficients[m]=0;

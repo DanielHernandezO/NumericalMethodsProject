@@ -6,7 +6,7 @@ function retornar(a){
     return arreglos;
 }
 
-module.exports = (a, b, c, d) => {
+export default  (a, b, c, d) => {
     const stages = [];
     const logs = [];
     var N = d.length

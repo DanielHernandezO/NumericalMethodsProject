@@ -127,7 +127,7 @@ const backward_substitution = (A, b) => {
     return { x, error: false };
 }
 
-module.exports = (A, b) => {
+export default  (A, b) => {
     stages = [];
     stages.push({
         title: 'Stage 0',

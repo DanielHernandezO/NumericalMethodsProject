@@ -46,7 +46,7 @@ const sustitution = (m, n) => {
     return { x: results, error: false };
 }
 
-module.exports = (A, b, n) => {
+export default (A, b, n) => {
     stages = [];
     stages.push({
         title: 'Stage 0',

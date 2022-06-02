@@ -1,5 +1,5 @@
 const mathjs = require('mathjs')
-module.exports = (a, b, f, n) => {
+export default (a, b, f, n) => {
     const deltaX = (b - a) / n;
     let A = 0;
     const iterations = [];

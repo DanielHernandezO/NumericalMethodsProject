@@ -19,7 +19,7 @@ function polinomio(x){
 	return pol;
 }
 
-module.exports = (xi,y) =>{
+export default  (xi,y) =>{
 	let n = xi.length;
 	let A = mathjs.ones(n,n).toArray();
 	for (var i = 0; i < n; i++) {

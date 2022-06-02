@@ -100,7 +100,7 @@ const orderResult = (x, marks) => {
     return result;
 }
 
-module.exports = (A, b, n) => {
+export default  (A, b, n) => {
     stages = [];
     stages.push({
         title: 'Stage 0',

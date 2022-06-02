@@ -3,7 +3,7 @@ const { i } = require('mathjs');
 const mathjs = require('mathjs')
 
 
-module.exports = (x,y) => {
+export default  (x,y) => {
     function zeros(dimensions) {
         var array = [];
         for (var i = 0; i < dimensions[0]; ++i) {

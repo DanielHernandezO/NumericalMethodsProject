@@ -1,6 +1,6 @@
 const { complex, isComplex } = require('mathjs')
 const mathjs = require('mathjs')
-module.exports = (f, x0, x1, tolerance, nMax) => {
+export default  (f, x0, x1, tolerance, nMax) => {
     let iterations = []
     //Utilizamos método de regla falsa para hallar x2
     let fx0 = mathjs.evaluate(f, { x: x0 })

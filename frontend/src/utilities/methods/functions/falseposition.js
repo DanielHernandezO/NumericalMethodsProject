@@ -1,6 +1,6 @@
 const mathjs = require('mathjs')
 
-module.exports = (f, xi, xs, tolerance, nMax) => {
+export default  (f, xi, xs, tolerance, nMax) => {
     const iterations = []
     const logs = []
     let fxi = mathjs.evaluate(f, { x: xi });

@@ -61,7 +61,7 @@ const sustitution = (m, n) => {
     return { x: results, error: false };
 }
 
-module.exports = (A, b, n) => {
+export default  (A, b, n) => {
     stages = [];
     console.log(A,b,n);
     stages.push({
