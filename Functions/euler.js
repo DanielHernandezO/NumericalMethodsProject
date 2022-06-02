@@ -32,5 +32,12 @@ function euler(f, xi, yi, xf, h) {
 	return arr;
 	
 }
+<<<<<<< HEAD
+ 
+function cooling(x, y) {
+	return -0.07 * (y-20);
+}
+=======
 export default euler;
+>>>>>>> 61720ae54686e3e4426d23c137a16417c01b6841
 console.log(euler('0.1*sqrt(y)+0.4*x^2',2,4,4,0.5));

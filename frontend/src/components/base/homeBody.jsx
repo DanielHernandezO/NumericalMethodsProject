@@ -30,6 +30,7 @@ const HomeBody = () => {
                                 <li><a href="/functions/aitken">Aitken</a></li>
                                 <li><a href="/functions/muller">Müller</a></li>
                                 <li><a href="/functions/trisection">Trisection</a></li>
+                                <li><a href="/interpolation/vandermorde">Vandermorde</a></li>
                             </ul>
                         </div>
                     </div>
@@ -44,15 +45,16 @@ const HomeBody = () => {
                                 <li><a href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a href="/matrices/partial_pivoting">Partial pivoting</a></li>
                                 <li><a href="/matrices/total_pivoting">Total pivoting</a></li>
-                                <li><a href="#">Tridiagonal Gaussian elimination</a></li>
+                                <li><a href="/matrices/tridiagonal">Tridiagonal Gaussian elimination</a></li>
                                 <li><a href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a href="/matrices/privotlu">Pivot LU</a></li>
                                 <li><a href="/functions/crout">Crout</a></li>
                                 <li><a href="/functions/doolittle">Doolittle</a></li>
                                 <li><a href="/functions/cholesky">Cholesky</a></li>
                                 <li><a href="/matrices/jacobi">Jacobi</a></li>
-                                <li><a href="#">Gauss-Seidel</a></li>
-                                <li><a href="#">SOR</a></li>
+                                <li><a href="/matrices/gaussseidel">Gauss-seidel</a></li>
+                                <li><a href="/matrices/sor">Sor</a></li>
+                                <li><a href="/matrices/tridiagonal">Tridiagonal</a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +66,7 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Vandermonde</a></li>
+                                <li><a href="/interpolation/vandermorde">Vandermonde</a></li>
                                 <li><a href="/functions/difdivididas">Newton( Divided differences)</a></li>
                                 <li><a href="/functions/lagrange">Lagrange</a></li>
                                 <li><a href="/functions/linealspline">Line plotters</a></li>
@@ -95,7 +97,7 @@ const HomeBody = () => {
                         <div>
                             <h6>List of methods</h6>
                             <ul>
-                                <li><a href="#">Euler</a></li>
+                                <li><a href="/functions/euler">Euler</a></li>
                                 <li><a href="/functions/heun">Heun</a></li>
                             </ul>
                         </div>

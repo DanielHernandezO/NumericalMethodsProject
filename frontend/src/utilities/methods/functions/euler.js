@@ -1,5 +1,6 @@
 const mathjs = require('mathjs')
 
+
 function euler(f, xi, yi, xf, h) {
 	xi = parseInt(xi);
 	yi = parseInt(yi);
