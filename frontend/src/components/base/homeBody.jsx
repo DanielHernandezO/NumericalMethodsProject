@@ -23,6 +23,7 @@ const HomeBody = () => {
                                 <li><a href="/functions/aitken">Aitken</a></li>
                                 <li><a href="/functions/muller">Müller</a></li>
                                 <li><a href="/functions/trisection">Trisection</a></li>
+                                <li><a href="/interpolation/vandermorde">Vandermorde</a></li>
                             </ul>
                         </div>
                     </div>
@@ -44,8 +45,9 @@ const HomeBody = () => {
                                 <li><a href="/functions/doolittle">Doolittle</a></li>
                                 <li><a href="/functions/cholesky">Cholesky</a></li>
                                 <li><a href="/matrices/jacobi">Jacobi</a></li>
-                                <li><a href="#">Gauss-Seidel</a></li>
-                                <li><a href="#">SOR</a></li>
+                                <li><a href="/matrices/gaussseidel">Gauss-seidel</a></li>
+                                <li><a href="/matrices/sor">Sor</a></li>
+                                <li><a href="/matrices/tridiagonal">Tridiagonal</a></li>
                             </ul>
                         </div>
                     </div>

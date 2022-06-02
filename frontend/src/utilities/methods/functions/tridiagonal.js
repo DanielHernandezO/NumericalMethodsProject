@@ -1,3 +1,11 @@
+function retornar(a){
+    const arreglos = [];
+    for (var i = 0; i < a.length; i++) {
+        arreglos.push([a[i]]);
+    }
+    return arreglos;
+}
+
 module.exports = (a, b, c, d) => {
     const stages = [];
     const logs = [];
@@ -13,7 +21,7 @@ module.exports = (a, b, c, d) => {
     c[0] = c[0] / b[0];
     d[0] = d[0] / b[0];
  
-    for (i = 1; i < N; i++) {
+    for (let i = 1; i < N; i++) {
         var temp = b[i] - a[i] * c[i - 1];
         if(temp === 0){
             logs.push({
@@ -26,16 +34,16 @@ module.exports = (a, b, c, d) => {
         d[i] = (d[i] - a[i] * d[i - 1]) / temp;
         stages.push({
             title: `c${i + 1}: `,
-            matrix: [...c]
+            matrix: retornar(c)
         })
         stages.push({
             title: `d${i + 1}: `,
-            matrix: [...d]
+            matrix: retornar(d)
         })
     }
  
     let x = d
-    for (i = N - 2; i >= 0; i--){
+    for (let  i = N - 2; i >= 0; i--){
         x[i] = d[i] - c[i] * x[i + 1];
     }
         

@@ -26,6 +26,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="/functions/aitken">Aitken</a></li>
                                 <li><a className="dropdown-item" href="/functions/muller">Müller</a></li>
                                 <li><a className="dropdown-item" href="/functions/trisection">Trisection</a></li>
+                                <li><a className="dropdown-item" href="/interpolation/vandermorde">Vandermorde</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
@@ -36,15 +37,15 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
                                 <li><a className="dropdown-item" href="/matrices/partial_pivoting">Partial pivoting</a></li>
                                 <li><a className="dropdown-item" href="#">Total pivoting</a></li>
-                                <li><a className="dropdown-item" href="#">Tridiagonal Gaussian elimination</a></li>
+                                <li><a className="dropdown-item" href="/matrices/tridiagonal">Tridiagonal</a></li>
                                 <li><a className="dropdown-item" href="/matrices/simplelu">Simple LU</a></li>
                                 <li><a className="dropdown-item" href="/matrices/privotlu">Pivot LU</a></li>
                                 <li><a className="dropdown-item" href="/functions/crout">Crout</a></li>
                                 <li><a className="dropdown-item" href="/functions/doolittle">Doolittle</a></li>
                                 <li><a className="dropdown-item" href="/functions/cholesky">Cholesky</a></li>
                                 <li><a className="dropdown-item" href="/matrices/jacobi">Jacobi</a></li>
-                                <li><a className="dropdown-item" href="#">Gauss-Seidel</a></li>
-                                <li><a className="dropdown-item" href="#">SOR</a></li>
+                                <li><a className="dropdown-item" href="/matrices/gaussseidel">Gauss- seidel</a></li>
+                                <li><a className="dropdown-item" href="/matrices/sor">Sor</a></li>
                             </ul>
                         </li>
 

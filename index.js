@@ -29,10 +29,7 @@ const difdivididas = require('./Functions/difdivididas')
 // console.log(xi)
 
 const {root,approximation,iterations} = muller('log((sin(x)^2)+ 1)-1/2',0,1,10e-7,100)
-console.log('iterations:\n')
-console.table(iterations)
-console.log('x:\n')
-console.log(root?root:approximation)
+
 
 // const {x,iterations}=fixedpoint('log((sin(x)^2)+1)-x-1/2','log((sin(x)^2)+1)-1/2',-0.5,1e-7,100)
 // console.table(iterations)
@@ -88,3 +85,6 @@ const factLUPartialPiv = require('./Matrixes/factLUPartialPiv')
 // gaussseidel([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7);
 //const sor = require('./Functions/sor.js');
 //sor([[20,10,3,4],[10,26,8,9],[40,50,9,6],[4,90,9,4]],[5,6,6,6],[0,0,0,0],100,1e-7,3.5);
+const euler = require('./Functions/euler')
+var arr = euler('0.1*sqrt(y)+0.4*x^2',2,4,4,0.5);
+console.log(arr);

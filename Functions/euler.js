@@ -1,3 +1,4 @@
+const mathjs = require('mathjs')
 // function eulersMethod(x1, y1, h) {
 // 	var arr = [];
 // 	function cooling(y) {
@@ -18,16 +19,15 @@
  
 
 // console.log(eulersMethod(0,5,0.2));
-function eulersMethod(f, x1, y1, x2, h) {
+function euler(f, xi, yi, xf, h) {
 	var arr = [];
-	var x=x1, y=y1;
-	while ((x<x2 && x1<x2) || (x>x2 && x1>x2)) {
-		// Print what we have
-
-		arr.push([x,y]);
-		// Calculate the next values
-		y += h*f(x, y)
-		x += h;
+	var n = (xf - xi)/h;
+	for (var i = 0; i < n; i++) {
+		var y1 = mathjs.evaluate(f, { x: xi , y: yi});
+		var hy1 = h*y1;
+		arr.push([xi,yi]);
+		yi = yi +hy1;
+    	xi = xi+h;
 	}
 	return arr;
 	
@@ -36,5 +36,4 @@ function eulersMethod(f, x1, y1, x2, h) {
 function cooling(x, y) {
 	return -0.07 * (y-20);
 }
- 
-console.log(eulersMethod(cooling, 0, 2, 1, 0.1));
+console.log(euler('0.1*sqrt(y)+0.4*x^2',2,4,4,0.5));

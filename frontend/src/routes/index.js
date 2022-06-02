@@ -29,6 +29,10 @@ import Doolittle from "../pages/matrices/Doolittle"
 import GaussianElimination from "../pages/matrices/GaussianElimination"
 import PartialPivoting from "../pages/matrices/PartialPivoting"
 import Jacobi from "../pages/matrices/Jacobi"
+import Gaussseidel from "../pages/matrices/Gaussseidel"
+import Sor from "../pages/matrices/Sor"
+import Vandermorde from "../pages/functions/Vandermorde"
+import Tridiagonal from "../pages/matrices/Tridiagonal"
 
 import Cholesky from "../pages/matrices/Cholesky"
 const App = () => {
@@ -59,9 +63,13 @@ const App = () => {
                     <Route path="/matrices/privotlu" element={<PivotLu/>}/>
                     <Route path="/functions/doolittle" element={<Doolittle/>}/>
                     <Route path="/matrices/gaussian_elimination" element={<GaussianElimination/>} />
-                    <Route path="/matrices/partial_pivoting" element={<PartialPivoting/>}></Route>
+                    <Route path="/matrices/partial_pivoting" element={<PartialPivoting/>}/>
                     <Route path="/functions/cholesky" element={<Cholesky/>}/>
                     <Route path="/matrices/jacobi" element={<Jacobi/>}/>
+                    <Route path="/matrices/gaussseidel" element={<Gaussseidel/>}/>
+                    <Route path="/matrices/sor" element={<Sor/>}/>
+                    <Route path="/interpolation/vandermorde" element={<Vandermorde/>}/>
+                    <Route path="/matrices/tridiagonal" element={<Tridiagonal/>}/>
                     {/* Others url */}  
                 </Routes>
             </BrowserRouter>

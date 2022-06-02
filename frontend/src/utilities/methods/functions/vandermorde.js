@@ -1,27 +1,34 @@
 const mathjs = require('mathjs')
-module.exports = (x,y) =>{
-	const n = x.length;
-	let A = mathjs.zeros(n,n).toArray();
-	var cont  = 0;
-	while(cont < n){
-		A[cont][0] = 1;
-		cont = cont+1;
+const partialPivoting = require('./partialPivoting.js')
+
+
+function retornar(a){
+    const arreglos = [];
+    for (var i = 0; i < a.length; i++) {
+        arreglos.push([a[i]]);
+    }
+    return arreglos;
+}
+
+function polinomio(x){
+	let pol = "";
+	for(let i = 0; i < x.length - 1; i++){
+		pol = pol + x[i]+"x^"+(x.length-i-1)+"+";
 	}
-	cont = 0;
-	while(cont < n){
-		A[cont][1] = x[cont];
-		cont = cont+1;
-	}
-	cont = 0;
-	while(cont < n){
-		var cont2 = 2;
-		while(cont2 < n){
-			A[cont][cont2] = A[cont][1]^(cont2 - 1);
-			cont2 = cont2 + 1;
+	pol = pol + x[x.length - 1] + " ";
+	return pol;
+}
+
+module.exports = (xi,y) =>{
+	let n = xi.length;
+	let A = mathjs.ones(n,n).toArray();
+	for (var i = 0; i < n; i++) {
+		for (var j = 0; j < n - 1; ++j){
+			A[i][j] = mathjs.pow(xi[i],(n-j - 1));
 		}
-		cont = cont+1;
 	}
-	let AI = mathjs.inv(A);
-	let R = mathjs.multiply(AI,y);
-	return {R};
+	console.log(A);
+	let {x} = partialPivoting(A,retornar(y),n); 
+	let poli  = polinomio(x);
+	return {A,x,poli};
 }

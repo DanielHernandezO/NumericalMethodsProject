@@ -63,6 +63,7 @@ const sustitution = (m, n) => {
 
 module.exports = (A, b, n) => {
     stages = [];
+    console.log(A,b,n);
     stages.push({
         title: 'Stage 0',
         matrix: [...mathjs.concat(A, b)]
