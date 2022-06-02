@@ -30,7 +30,7 @@ const Header = () => {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Matrices
+                                    Matrixes
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a className="dropdown-item" href="/matrices/gaussian_elimination">Gaussian elimination</a></li>
@@ -42,7 +42,7 @@ const Header = () => {
                                 <li><a className="dropdown-item" href="/functions/crout">Crout</a></li>
                                 <li><a className="dropdown-item" href="/functions/doolittle">Doolittle</a></li>
                                 <li><a className="dropdown-item" href="/functions/cholesky">Cholesky</a></li>
-                                <li><a className="dropdown-item" href="#">Jacobi</a></li>
+                                <li><a className="dropdown-item" href="/matrices/jacobi">Jacobi</a></li>
                                 <li><a className="dropdown-item" href="#">Gauss-Seidel</a></li>
                                 <li><a className="dropdown-item" href="#">SOR</a></li>
                             </ul>
